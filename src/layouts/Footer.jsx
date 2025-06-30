@@ -2,9 +2,10 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div>
+    <footer className='bg-[#070c13] h-18 flex justify-center items-center w-full'>
+      <h1>Copyright &copy; 2025</h1>
       
-    </div>
+    </footer>
   )
 }
 
