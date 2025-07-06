@@ -9,6 +9,7 @@ import Container from "./customs/Container";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import Skills from "./layouts/Skills";
+import { Element } from "react-scroll";
 
 export default function App() {
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function App() {
     });
   }, []);
   return (
-    <>
+    <Element>
       <Navbar />
       <Header />
       <About />
@@ -28,6 +29,6 @@ export default function App() {
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </Element>
   );
 }
