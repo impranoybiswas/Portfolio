@@ -2,6 +2,7 @@ import React from "react";
 import { FaDownload } from "react-icons/fa6";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { Link } from "react-scroll";
+import { resumeLink } from "../utilities/data";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -14,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-primary h-fit w-full text-white">
       <section className="hidden lg:px-25 w-full mx-auto lg:flex justify-between h-16 items-center gap-2">
-      <Link to="home" className="flex justify-center items-center gap-2 text-xl font-semibold">
+      <Link to="home" className="flex justify-center items-center gap-2 text-xl font-semibold cursor-pointer">
           <img className="w-5 h-5" src="./logo.svg" alt="" />
             PRANOY
         </Link>
@@ -39,7 +40,7 @@ export default function Navbar() {
         <div>
           <a
             className="rounded-md flex justify-center items-center gap-2 py-1 px-4 bg-secondary/90 hover:bg-secondary text-lg font-semibold cursor-pointer transition "
-            href="https://drive.google.com/file/d/1lHkLVej0L2loUSMB6FY5U2Ak2v67c3eS/view"
+            href={resumeLink}
             target="_blank"
           >
             <FaDownload /> Resume

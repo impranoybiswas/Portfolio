@@ -21,7 +21,7 @@ export default function Projects() {
       name: "Work Nest",
       image: "https://i.ibb.co/fG1spYNY/work-nest.png",
       description:
-        "Garden Nest is a social platform for garden enthusiasts to connect, share tips, and find local events. Built with React and Firebase, it's fully responsive and easy to use.",
+        "Work Nest is a modern freelance task posting platform where clients can post jobs and freelancers can bid for work. Built with React and Tailwind CSS, it ensures a responsive, user-friendly experience. Features include real-time bidding, secure authentication, and dynamic task management for seamless collaboration.",
       live: "https://work-nest-pranoy.netlify.app/",
       github: "https://github.com/impranoybiswas/PH_A10_Work_Nest",
       stack: [
@@ -62,7 +62,7 @@ export default function Projects() {
       name: "Share Bite",
       image: "https://i.ibb.co/YGr9hMc/share-bite.png",
       description:
-        "Share Bite is a food-sharing platform that helps reduce food waste by connecting donors and receivers after events or parties. Built with MERN stack and responsive UI.",
+        "Share Bite is a community-driven food sharing platform that helps reduce food waste by connecting donors and receivers. Built with React and Tailwind CSS, it allows users to share surplus food from events or households. The app promotes sustainability through real-time listings, location-based sharing, and secure user interaction.",
       live: "https://share-bite-pranoy.netlify.app/",
       github: "https://github.com/impranoybiswas/PH_A11_Share_Bite",
       stack: [

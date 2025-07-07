@@ -17,8 +17,10 @@ export default function App() {
       duration: 1000,       
       easing: "ease-in-out",
       once: false,          
-      mirror: false  
-    });
+      mirror: true, 
+
+      
+    });Aos.refresh();
   }, []);
   return (
     <Element>

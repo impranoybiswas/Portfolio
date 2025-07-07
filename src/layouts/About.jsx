@@ -9,7 +9,7 @@ export default function About() {
         <Title title="About Me" />
 
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 z-10">
-          <div className="text-white/70 text-justify text-base md:text-lg lg:flex-2">
+          <div className="text-white/70 text-center md:text-justify text-base md:text-lg lg:flex-2">
 
         <p className="leading-6 md:leading-8">
           I am a dedicated <span className="font-medium">Full-Stack Web Developer</span> from Bangladesh,
@@ -41,7 +41,7 @@ export default function About() {
     
         
           </div>
-          <div className="md:border-l-2 md:border-base-100 pl-5 lg:pl-8 lg:flex-1">
+          <div data-aos="fade-left" className="md:border-l-2 md:border-base-100 pl-5 lg:pl-8 lg:flex-1">
           <h1 className="pb-6 text-2xl md:text-3xl font-semibold text-shadow-xs">Education</h1>
         <div className="flex flex-col gap-5">
          

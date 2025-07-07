@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Container from "../customs/Container";
 import Title from "../customs/Title";
-import { FaEnvelope, FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub, FaFacebook, FaBehance, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaThreads } from "react-icons/fa6";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -26,16 +27,56 @@ export default function Contact() {
 
     window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
   };
+
+  //social media links
+  const socialLinks = [
+    {
+      name: "Linkedin",
+      icon: <FaLinkedin />,
+      link: "https://www.linkedin.com/in/pranoybiswas/",
+    },
+    {
+      name: "Github",
+      icon: <FaGithub />,
+      link: "https://github.com/impranoybiswas",
+    },
+    {
+      name: "Facebook",
+      icon: <FaFacebook />,
+      link: "https://www.facebook.com/impranoybiswas",
+    },
+    {
+      name: "instagram",
+      icon: <FaInstagram />,
+      link: "https://www.instagram.com/impranoybiswas",
+    },
+    {
+      name: "Behance",
+      icon: <FaBehance />,
+      link: "https://www.behance.com/impranoybiswas",
+    },
+    {
+      name : "Twitter",
+      icon : <FaTwitter />,
+      link : "https://twitter.com/impranoybiswas"
+    },
+    {
+      name: "Threads",
+      icon: <FaThreads />,
+      link: "https://www.threads.net/@impranoybiswas",
+    }
+  ];
   return (
     <Container id="contact" customClass={"bg-primary"}>
       <Title title="Contacts" />
       <div className="w-full grid md:grid-cols-2 gap-10">
         {/* Contact Form */}
-        <div className="bg-secondary p-2 lg:p-8 rounded-xl flex flex-col items-center justify-center">
+        <div data-aos="fade-right"
+         className="bg-secondary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center">
           <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
-          <p className="text-gray-100 text-center mb-6">
-            Have a question or want to work together? <br/>Fill out the form and I’ll
-            get back to you!
+          <p className="text-gray-100 text-center text-sm md:text-lg mb-6">
+            Have a question or want to work together? <br />
+            Fill out the form and I’ll get back to you!
           </p>
 
           <form onSubmit={handleEmail} className="space-y-6 w-full">
@@ -112,45 +153,26 @@ export default function Contact() {
         </div>
 
         {/* Social Links */}
-        <div className="flex flex-col justify-center">
-          <h2 className="text-2xl font-semibold mb-6">Connect with me</h2>
+        <div className="flex flex-col items-center p-0 lg:p-8">
+          <h2 className="text-2xl font-semibold mb-6 sticky top-30">
+            Contact on Social Media
+          </h2>
 
-          <ul className="space-y-4">
-            <li className="flex items-center gap-4 text-white hover:text-primary transition">
-              <FaEnvelope className="text-xl" />
-              <a href="mailto:youremail@example.com">youremail@example.com</a>
-            </li>
-            <li className="flex items-center gap-4 text-white hover:text-primary transition">
-              <FaLinkedin className="text-xl" />
+          <div className="grid grid-cols-3 gap-2">
+            {socialLinks.map((link, index) => (
               <a
-                href="https://linkedin.com/in/yourprofile"
+              data-aos="fade-in"
+              data-aos-delay="300"
+                key={index}
+                href={link.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="bg-black/15 hover:bg-black/40 transition-all duration-300 shadow-md rounded-lg p-4 flex items-center gap-4 size-12 md:size-18 text-white cursor-pointer text-2xl md:text-5xl"
               >
-                linkedin.com/in/yourprofile
+                {link.icon}
               </a>
-            </li>
-            <li className="flex items-center gap-4 text-white hover:text-primary transition">
-              <FaGithub className="text-xl" />
-              <a
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github.com/yourusername
-              </a>
-            </li>
-            <li className="flex items-center gap-4 text-white hover:text-primary transition">
-              <FaFacebook className="text-xl" />
-              <a
-                href="https://facebook.com/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                facebook.com/yourprofile
-              </a>
-            </li>
-          </ul>
+            ))}
+          </div>
         </div>
       </div>
     </Container>

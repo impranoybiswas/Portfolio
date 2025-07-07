@@ -3,7 +3,9 @@ import { TbWorld } from "react-icons/tb";
 
 export default function ProjectCard({ project }) {
   return (
-    <div className="bg-black/25 rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8">
+    <div 
+    data-aos="fade-in" data-aos-delay="100"
+    className="bg-black/25 rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8">
       {/* Image Section */}
       <div className="md:w-1/2 w-full rounded-lg overflow-y-scroll h-64 shadow-md">
         <img
@@ -16,7 +18,7 @@ export default function ProjectCard({ project }) {
       {/* Content Section */}
       <div className="md:w-1/2 w-full space-y-4">
         <h2 className="text-3xl font-bold">{project.name}</h2>
-        <p className="text-gray-100">{project.description}</p>
+        <p className="text-gray-100 text-justify">{project.description}</p>
 
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap gap-2 mt-4">
