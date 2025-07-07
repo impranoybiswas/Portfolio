@@ -58,7 +58,7 @@ export default function About() {
               <div className="flex gap-2 items-center opacity-70"> <span className="text-transparent font-semibold text-xl"><FaGraduationCap /></span>HSC in Science (2014-2015)</div>
           </div>
           <div className="flex flex-col gap-2">
-              <div className="flex gap-2 items-center font-semibold text-xl"> <FaGraduationCap /> Cox's Bazar Govt. College</div>
+              <div className="flex gap-2 items-center font-semibold text-xl"> <FaGraduationCap /> Cox's Bazar Govt. High School</div>
               <div className="flex gap-2 items-center opacity-70"> <span className="text-transparent font-semibold text-xl"><FaGraduationCap /></span>SSC in Science (2011-2012)</div>
           </div>
         </div>
