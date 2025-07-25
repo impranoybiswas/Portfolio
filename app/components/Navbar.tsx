@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { FaDownload } from "react-icons/fa6";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { Link } from "react-scroll";
 import Image from "next/image";
+import { ScrollContext } from "../providers/ScrollProvider";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -12,12 +13,18 @@ const navLinks = [
   { name: "Contact", path: "contact" },
 ];
 
-export const resumeLink = "https://drive.google.com/file/d/1q1GvCYP-pihc6pnOu5fgY5zN-USw33Sk/view";
+export const resumeLink =
+  "https://drive.google.com/file/d/1q1GvCYP-pihc6pnOu5fgY5zN-USw33Sk/view";
 
 export default function Navbar() {
+  const context = useContext(ScrollContext);
+  const isScrolled = context?.isScrolled ?? false;
   return (
-    <nav className="fixed top-0 z-50 bg-primary h-fit w-full px-5 md:px-12 lg:px-25 text-white ">
-      <section className="w-full hidden md:flex justify-between mx-auto h-18 items-center gap-2">
+    <nav
+      className={`fixed top-0 z-50 bg-primary h-fit w-full px-5 md:px-12 lg:px-25 text-white
+    ${isScrolled ? "shadow-md" : ""}`}
+    >
+      <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
         <Link
           to="home"
           className="flex justify-center items-center gap-2 text-2xl font-semibold cursor-pointer"

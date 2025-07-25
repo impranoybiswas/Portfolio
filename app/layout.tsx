@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "./theme/ThemeProvider";
+import ThemeProvider from "./providers/ThemeProvider";
+import ScrollProvider from "./providers/ScrollProvider";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
   title: "Pranoy Biswas Bappa",
   description: "Pranoy's Portfolio Website",
-  keywords: ["Pranoy Biswas", "Pranoy Biswas Bappa", "Portfolio", "Next.js", "TypeScript"],
+  keywords: [
+    "Pranoy Biswas",
+    "Pranoy Biswas Bappa",
+    "Portfolio",
+    "Next.js",
+    "TypeScript",
+  ],
 };
 
 export default function RootLayout({
@@ -27,8 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary`}>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className={`${poppins.variable} antialiased bg-primary`}>
+        <ThemeProvider>
+          <ScrollProvider>
+            {children}
+          </ScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

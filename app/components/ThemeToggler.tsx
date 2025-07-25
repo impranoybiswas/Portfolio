@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 import React, { useContext } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { ThemeContext } from "./ThemeProvider";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 export default function ThemeToggler() {
   const context = useContext(ThemeContext);

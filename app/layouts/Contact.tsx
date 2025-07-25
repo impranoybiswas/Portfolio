@@ -84,7 +84,7 @@ export default function Contact() {
   ];
 
   return (
-    <Section name="contact" title="Get in Touch" subtitle="">
+    <Section name="contact" title="Get in Touch" subtitle="" className="relative">
       <div className="w-full grid md:grid-cols-2 gap-10">
         {/* Contact Form */}
         <div
@@ -172,7 +172,7 @@ export default function Contact() {
 
         {/* Social Links */}
         <div className="flex flex-col items-center p-0 lg:p-8">
-          <h2 className="text-2xl font-semibold mb-6 sticky top-30">
+          <h2 className="text-2xl font-semibold mb-6">
             Contact on Social Media
           </h2>
 
