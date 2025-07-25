@@ -5,18 +5,19 @@ import { Element } from "react-scroll";
 interface Props {
   name: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   children: ReactNode;
+  className?: string;
 }
 
-export default function Section({ name, title, subtitle, children }: Props) {
+export default function Section({ name, className, title, subtitle, children }: Props) {
   return (
     <Element
       name={name}
-      className={"flex flex-col justify-center items-center"}
+      className={`flex flex-col justify-center items-center mb-10 md:mb-14 ${className}`}
     >
-      <h1 className="text-2xl md:text-4xl font-bold mb-4">{title}</h1>
-      <p className="text-base md:text-lg opacity-65">{subtitle}</p>
+      <h1 className="text-2xl md:text-4xl font-bold mb-3">{title}</h1>
+      <p className="text-base md:text-lg opacity-65 mb-6 md:mb-8">{subtitle}</p>
       {children}
     </Element>
   );

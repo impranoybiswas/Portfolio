@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <Element
       name="home"
-      className="flex flex-col-reverse md:flex-row items-center gap-5 w-full"
+      className="flex flex-col-reverse md:flex-row items-center gap-5 w-full min-h-dvh pt-20 pb-10"
     >
       <HeroText />
       <HeroPhoto />

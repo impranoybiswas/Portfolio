@@ -1,21 +1,26 @@
 import Navbar from "./components/Navbar";
 import About from "./layouts/About";
 import Contact from "./layouts/Contact";
-import Footer from "./layouts/Footer";
 import Header from "./layouts/Header";
 import Projects from "./layouts/Projects";
 import Skills from "./layouts/Skills";
+import Footer from "./layouts/Footer";
+import AOSInit from "./components/AOSInit";
 
 export default function Home() {
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-10">
-      <Navbar />
-      <Header />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+    <>
+      <AOSInit/>
+      <main className="w-full px-5 md:px-12 lg:px-25  mx-auto flex flex-col items-center text-white">
+        <Navbar />
+        <Header />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

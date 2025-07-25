@@ -12,6 +12,7 @@ import {
   SiCanva,
 } from "react-icons/si";
 import Section from "../components/Section";
+import Image from "next/image";
 
 const frontendSkills = [
   {
@@ -110,13 +111,13 @@ export default function Skills() {
   return (
     <Section
       name="skills"
+      className="relative"
       title="Skills & Technologies"
       subtitle="Technologies I master to build exceptional digital experiences"
     >
-      <img
-        src="./assets/circuit.png"
-        className="h-40 w-40 md:w-80 md::h-80 lg:w-100 lg:h-100 absolute right-0 bottom-0 z-5 opacity-5"
-      />
+      <div className="size-40 md:size-90 absolute right-0 -bottom-10 z-5 opacity-5">
+        <Image alt="circuit" src="/assets/circuit.png" fill />
+      </div>
 
       <SkillSections title="Frontend" skills={frontendSkills} />
       <SkillSections title="Backend" skills={backendSkills} />

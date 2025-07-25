@@ -3,8 +3,8 @@ import { SiReaddotcv } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 import { RiContactsBook3Line } from "react-icons/ri";
 import { Link } from "react-scroll";
+import { resumeLink } from "./Navbar";
 
-const resumeLink = "";
 
 export default function HeroText() {
   return (
@@ -34,7 +34,7 @@ export default function HeroText() {
           delaySpeed={1500}
         />
       </h1>
-      <p className="text-base md:text-xl text-white mt-4 text-center md:text-left">
+      <p className="text-base lg:text-xl text-white mt-4 text-center md:text-left">
         I specialize in creating performant, responsive, and maintainable web
         applications using React, TailwindCSS, Express.js, MongoDB. Let&apos;s
         discuss your next project.

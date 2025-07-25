@@ -3,6 +3,7 @@ import React from "react";
 import { FaDownload } from "react-icons/fa6";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { Link } from "react-scroll";
+import Image from "next/image";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -11,17 +12,19 @@ const navLinks = [
   { name: "Contact", path: "contact" },
 ];
 
-const resumeLink = "";
+export const resumeLink = "https://drive.google.com/file/d/1q1GvCYP-pihc6pnOu5fgY5zN-USw33Sk/view";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-primary h-fit w-full text-white">
-      <section className="hidden w-full mx-auto lg:flex justify-between h-16 items-center gap-2">
+    <nav className="fixed top-0 z-50 bg-primary h-fit w-full px-5 md:px-12 lg:px-25 text-white ">
+      <section className="w-full hidden md:flex justify-between mx-auto h-18 items-center gap-2">
         <Link
           to="home"
-          className="flex justify-center items-center gap-2 text-xl font-semibold cursor-pointer"
+          className="flex justify-center items-center gap-2 text-2xl font-semibold cursor-pointer"
         >
-          <img className="w-5 h-5" src="./logo.svg" alt="" />
+          <span className="relative size-6">
+            <Image fill src="/logo.svg" alt="logo" />
+          </span>
           PRANOY
         </Link>
 
@@ -53,12 +56,15 @@ export default function Navbar() {
         </div>
       </section>
 
-      <section className="flex lg:hidden justify-between items-center h-16 w-full px-3 md:px-10">
+      <section className="flex md:hidden justify-between items-center h-16 w-full">
         <Link
           to="home"
           className="flex justify-center items-center gap-2 text-xl font-semibold"
         >
-          <img className="w-5 h-5" src="./logo.svg" alt="" /> PRANOY
+          <span className="relative size-6">
+            <Image fill src="/logo.svg" alt="logo" />
+          </span>{" "}
+          PRANOY
         </Link>
 
         <div className="dropdown dropdown-end">
