@@ -10,6 +10,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --animate-slowSpin: slowSpin 10s ease-in-out infinite;
+  @keyframes slowSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -19,15 +29,15 @@
 }
 
 @plugin "daisyui/theme" {
-    name: "light";
-    --color-primary: #121e28;
-    --color-secondary: #fe715a;
-    --color-accent: #1d232a;
-  }
-  
-  @plugin "daisyui/theme" {
-    name: "dark";
-    --color-primary: #121e28;
-    --color-secondary: #02a17a;
-    --color-accent: #ffffff;
-  }
+  name: "light";
+  --color-primary: #121e28;
+  --color-secondary: #fe715a;
+  --color-accent: #1d232a;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: #121e28;
+  --color-secondary: #02a17a;
+  --color-accent: #ffffff;
+}

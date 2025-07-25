@@ -91,10 +91,10 @@ export default function Contact() {
           data-aos="fade-right"
           className="bg-secondary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Let&apos;s Connect</h2>
+          <h2 className="text-3xl font-bold mb-4 ">Let&apos;s Connect</h2>
           <p className="text-gray-100 text-center text-sm md:text-lg mb-6">
             Have a question or want to work together? <br />
-            Fill out the form and I’ll get back to you!
+            Fill out the form and I&apos;ll get back to you!
           </p>
 
           <form onSubmit={handleEmail} className="space-y-6 w-full">

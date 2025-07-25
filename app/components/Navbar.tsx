@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaDownload } from "react-icons/fa6";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { Link } from "react-scroll";
@@ -19,6 +19,7 @@ export const resumeLink =
 export default function Navbar() {
   const context = useContext(ScrollContext);
   const isScrolled = context?.isScrolled ?? false;
+  const [open, setOpen] = useState(false);
   return (
     <nav
       className={`fixed top-0 z-50 bg-primary h-fit w-full px-5 md:px-12 lg:px-25 text-white
@@ -74,40 +75,37 @@ export default function Navbar() {
           PRANOY
         </Link>
 
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="flex justify-center items-center w-10 h-10 text-2xl text-white"
-          >
-            <CgMenuRightAlt />
-          </div>
-          <div
-            tabIndex={0}
-            className="dropdown-content bg-primary rounded-box z-1 w-60 py-2 mt-2 shadow-sm flex flex-col px-4 gap-2"
-          >
-            {navLinks.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                smooth={true}
-                duration={300}
-                spy={true}
-                offset={-80} // Adjust based on your navbar height
-                activeClass="text-secondary font-semibold"
-                className="cursor-pointer hover:text-secondary transition text-lg"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <a
-              className="rounded-md flex justify-center items-center gap-2 py-1 px-4 bg-secondary/90 hover:bg-secondary text-lg font-semibold cursor-pointer transition mt-4"
-              href="https://drive.google.com/file/d/1lHkLVej0L2loUSMB6FY5U2Ak2v67c3eS/view"
-              target="_blank"
+        <CgMenuRightAlt
+          onClick={() => setOpen(!open)}
+          className="flex justify-center items-center size-8 text-white"
+        />
+
+        <div
+          className={`flex flex-col items-end py-5 gap-0 bg-primary shadow-lg absolute top-16 right-0
+          trasition duration-500 ease-in-out rounded-bl-lg
+          ${open ? "translate-x-0" : "translate-x-full"}`}
+        >
+          {navLinks.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              smooth={true}
+              duration={300}
+              spy={true}
+              offset={-80}
+              className="relative font-semibold cursor-pointer pr-5 py-2 text-lg border-r-4 border-r-primary trasition duration-300 ease-in-out"
+              activeClass=" border-r-secondary"
             >
-              <FaDownload /> Resume
-            </a>
-          </div>
+              {item.name}
+            </Link>
+          ))}
+          <a
+            className="rounded-md flex justify-center items-center gap-2 py-1 px-5 mx-4 bg-secondary/90 hover:bg-secondary text-lg font-semibold cursor-pointer transition mt-6"
+            href={resumeLink}
+            target="_blank"
+          >
+            <FaDownload /> Resume
+          </a>
         </div>
       </section>
     </nav>
