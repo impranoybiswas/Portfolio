@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <AOSInit/>
-      <main className="w-full px-5 md:px-12 lg:px-25  mx-auto flex flex-col items-center text-white">
+      <main className="w-full px-5 md:px-12 lg:px-25  mx-auto flex flex-col items-center text-white overflow-hidden">
         <Navbar />
         <Header />
         <About />
