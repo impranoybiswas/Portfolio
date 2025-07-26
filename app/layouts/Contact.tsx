@@ -181,20 +181,28 @@ export default function Contact() {
             Contact on Social Media
           </h2>
 
-          <div className="grid grid-cols-3 gap-2">
-            {socialLinks.map((link, index) => (
-              <a
-                data-aos="zoom-in"
-                data-aos-delay="100"
-                key={index}
-                href={link.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-black/15 hover:bg-black/40 transition-all duration-300 shadow-md rounded-lg p-4 flex items-center gap-4 size-12 md:size-18 text-white cursor-pointer text-2xl md:text-5xl"
-              >
-                {link.icon}
-              </a>
-            ))}
+          <div className="relative size-60 bg-transparent rounded-full mx-auto my-20 animate-socialSpin">
+            {socialLinks.map((link, i) => {
+              const angle = (i * 360) / socialLinks.length;
+              const radius = 120; // adjust based on parent size
+              const x = radius * Math.cos((angle * Math.PI) / 180);
+              const y = radius * Math.sin((angle * Math.PI) / 180);
+
+              return (
+                <a
+                  key={i}
+                  href={link.link}
+                  className="bg-gradient-to-r from-black/40 to-black/60 hover:bg-secondary hover:scale-110 transition-all duration-800 shadow-md rounded-full p-4 flex items-center gap-4 size-14 md:size-16 text-white cursor-pointer text-3xl md:text-4xl absolute animate-sillyMove text-shadow-sm"
+                  style={{
+                    top: `calc(50% + ${y}px)`,
+                    left: `calc(50% + ${x}px)`,
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <span className="animate-socialSpinR">{link.icon}</span>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

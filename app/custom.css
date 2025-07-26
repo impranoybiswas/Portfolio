@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --animate-slowSpin: slowSpin 5s ease-in-out infinite;
+  --animate-slowSpin: slowSpin 8s ease-in-out infinite;
   @keyframes slowSpin {
     0% {
       transform: rotate(0deg);
@@ -10,5 +10,38 @@
       transform: rotate(360deg);
     }
   }
-}
+  --animate-socialSpin: socialSpin 35s ease-in-out infinite;
+  @keyframes socialSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
+  --animate-socialSpinR: socialSpinR 35s ease-in-out infinite;
+  @keyframes socialSpinR {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  --animate-sillyMove: sillyMove 10s ease-in-out infinite;
+  @keyframes sillyMove {
+    0%,
+    100% {
+      transform: translate(-40%, -40%);
+    }
+    25%,
+    75% {
+      transform: translate(-60%, -60%);
+    }
+    50% {
+      transform: translate(-50%, -50%);
+    }
+  }
+}

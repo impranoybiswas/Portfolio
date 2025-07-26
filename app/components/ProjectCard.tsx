@@ -79,7 +79,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Button
               isLarge={false}
               isOutline={true}
-              lebel="Live Site"
+              lebel="Live"
               leftIcon={<TbWorld />}
             />
           </a>
