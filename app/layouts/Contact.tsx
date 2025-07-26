@@ -90,14 +90,14 @@ export default function Contact() {
       subtitle=""
       className="relative"
     >
-      <div className="w-full grid md:grid-cols-2 gap-10">
+      <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Contact Form */}
         <div
           data-aos="fade-right"
-          className="bg-secondary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center"
+          className="bg-secondary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center w-full"
         >
-          <h2 className="text-3xl font-bold mb-4 ">Let&apos;s Connect</h2>
-          <p className="text-gray-100 text-center text-sm md:text-lg mb-6">
+          <h2 className="text-3xl font-bold mb-4">Let&apos;s Connect</h2>
+          <p className="text-gray-100 text-center text-sm md:text-base mb-6">
             Have a question or want to work together? <br />
             Fill out the form and I&apos;ll get back to you!
           </p>
@@ -184,7 +184,7 @@ export default function Contact() {
           <div className="relative size-60 bg-transparent rounded-full mx-auto my-20 animate-socialSpin">
             {socialLinks.map((link, i) => {
               const angle = (i * 360) / socialLinks.length;
-              const radius = 120; // adjust based on parent size
+              const radius = 110; // adjust based on parent size
               const x = radius * Math.cos((angle * Math.PI) / 180);
               const y = radius * Math.sin((angle * Math.PI) / 180);
 
@@ -192,7 +192,7 @@ export default function Contact() {
                 <a
                   key={i}
                   href={link.link}
-                  className="bg-gradient-to-r from-black/40 to-black/60 hover:bg-secondary hover:scale-110 transition-all duration-800 shadow-md rounded-full p-4 flex items-center gap-4 size-14 md:size-16 text-white cursor-pointer text-3xl md:text-4xl absolute animate-sillyMove text-shadow-sm"
+                  className="bg-gradient-to-r from-black/40 to-black/60 hover:bg-secondary hover:scale-110 transition-all duration-800 shadow-md rounded-full flex items-center justify-center gap-4 size-14 md:size-16 text-white cursor-pointer text-3xl md:text-4xl absolute animate-sillyMove text-shadow-sm"
                   style={{
                     top: `calc(50% + ${y}px)`,
                     left: `calc(50% + ${x}px)`,
