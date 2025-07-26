@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
 import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import { ReactNode } from "react";
+import Image from "next/image";
 
 interface TechStack {
   name: string;
@@ -35,11 +36,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     >
       {/* Image Section */}
       <div className="md:w-1/2 w-full rounded-lg overflow-y-scroll h-64 shadow-md">
-        <img
-          src={image}
-          alt={name}
-          className="w-full object-cover"
-        />
+        <div className="w-full h-auto relative">
+          <Image
+            src={image}
+            alt={name}
+            height={1000}
+            width={1000}
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
       </div>
 
       {/* Content Section */}

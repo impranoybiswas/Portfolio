@@ -1,9 +1,9 @@
 import React from "react";
 import { SiReaddotcv } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
-import { RiContactsBook3Line } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { resumeLink } from "./Navbar";
+import { IoIosCodeWorking } from "react-icons/io";
 
 
 export default function HeroText() {
@@ -49,14 +49,14 @@ export default function HeroText() {
         </a>
 
         <Link
-          to={"contact"}
+          to={"projects"}
           smooth={true}
           duration={300}
           spy={true}
           offset={-80} // Adjust based on your navbar height
-          className="h-14 px-5 flex justify-center items-center gap-2 rounded-md border-secondary/80 text-secondary/80 hover:border-secondary hover-text-secondary border-2 text-2xl font-semibold cursor-pointer transition"
+          className="h-14 px-5 flex justify-center items-center gap-2 rounded-md border-secondary/70 text-secondary/80 hover:border-secondary hover-text-secondary border-2 text-2xl font-semibold cursor-pointer transition group"
         >
-          <RiContactsBook3Line /> Contact Me
+          <IoIosCodeWorking className="group-hover:scale-115 duration-500 ease-in-out transition" size={36} /> Check My Work
         </Link>
       </div>
     </div>
