@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-scroll";
 import { resumeLink } from "./Navbar";
 import { IoIosCodeWorking } from "react-icons/io";
-
+import Button from "../ui/Button";
 
 export default function HeroText() {
   return (
@@ -40,23 +40,27 @@ export default function HeroText() {
         discuss your next project.
       </p>
       <div className="flex flex-col lg:flex-row justify-center gap-4 mt-12">
-        <a
-          href={resumeLink}
-          target="_blank"
-          className="h-14 px-5 flex justify-center items-center gap-2 rounded-md bg-secondary/80 hover:bg-secondary text-2xl font-semibold cursor-pointer transition"
-        >
-          <SiReaddotcv /> Show Resume
+        <a href={resumeLink} target="_blank">
+          <Button
+            isOutline={false}
+            lebel="Show Resume"
+            leftIcon={<SiReaddotcv />}
+            isLarge={true}
+          />
         </a>
-
         <Link
           to={"projects"}
           smooth={true}
           duration={300}
           spy={true}
-          offset={-80} // Adjust based on your navbar height
-          className="h-14 px-5 flex justify-center items-center gap-2 rounded-md border-secondary/70 text-secondary/80 hover:border-secondary hover-text-secondary border-2 text-2xl font-semibold cursor-pointer transition group"
+          offset={-80}
         >
-          <IoIosCodeWorking className="group-hover:scale-115 duration-500 ease-in-out transition" size={36} /> Check My Work
+          <Button
+            isOutline={true}
+            lebel="Check My Work"
+            leftIcon={<IoIosCodeWorking />}
+            isLarge={true}
+          />
         </Link>
       </div>
     </div>

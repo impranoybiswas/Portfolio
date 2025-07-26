@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import "./custom.css";
 import ThemeProvider from "./providers/ThemeProvider";
 import ScrollProvider from "./providers/ScrollProvider";
 

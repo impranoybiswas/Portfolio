@@ -9,7 +9,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
-import Section from "../components/Section";
+import Section from "../ui/Section";
 
 // Social link type (optional but good practice)
 interface SocialLink {
@@ -84,7 +84,12 @@ export default function Contact() {
   ];
 
   return (
-    <Section name="contact" title="Get in Touch" subtitle="" className="relative">
+    <Section
+      name="contact"
+      title="Get in Touch"
+      subtitle=""
+      className="relative"
+    >
       <div className="w-full grid md:grid-cols-2 gap-10">
         {/* Contact Form */}
         <div
@@ -179,8 +184,8 @@ export default function Contact() {
           <div className="grid grid-cols-3 gap-2">
             {socialLinks.map((link, index) => (
               <a
-                data-aos="fade-in"
-                data-aos-delay="300"
+                data-aos="zoom-in"
+                data-aos-delay="100"
                 key={index}
                 href={link.link}
                 target="_blank"

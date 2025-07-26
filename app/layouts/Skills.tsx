@@ -11,7 +11,7 @@ import {
   SiAdobeillustrator,
   SiCanva,
 } from "react-icons/si";
-import Section from "../components/Section";
+import Section from "../ui/Section";
 import Image from "next/image";
 
 const frontendSkills = [

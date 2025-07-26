@@ -1,10 +1,12 @@
 "use client";
 import React, { useContext, useState } from "react";
 import { FaDownload } from "react-icons/fa6";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { Link } from "react-scroll";
 import Image from "next/image";
 import { ScrollContext } from "../providers/ScrollProvider";
+import Button from "../ui/Button";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -54,12 +56,13 @@ export default function Navbar() {
         </div>
 
         <div>
-          <a
-            className="rounded-md flex justify-center items-center gap-2 py-1 px-4 bg-secondary/90 hover:bg-secondary text-lg font-semibold cursor-pointer transition "
-            href={resumeLink}
-            target="_blank"
-          >
-            <FaDownload /> Resume
+          <a href={resumeLink} target="_blank">
+            <Button
+              lebel="Resume"
+              leftIcon={<FaDownload />}
+              isOutline={false}
+              isLarge={false}
+            />
           </a>
         </div>
       </section>
@@ -75,10 +78,28 @@ export default function Navbar() {
           PRANOY
         </Link>
 
-        <CgMenuRightAlt
-          onClick={() => setOpen(!open)}
-          className="flex justify-center items-center size-8 text-white"
-        />
+        <div className="flex justify-center items-center gap-3">
+          <a
+            href={"https://www.linkedin.com/in/pranoybiswas/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center items-center text-white"
+          >
+            <FaLinkedin size={25} />
+          </a>
+          <a
+            href={"https://www.github.com/pranoybiswas/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center items-center text-white"
+          >
+            <FaGithub size={25} />
+          </a>
+          <CgMenuRightAlt
+            onClick={() => setOpen(!open)}
+            className="flex justify-center items-center size-8 text-white"
+          />
+        </div>
 
         <div
           className={`flex flex-col items-end py-5 gap-0 bg-primary shadow-lg absolute top-16 right-0
@@ -93,18 +114,19 @@ export default function Navbar() {
               duration={300}
               spy={true}
               offset={-80}
-              className="relative font-semibold cursor-pointer pr-5 py-2 text-lg border-r-4 border-r-primary trasition duration-300 ease-in-out"
+              className="relative font-semibold cursor-pointer pr-5 py-2 text-xl border-r-5 border-r-primary trasition duration-300 ease-in-out mr-1"
               activeClass=" border-r-secondary"
             >
               {item.name}
             </Link>
           ))}
-          <a
-            className="rounded-md flex justify-center items-center gap-2 py-1 px-5 mx-4 bg-secondary/90 hover:bg-secondary text-lg font-semibold cursor-pointer transition mt-6"
-            href={resumeLink}
-            target="_blank"
-          >
-            <FaDownload /> Resume
+          <a className="mx-6 mt-5" href={resumeLink} target="_blank">
+            <Button
+              lebel="Resume"
+              leftIcon={<FaDownload />}
+              isOutline={false}
+              isLarge={false}
+            />
           </a>
         </div>
       </section>

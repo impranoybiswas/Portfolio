@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa6";
-import Section from "../components/Section";
+import Section from "../ui/Section";
 
 const educations = [
   {

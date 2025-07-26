@@ -35,8 +35,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className="bg-black/25 rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8"
     >
       {/* Image Section */}
-      <div className="md:w-1/2 w-full rounded-lg overflow-y-scroll h-64 shadow-md">
-        <div className="w-full h-auto relative">
+      <div className="md:w-1/2 w-full overflow-y-scroll h-64 shadow-lg rounded-lg">
+        <div className="w-full h-auto relative ">
           <Image
             src={image}
             alt={name}
