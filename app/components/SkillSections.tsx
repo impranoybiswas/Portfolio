@@ -14,7 +14,7 @@ export default function SkillSections({ title, skills } : { title: string; skill
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 items-center justify-center w-full">
         {skills.map((item) => (
           <div
-          data-aos="zoom-inw"
+          data-aos="zoom-in"
           key={item.name}
           className="p-[1px] relative rounded-xl overflow-hidden"
           >

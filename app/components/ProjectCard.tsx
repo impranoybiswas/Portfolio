@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import { ReactNode } from "react";
 import Image from "next/image";
+import Button from "../ui/Button";
 
 interface TechStack {
   name: string;
@@ -66,21 +67,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Links */}
         <div className="flex gap-4 mt-6">
-          <a
-            href={live}
-            target="_blank"
-            rel="noreferrer"
-            className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition"
-          >
-            <TbWorld size={18} /> Live
+          <a href={github} target="_blank" rel="noreferrer">
+            <Button
+              isLarge={false}
+              isOutline={false}
+              lebel="GitHub"
+              leftIcon={<FaGithub />}
+            />
           </a>
-          <a
-            href={github}
-            target="_blank"
-            rel="noreferrer"
-            className="bg-gray-900 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition"
-          >
-            <FaGithub size={18} /> GitHub
+          <a href={live} target="_blank" rel="noreferrer">
+            <Button
+              isLarge={false}
+              isOutline={true}
+              lebel="Live Site"
+              leftIcon={<TbWorld />}
+            />
           </a>
         </div>
       </div>
