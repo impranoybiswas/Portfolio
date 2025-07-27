@@ -194,6 +194,7 @@ export default function Contact() {
                 <a
                   key={i}
                   href={link.link}
+                  target="_blank"
                   className="bg-gradient-to-r from-gray-800 to-black/60 hover:bg-secondary hover:scale-110 transition-all duration-800 shadow-md rounded-full flex items-center justify-center gap-4 size-14 md:size-16 text-white cursor-pointer text-3xl md:text-4xl absolute animate-sillyMove text-shadow-sm"
                   style={{
                     top: `calc(50% + ${y}px)`,

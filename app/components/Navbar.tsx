@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 z-50 bg-base-100 h-fit w-full px-5 md:px-12 lg:px-25 text-white
-    ${isScrolled ? "shadow-sm shadow-secondary/20" : ""}`}
+    ${isScrolled ? "shadow-sm shadow-secondary/30" : ""}`}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
         <Link
