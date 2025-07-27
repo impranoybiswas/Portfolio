@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function Footer() {
   return (
-    <footer className='bg-[#070c13] text-gray-50 h-18 flex justify-center items-center w-full'>
+    <footer className="bg-[#150519] text-primary h-18 flex justify-center items-center w-full border-t border-secondary/30">
       <h1>Copyright &copy; 2025</h1>
-      
     </footer>
-  )
+  );
 }
-

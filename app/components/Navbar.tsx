@@ -102,32 +102,35 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`flex flex-col items-end py-5 gap-0 bg-base-100 shadow-lg absolute top-16 right-0
-          trasition duration-500 ease-in-out rounded-bl-lg
+        onClick={() => setOpen(!open)}
+          className={`absolute top-16 right-0 w-full h-[calc(100vh-64px)] bg-transparent flex justify-end
+          trasition duration-500 ease-in-out 
           ${open ? "translate-x-0" : "translate-x-full"}`}
         >
-          {navLinks.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              smooth={true}
-              duration={300}
-              spy={true}
-              offset={-80}
-              className="relative font-semibold cursor-pointer pr-5 py-2 text-xl border-r-5 border-r-base-100 trasition duration-300 ease-in-out mr-1"
-              activeClass=" border-r-secondary"
-            >
-              {item.name}
-            </Link>
-          ))}
-          <a className="mx-6 mt-5" href={resumeLink} target="_blank">
-            <Button
-              lebel="Resume"
-              leftIcon={<FaDownload />}
-              isOutline={false}
-              isLarge={false}
-            />
-          </a>
+          <div className="flex flex-col items-end py-5 gap-0 bg-accent shadow-lg rounded-bl-lg w-fit h-fit border-l border-b border-secondary/30">
+            {navLinks.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                smooth={true}
+                duration={300}
+                spy={true}
+                offset={-80}
+                className="relative font-semibold cursor-pointer pr-4 py-2 text-xl border-r-5 border-r-accent trasition duration-300 ease-in-out mr-1"
+                activeClass=" border-r-primary"
+              >
+                {item.name}
+              </Link>
+            ))}
+            <a className="mx-6 mt-5" href={resumeLink} target="_blank">
+              <Button
+                lebel="Resume"
+                leftIcon={<FaDownload />}
+                isOutline={false}
+                isLarge={false}
+              />
+            </a>
+          </div>
         </div>
       </section>
     </nav>

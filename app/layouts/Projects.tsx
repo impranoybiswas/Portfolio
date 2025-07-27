@@ -14,6 +14,7 @@ import ProjectCard from "../components/ProjectCard";
 import Section from "../ui/Section";
 import { FaGithub } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
+import Button from "../ui/Button";
 
 export default function Projects() {
   const projects = [
@@ -155,10 +156,11 @@ export default function Projects() {
           <ProjectCard key={project.id} project={project} />
         ))}
 
+        {/* This Portfolio Card */}
         <div
           data-aos="fade-in"
           data-aos-delay="100"
-          className="bg-accent rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8"
+          className="bg-accent rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-6 border border-primary/20"
         >
           {/* Content Section */}
           <div className=" w-full space-y-4">
@@ -202,9 +204,13 @@ export default function Projects() {
                 href={"https://github.com/impranoybiswas/Portfolio"}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-gray-900 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition"
               >
-                <FaGithub size={18} /> GitHub
+                <Button
+                  isLarge={false}
+                  isOutline={false}
+                  lebel="GitHub"
+                  leftIcon={<FaGithub />}
+                />
               </a>
             </div>
           </div>

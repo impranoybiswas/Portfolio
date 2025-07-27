@@ -32,8 +32,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div
       data-aos="fade-in"
-      data-aos-delay="100"
-      className="bg-accent rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8"
+      data-aos-delay="200"
+      className="bg-accent rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8 border border-primary/20"
     >
       {/* Image Section */}
       <div className="md:w-1/2 w-full overflow-y-scroll h-64 shadow-lg rounded-lg">
