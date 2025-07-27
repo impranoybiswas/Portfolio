@@ -16,7 +16,7 @@ export default function HeroText() {
       <h1 className="text-white text-2xl md:text-3xl font-semibold">
         Hi There!
       </h1>
-      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-3">
+      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-sm">
         I&apos;m Pranoy Biswas Bappa
       </h1>
       <h1 className="text-secondary text-xl md:text-2xl mt-4">

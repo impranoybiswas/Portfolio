@@ -158,7 +158,7 @@ export default function Projects() {
         <div
           data-aos="fade-in"
           data-aos-delay="100"
-          className="bg-black/25 rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8"
+          className="bg-accent rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8"
         >
           {/* Content Section */}
           <div className=" w-full space-y-4">

@@ -1,5 +1,7 @@
 "use client";
 
+import ThemeToggler from "../components/ThemeToggler";
+
 export default function Text() {
   const contents = ["hello", "world", "glow", "tailwind"];
 
@@ -26,7 +28,7 @@ export default function Text() {
   };
 
   return (
-    <section className="min-h-screen w-full flex justify-center items-center gap-20 bg-gray-900">
+    <section className="min-h-screen w-full flex justify-center items-center gap-20">
       <div className="flex flex-col gap-6">
         {contents.map((content, index) => (
           <div
@@ -47,28 +49,16 @@ export default function Text() {
         ))}
       </div>
 
+      <div className="flex flex-col gap-6">
+      <div className="bg-primary p-5">HELLO</div>
+      <div className="bg-secondary p-5">HELLO</div>
+      <div className="bg-accent p-5">HELLO</div>
+      <div className="bg-gradient-to-l to-secondary from-primary p-5">HELLO</div>
+      </div>
 
-      <div className="relative size-40 bg-blue-200 rounded-full mx-auto my-20">
-  {Array.from({ length: 9 }).map((_, i) => {
-    const angle = (i * 360) / 9; // 9 equal segments
-    const radius = 80; // adjust based on parent size
-    const x = radius * Math.cos((angle * Math.PI) / 180);
-    const y = radius * Math.sin((angle * Math.PI) / 180);
-
-    return (
-      <div
-        key={i}
-        className="size-4 bg-red-500 rounded-full absolute"
-        style={{
-          top: `calc(50% + ${y}px)`,
-          left: `calc(50% + ${x}px)`,
-          transform: "translate(-50%, -50%)",
-        }}
-      />
-    );
-  })}
-</div>
-
+      <div>
+        <ThemeToggler />
+      </div>
     </section>
   );
 }

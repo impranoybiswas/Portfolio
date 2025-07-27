@@ -8,8 +8,9 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
-import { FaThreads } from "react-icons/fa6";
+import { FaPaperPlane, FaThreads } from "react-icons/fa6";
 import Section from "../ui/Section";
+import Button from "../ui/Button";
 
 // Social link type (optional but good practice)
 interface SocialLink {
@@ -49,7 +50,7 @@ export default function Contact() {
     {
       name: "Linkedin",
       icon: <FaLinkedin />,
-      link: "https://www.linkedin.com/in/pranoybiswas/",
+      link: "https://www.linkedin.com/in/impranoybiswas/",
     },
     {
       name: "Github",
@@ -94,7 +95,7 @@ export default function Contact() {
         {/* Contact Form */}
         <div
           data-aos="fade-right"
-          className="bg-secondary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center w-full"
+          className="bg-accent shadow shadow-primary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center w-full"
         >
           <h2 className="text-3xl font-bold mb-4">Let&apos;s Connect</h2>
           <p className="text-gray-100 text-center text-sm md:text-base mb-6">
@@ -164,13 +165,14 @@ export default function Contact() {
             </div>
 
             {/* Submit Button */}
-            <div>
-              <button
-                type="submit"
-                className="w-full md:w-auto px-6 py-3 rounded-lg bg-primary text-white font-medium shadow hover:bg-primary-dark transition-all duration-200"
-              >
-                Send Message
-              </button>
+            <div className="w-full md:w-fit float-end">
+              <Button
+                isOutline={false}
+                isLarge={false}
+                onClick={() => handleEmail}
+                lebel="Send Message"
+                leftIcon={<FaPaperPlane />}
+              />
             </div>
           </form>
         </div>
@@ -192,7 +194,7 @@ export default function Contact() {
                 <a
                   key={i}
                   href={link.link}
-                  className="bg-gradient-to-r from-black/40 to-black/60 hover:bg-secondary hover:scale-110 transition-all duration-800 shadow-md rounded-full flex items-center justify-center gap-4 size-14 md:size-16 text-white cursor-pointer text-3xl md:text-4xl absolute animate-sillyMove text-shadow-sm"
+                  className="bg-gradient-to-r from-gray-800 to-black/60 hover:bg-secondary hover:scale-110 transition-all duration-800 shadow-md rounded-full flex items-center justify-center gap-4 size-14 md:size-16 text-white cursor-pointer text-3xl md:text-4xl absolute animate-sillyMove text-shadow-sm"
                   style={{
                     top: `calc(50% + ${y}px)`,
                     left: `calc(50% + ${x}px)`,

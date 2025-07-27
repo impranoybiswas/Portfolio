@@ -17,7 +17,7 @@ export default function ThemeToggler() {
   return (
     <span
       role="button"
-      className="cursor-pointer text-xl"
+      className="cursor-pointer text-xl text-white"
       data-tooltip-id="my-tooltip"
       data-tooltip-content={`Toggle ${theme === "light" ? "Dark" : "Light"}`}
       onClick={toggleTheme}

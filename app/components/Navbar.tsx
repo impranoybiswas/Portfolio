@@ -24,8 +24,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className={`fixed top-0 z-50 bg-primary h-fit w-full px-5 md:px-12 lg:px-25 text-white
-    ${isScrolled ? "shadow-md" : ""}`}
+      className={`fixed top-0 z-50 bg-base-100 h-fit w-full px-5 md:px-12 lg:px-25 text-white
+    ${isScrolled ? "shadow-sm shadow-secondary/20" : ""}`}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
         <Link
@@ -80,7 +80,7 @@ export default function Navbar() {
 
         <div className="flex justify-center items-center gap-3">
           <a
-            href={"https://www.linkedin.com/in/pranoybiswas/"}
+            href={"https://www.linkedin.com/in/impranoybiswas/"}
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center text-white"
@@ -102,7 +102,7 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`flex flex-col items-end py-5 gap-0 bg-primary shadow-lg absolute top-16 right-0
+          className={`flex flex-col items-end py-5 gap-0 bg-base-100 shadow-lg absolute top-16 right-0
           trasition duration-500 ease-in-out rounded-bl-lg
           ${open ? "translate-x-0" : "translate-x-full"}`}
         >
@@ -114,7 +114,7 @@ export default function Navbar() {
               duration={300}
               spy={true}
               offset={-80}
-              className="relative font-semibold cursor-pointer pr-5 py-2 text-xl border-r-5 border-r-primary trasition duration-300 ease-in-out mr-1"
+              className="relative font-semibold cursor-pointer pr-5 py-2 text-xl border-r-5 border-r-base-100 trasition duration-300 ease-in-out mr-1"
               activeClass=" border-r-secondary"
             >
               {item.name}
