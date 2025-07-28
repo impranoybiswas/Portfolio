@@ -1,12 +1,12 @@
 "use client";
 import React, { useContext, useState } from "react";
-import { FaDownload } from "react-icons/fa6";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { Link } from "react-scroll";
 import Image from "next/image";
 import { ScrollContext } from "../providers/ScrollProvider";
 import Button from "../ui/Button";
+import { SiReaddotcv } from "react-icons/si";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -59,7 +59,7 @@ export default function Navbar() {
           <a href={resumeLink} target="_blank">
             <Button
               lebel="Resume"
-              leftIcon={<FaDownload />}
+              leftIcon={<SiReaddotcv />}
               isOutline={false}
               isLarge={false}
             />
@@ -88,7 +88,7 @@ export default function Navbar() {
             <FaLinkedin size={25} />
           </a>
           <a
-            href={"https://www.github.com/pranoybiswas/"}
+            href={"https://www.github.com/impranoybiswas/"}
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center text-white"
@@ -125,7 +125,7 @@ export default function Navbar() {
             <a className="mx-6 mt-5" href={resumeLink} target="_blank">
               <Button
                 lebel="Resume"
-                leftIcon={<FaDownload />}
+                leftIcon={<SiReaddotcv />}
                 isOutline={false}
                 isLarge={false}
               />
