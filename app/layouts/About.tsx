@@ -59,12 +59,12 @@ export default function About() {
         </div>
         <div
           data-aos="fade-left"
-          className="md:border-l md:border-base-100 pl-5 lg:pl-8 lg:flex-1"
+          className="md:border-l md:border-white pl-5 lg:pl-8 lg:flex-1"
         >
           <h1 className="pb-6 text-2xl md:text-3xl font-semibold text-shadow-xs">
             Education
           </h1>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 ">
             {educations.map((edu, index) => (
               <div key={index} className="flex flex-col gap-2">
                 <div className="flex gap-2 items-center font-semibold text-xl">

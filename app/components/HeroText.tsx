@@ -10,13 +10,13 @@ export default function HeroText() {
   return (
     <div
       data-aos="fade-left"
-      data-aos-delay="100"
+      data-aos-delay="1000"
       className="w-full flex flex-col justify-center items-center md:items-start flex-1"
     >
       <h1 className="text-white text-2xl md:text-3xl font-semibold">
         Hi There!
       </h1>
-      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-sm">
+      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-xs">
         I&apos;m Pranoy Biswas Bappa
       </h1>
       <h1 className="text-secondary text-xl md:text-2xl mt-4">

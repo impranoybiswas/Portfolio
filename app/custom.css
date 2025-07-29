@@ -30,18 +30,13 @@
     }
   }
 
-  --animate-sillyMove: sillyMove 10s ease-in-out infinite;
-  @keyframes sillyMove {
-    0%,
-    100% {
-      transform: translate(-40%, -40%);
-    }
-    25%,
-    75% {
-      transform: translate(-60%, -60%);
+  --animate-sillyZoom: sillyZoom 10s ease-in-out infinite;
+  @keyframes sillyZoom {
+    0%, 100% {
+      transform: scale(.9);
     }
     50% {
-      transform: translate(-50%, -50%);
+      transform: scale(1.1);
     }
   }
 }

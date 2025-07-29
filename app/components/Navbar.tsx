@@ -24,58 +24,67 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className={`fixed top-0 z-50 bg-base-100 h-fit w-full px-5 md:px-12 lg:px-25 text-white
-    ${isScrolled ? "shadow-sm shadow-secondary/30" : ""}`}
+      className={`fixed top-0 left-0 z-50 bg-base-100 h-fit w-full px-5 md:px-12 lg:px-25 text-white overflow-hidden
+    ${isScrolled ? "shadow-sm shadow-secondary/30" : ""} `}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
         <Link
+          data-aos="fade-down"
           to="home"
-          className="flex justify-center items-center gap-2 text-2xl font-semibold cursor-pointer"
+          className="flex justify-center items-end gap-0 text-2xl font-semibold cursor-pointer"
         >
           <span className="relative size-6">
             <Image fill src="/logo.svg" alt="logo" />
           </span>
-          PRANOY
         </Link>
 
-        <div className="flex justify-center items-center gap-5 text-white/70">
-          {navLinks.map((item) => (
-            <Link
-              key={item.name}
+        <div className="flex justify-center items-center gap-5 z-50 text-white/70">
+          {navLinks.map((item, i) => (
+            <div
+            data-aos="fade-down"
+              data-aos-delay={100 + i * 100}
+              key={i}
+            >
+              <Link
+              
               to={item.path}
               smooth={true}
               duration={300}
               spy={true}
               offset={-80}
               activeClass="text-secondary font-semibold"
-              className="cursor-pointer hover:text-secondary transition text-lg"
+              className="flex cursor-pointer hover:text-secondary transition text-lg"
             >
               {item.name}
             </Link>
+            </div>
           ))}
         </div>
 
-        <div>
-          <a href={resumeLink} target="_blank">
-            <Button
-              lebel="Resume"
-              leftIcon={<SiReaddotcv />}
-              isOutline={false}
-              isLarge={false}
-            />
-          </a>
-        </div>
+        <a
+          data-aos="fade-down"
+          data-aos-delay={400}
+          href={resumeLink}
+          target="_blank"
+        >
+          <Button
+            lebel="Resume"
+            leftIcon={<SiReaddotcv />}
+            isOutline={false}
+            isLarge={false}
+          />
+        </a>
       </section>
 
       <section className="flex md:hidden justify-between items-center h-16 w-full">
         <Link
           to="home"
-          className="flex justify-center items-center gap-2 text-xl font-semibold"
+          className="flex justify-center items-center gap-0 text-xl font-semibold"
         >
           <span className="relative size-6">
             <Image fill src="/logo.svg" alt="logo" />
-          </span>{" "}
-          PRANOY
+          </span>
+          RANOY
         </Link>
 
         <div className="flex justify-center items-center gap-3">
@@ -102,7 +111,7 @@ export default function Navbar() {
         </div>
 
         <div
-        onClick={() => setOpen(!open)}
+          onClick={() => setOpen(!open)}
           className={`absolute top-16 right-0 w-full h-[calc(100vh-64px)] bg-transparent flex justify-end
           trasition duration-500 ease-in-out 
           ${open ? "translate-x-0" : "translate-x-full"}`}

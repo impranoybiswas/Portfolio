@@ -35,13 +35,13 @@ export default function Button({
       />
 
       <div
-        className={`${className} relative px-6 flex justify-center items-center gap-2 rounded-lg font-semibold cursor-pointer transition-all duration-500 ease-in-out group z-10
+        className={`${className} relative flex justify-center items-center gap-2 rounded-lg font-semibold cursor-pointer transition-all duration-500 ease-in-out group z-10
     ${
       isOutline
         ? " text-secondary bg-base-100 hover:bg-accent border-[1px] border-secondary/10 hover:border-secondary/30 "
         : ""
     }
-    ${isLarge ? "text-2xl h-14" : "text-base h-10"}
+    ${isLarge ? "text-2xl h-14 px-7" : "text-base h-9 px-5"}
       `}
       >
         <span className="group-hover:scale-115 transition-all duration-300 ease-in-out">

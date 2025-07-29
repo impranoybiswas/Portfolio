@@ -5,6 +5,7 @@ import "./custom.css";
 import ThemeProvider from "./providers/ThemeProvider";
 import ScrollProvider from "./providers/ScrollProvider";
 
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           <ScrollProvider>
+  
             {children}
           </ScrollProvider>
         </ThemeProvider>
