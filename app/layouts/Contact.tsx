@@ -11,6 +11,7 @@ import {
 import { FaPaperPlane, FaThreads } from "react-icons/fa6";
 import Section from "../ui/Section";
 import Button from "../ui/Button";
+import toast from "react-hot-toast";
 
 // Social link type (optional but good practice)
 interface SocialLink {
@@ -25,6 +26,7 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   // Handle input & textarea changes
   const handleChange = (
@@ -34,15 +36,30 @@ export default function Contact() {
   };
 
   // Handle email submission
-  const handleEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const subject = encodeURIComponent(`Message from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+    setIsLoading(true);
 
-    window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("Email sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Failed to send email.");
+      }
+    } catch (err) {
+      toast.error("Something went wrong.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Social media links
@@ -139,7 +156,7 @@ export default function Contact() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2  focus:border-transparent transition"
+                className=" w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2  focus:border-transparent transition"
                 placeholder="example@mail.com"
               />
             </div>
@@ -169,9 +186,16 @@ export default function Contact() {
               <Button
                 isOutline={false}
                 isLarge={false}
-                onClick={() => handleEmail}
-                lebel="Send Message"
-                leftIcon={<FaPaperPlane />}
+                type="submit"
+                label={isLoading ? "Sending..." : "Send Message"}
+                onClick={() => {}} // optional since form handles submit
+                leftIcon={
+                  isLoading ? (
+                    <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white border-opacity-70" />
+                  ) : (
+                    <FaPaperPlane />
+                  )
+                }
               />
             </div>
           </form>

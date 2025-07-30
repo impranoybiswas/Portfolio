@@ -4,6 +4,8 @@ import "./globals.css";
 import "./custom.css";
 import ThemeProvider from "./providers/ThemeProvider";
 import ScrollProvider from "./providers/ScrollProvider";
+import AOSInit from "./components/AOSInit";
+import { Toaster } from "react-hot-toast";
 
 
 const poppins = Poppins({
@@ -34,7 +36,8 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           <ScrollProvider>
-  
+            <AOSInit/>
+            <Toaster position="top-center" reverseOrder={false} />
             {children}
           </ScrollProvider>
         </ThemeProvider>

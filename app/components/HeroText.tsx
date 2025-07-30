@@ -10,7 +10,7 @@ export default function HeroText() {
   return (
     <div
       data-aos="fade-left"
-      data-aos-delay="1000"
+      data-aos-delay="800"
       className="w-full flex flex-col justify-center items-center md:items-start flex-1"
     >
       <h1 className="text-white text-2xl md:text-3xl font-semibold">
@@ -43,7 +43,7 @@ export default function HeroText() {
         <a href={resumeLink} target="_blank">
           <Button
             isOutline={false}
-            lebel="Show Resume"
+            label="Show Resume"
             leftIcon={<SiReaddotcv />}
             isLarge={true}
           />
@@ -57,7 +57,7 @@ export default function HeroText() {
         >
           <Button
             isOutline={true}
-            lebel="Check My Work"
+            label="Check My Work"
             leftIcon={<IoIosCodeWorking />}
             isLarge={true}
           />

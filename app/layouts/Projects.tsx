@@ -174,7 +174,7 @@ export default function Projects() {
             <div className="flex flex-wrap gap-2 mt-4 justify-center">
               <span
                 className={`flex items-center gap-1 px-3 py-1 rounded-md shadow-sm text-sm
-                    bg-gray-800 text-white `}
+                    bg-black text-white `}
               >
                 <RiNextjsLine /> Next JS
               </span>
@@ -208,7 +208,7 @@ export default function Projects() {
                 <Button
                   isLarge={false}
                   isOutline={false}
-                  lebel="GitHub"
+                  label="GitHub"
                   leftIcon={<FaGithub />}
                 />
               </a>

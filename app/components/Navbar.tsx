@@ -24,7 +24,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 bg-base-100 h-fit w-full px-5 md:px-12 lg:px-25 text-white overflow-hidden
+      className={`fixed top-0 left-0 z-50 bg-base-100 h-fit w-full px-5 md:px-12 lg:px-25 text-white
     ${isScrolled ? "shadow-sm shadow-secondary/30" : ""} `}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
@@ -42,7 +42,7 @@ export default function Navbar() {
           {navLinks.map((item, i) => (
             <div
             data-aos="fade-down"
-              data-aos-delay={100 + i * 100}
+              data-aos-delay={(1 + i) * 100}
               key={i}
             >
               <Link
@@ -68,7 +68,7 @@ export default function Navbar() {
           target="_blank"
         >
           <Button
-            lebel="Resume"
+            label="Resume"
             leftIcon={<SiReaddotcv />}
             isOutline={false}
             isLarge={false}
@@ -76,7 +76,10 @@ export default function Navbar() {
         </a>
       </section>
 
-      <section className="flex md:hidden justify-between items-center h-16 w-full">
+      <section 
+      data-aos="fade-down"
+      data-aos-delay={100}
+      className="flex md:hidden justify-between items-center h-16 w-full">
         <Link
           to="home"
           className="flex justify-center items-center gap-0 text-xl font-semibold"
@@ -84,7 +87,7 @@ export default function Navbar() {
           <span className="relative size-6">
             <Image fill src="/logo.svg" alt="logo" />
           </span>
-          RANOY
+          
         </Link>
 
         <div className="flex justify-center items-center gap-3">
@@ -133,7 +136,7 @@ export default function Navbar() {
             ))}
             <a className="mx-6 mt-5" href={resumeLink} target="_blank">
               <Button
-                lebel="Resume"
+                label="Resume"
                 leftIcon={<SiReaddotcv />}
                 isOutline={false}
                 isLarge={false}

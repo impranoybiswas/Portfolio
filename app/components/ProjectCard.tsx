@@ -71,7 +71,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Button
               isLarge={false}
               isOutline={false}
-              lebel="GitHub"
+              label="GitHub"
               leftIcon={<FaGithub />}
             />
           </a>
@@ -79,7 +79,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Button
               isLarge={false}
               isOutline={true}
-              lebel="Live"
+              label="Live"
               leftIcon={<TbWorld />}
             />
           </a>
