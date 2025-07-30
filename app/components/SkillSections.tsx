@@ -11,7 +11,7 @@ export default function SkillSections({ title, skills } : { title: string; skill
   return (
     <>
       <h1 className="text-xl font-semibold my-5">{title}</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 items-center justify-center w-full">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-5 items-center justify-center w-full">
         {skills.map((item) => (
           <div
           data-aos="zoom-in"
