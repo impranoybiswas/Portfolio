@@ -2,11 +2,11 @@
 import React, { useContext, useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { CgMenuRightAlt } from "react-icons/cg";
+import { SiReaddotcv } from "react-icons/si";
 import { Link } from "react-scroll";
-import Image from "next/image";
 import { ScrollContext } from "../providers/ScrollProvider";
 import Button from "../ui/Button";
-import { SiReaddotcv } from "react-icons/si";
+import SiteTitle from "../ui/SiteTitle";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -28,35 +28,22 @@ export default function Navbar() {
     ${isScrolled ? "shadow-sm shadow-secondary/30" : ""} `}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
-        <Link
-          data-aos="fade-down"
-          to="home"
-          className="flex justify-center items-end gap-0 text-2xl font-semibold cursor-pointer"
-        >
-          <span className="relative size-6">
-            <Image fill src="/logo.svg" alt="logo" />
-          </span>
-        </Link>
+        <SiteTitle />
 
         <div className="flex justify-center items-center gap-5 z-50 text-white/70">
           {navLinks.map((item, i) => (
-            <div
-            data-aos="fade-down"
-              data-aos-delay={(1 + i) * 100}
-              key={i}
-            >
+            <div data-aos="fade-down" data-aos-delay={(1 + i) * 100} key={i}>
               <Link
-              
-              to={item.path}
-              smooth={true}
-              duration={300}
-              spy={true}
-              offset={-80}
-              activeClass="text-secondary font-semibold"
-              className="flex cursor-pointer hover:text-secondary transition text-lg"
-            >
-              {item.name}
-            </Link>
+                to={item.path}
+                smooth={true}
+                duration={300}
+                spy={true}
+                offset={-80}
+                activeClass="text-secondary font-semibold"
+                className="flex cursor-pointer hover:text-secondary transition text-lg"
+              >
+                {item.name}
+              </Link>
             </div>
           ))}
         </div>
@@ -76,19 +63,12 @@ export default function Navbar() {
         </a>
       </section>
 
-      <section 
-      data-aos="fade-down"
-      data-aos-delay={100}
-      className="flex md:hidden justify-between items-center h-16 w-full">
-        <Link
-          to="home"
-          className="flex justify-center items-center gap-0 text-xl font-semibold"
-        >
-          <span className="relative size-6">
-            <Image fill src="/logo.svg" alt="logo" />
-          </span>
-          
-        </Link>
+      <section
+        data-aos="fade-down"
+        data-aos-delay={100}
+        className="flex md:hidden justify-between items-center h-16 w-full"
+      >
+        <SiteTitle />
 
         <div className="flex justify-center items-center gap-3">
           <a

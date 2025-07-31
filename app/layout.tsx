@@ -7,7 +7,6 @@ import ScrollProvider from "./providers/ScrollProvider";
 import AOSInit from "./components/AOSInit";
 import { Toaster } from "react-hot-toast";
 
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -32,11 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" data-theme="dark">
-      <body className={`${poppins.variable} antialiased`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${poppins.variable} antialiased overflow-x-hidden`}>
         <ThemeProvider>
           <ScrollProvider>
-            <AOSInit/>
+            <AOSInit />
             <Toaster position="top-center" reverseOrder={false} />
             {children}
           </ScrollProvider>

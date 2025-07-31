@@ -2,7 +2,7 @@ import React from "react";
 import { SiReaddotcv } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-scroll";
-import { resumeLink } from "./Navbar";
+import { resumeLink } from "../layouts/Navbar";
 import { IoIosCodeWorking } from "react-icons/io";
 import Button from "../ui/Button";
 
@@ -39,7 +39,7 @@ export default function HeroText() {
         applications using React, TailwindCSS, Express.js, MongoDB. Let&apos;s
         discuss your next project.
       </p>
-      <div className="flex flex-col lg:flex-row justify-center gap-4 mt-12">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mt-12">
         <a href={resumeLink} target="_blank">
           <Button
             isOutline={false}
