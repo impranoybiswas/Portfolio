@@ -145,6 +145,7 @@ export default function Projects() {
       ],
     },
   ];
+
   return (
     <Section
       name="projects"

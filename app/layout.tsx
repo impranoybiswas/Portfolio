@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${poppins.variable} antialiased overflow-x-hidden`}>
+      <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           <ScrollProvider>
             <AOSInit />

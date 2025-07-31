@@ -42,20 +42,3 @@
 }
 
 
-/* Scrollbar track */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Scrollbar thumb */
-::-webkit-scrollbar-thumb {
-  background-color: #4f46e5; /* Indigo-600 */
-  border-radius: 6px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-/* Scrollbar track background */
-::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-}

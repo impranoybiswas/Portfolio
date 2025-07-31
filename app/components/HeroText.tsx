@@ -39,7 +39,7 @@ export default function HeroText() {
         applications using React, TailwindCSS, Express.js, MongoDB. Let&apos;s
         discuss your next project.
       </p>
-      <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mt-12">
+      <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-4 mt-12">
         <a href={resumeLink} target="_blank">
           <Button
             isOutline={false}
