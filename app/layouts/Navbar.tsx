@@ -88,7 +88,7 @@ export default function Navbar() {
           >
             <FaGithub size={25} />
           </a>
-          <MenuButton menuOpen={open} setMenuOpen={setOpen} className="h-6 w-7" />
+          <MenuButton menuOpen={open} setMenuOpen={setOpen} className="size-6" />
         </div>
 
         <div
