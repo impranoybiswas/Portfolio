@@ -1,12 +1,12 @@
 "use client";
 import React, { useContext, useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { CgMenuRightAlt } from "react-icons/cg";
 import { SiReaddotcv } from "react-icons/si";
 import { Link } from "react-scroll";
 import { ScrollContext } from "../providers/ScrollProvider";
 import Button from "../ui/Button";
 import SiteTitle from "../ui/SiteTitle";
+import MenuButton from "../ui/MenuButton";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -28,9 +28,9 @@ export default function Navbar() {
     ${isScrolled ? "shadow-sm shadow-secondary/30" : ""} `}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
-        <SiteTitle />
+        <SiteTitle className="flex-1" />
 
-        <div className="flex justify-center items-center gap-5 z-50 text-white/70">
+        <div className="flex-3 flex justify-center items-center gap-5 z-50 text-white/70">
           {navLinks.map((item, i) => (
             <div data-aos="fade-down" data-aos-delay={(1 + i) * 100} key={i}>
               <Link
@@ -53,6 +53,7 @@ export default function Navbar() {
           data-aos-delay={400}
           href={resumeLink}
           target="_blank"
+          className="flex-1 flex justify-end items-center"
         >
           <Button
             label="Resume"
@@ -70,7 +71,7 @@ export default function Navbar() {
       >
         <SiteTitle />
 
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex justify-center items-center gap-4">
           <a
             href={"https://www.linkedin.com/in/impranoybiswas/"}
             target="_blank"
@@ -87,10 +88,7 @@ export default function Navbar() {
           >
             <FaGithub size={25} />
           </a>
-          <CgMenuRightAlt
-            onClick={() => setOpen(!open)}
-            className="flex justify-center items-center size-8 text-white"
-          />
+          <MenuButton menuOpen={open} setMenuOpen={setOpen} className="size-6" />
         </div>
 
         <div
@@ -99,6 +97,7 @@ export default function Navbar() {
           trasition duration-500 ease-in-out 
           ${open ? "translate-x-0" : "translate-x-full"}`}
         >
+          
           <div className="flex flex-col items-end py-5 gap-0 bg-accent shadow-lg rounded-bl-lg w-fit h-fit border-l border-b border-secondary/30">
             {navLinks.map((item) => (
               <Link
