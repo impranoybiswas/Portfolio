@@ -73,7 +73,7 @@ export default function Navbar() {
 
         <div className="flex justify-center items-center gap-4">
           <a
-            href={"https://www.linkedin.com/in/impranoybiswas/"}
+            href="https://www.linkedin.com/in/impranoybiswas/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center text-white"
@@ -81,14 +81,14 @@ export default function Navbar() {
             <FaLinkedin size={25} />
           </a>
           <a
-            href={"https://www.github.com/impranoybiswas/"}
+            href="https://www.github.com/impranoybiswas/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center text-white"
           >
             <FaGithub size={25} />
           </a>
-          <MenuButton menuOpen={open} setMenuOpen={setOpen} className="size-6" />
+          <MenuButton menuOpen={open} setMenuOpen={setOpen} className="h-6 w-7" />
         </div>
 
         <div
