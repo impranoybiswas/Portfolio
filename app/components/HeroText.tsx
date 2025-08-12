@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { SiReaddotcv } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
@@ -5,12 +6,20 @@ import { Link } from "react-scroll";
 import { resumeLink } from "../layouts/Navbar";
 import { IoIosCodeWorking } from "react-icons/io";
 import Button from "../ui/Button";
+import { motion } from "framer-motion";
 
 export default function HeroText() {
   return (
-    <div
-      data-aos="fade-left"
-      data-aos-delay="800"
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{
+        delay: 1,
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+        mass: 2,
+      }}
       className="w-full flex flex-col justify-center items-center md:items-start flex-1"
     >
       <h1 className="text-white text-2xl md:text-3xl font-semibold">
@@ -63,6 +72,6 @@ export default function HeroText() {
           />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

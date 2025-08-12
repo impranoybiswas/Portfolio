@@ -7,6 +7,7 @@ import { ScrollContext } from "../providers/ScrollProvider";
 import Button from "../ui/Button";
 import SiteTitle from "../ui/SiteTitle";
 import MenuButton from "../ui/MenuButton";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -28,11 +29,28 @@ export default function Navbar() {
     ${isScrolled ? "shadow-sm shadow-secondary/30" : ""} `}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">
-        <SiteTitle className="flex-1" />
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex-1"
+        >
+          <SiteTitle />
+        </motion.div>
 
         <div className="flex-3 flex justify-center items-center gap-5 z-50 text-white/70">
           {navLinks.map((item, i) => (
-            <div data-aos="fade-down" data-aos-delay={(1 + i) * 100} key={i}>
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: i * 0.15,
+                type: "spring",
+                stiffness: 80,
+                damping: 15,
+                mass: 1.5,
+              }}
+              key={i}
+            >
               <Link
                 to={item.path}
                 smooth={true}
@@ -44,13 +62,20 @@ export default function Navbar() {
               >
                 {item.name}
               </Link>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <a
-          data-aos="fade-down"
-          data-aos-delay={400}
+        <motion.a
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.5,
+            type: "spring",
+            stiffness: 80,
+            damping: 15,
+            mass: 1.5,
+          }}
           href={resumeLink}
           target="_blank"
           className="flex-1 flex justify-end items-center"
@@ -61,12 +86,20 @@ export default function Navbar() {
             isOutline={false}
             isLarge={false}
           />
-        </a>
+        </motion.a>
       </section>
 
-      <section
-        data-aos="fade-down"
-        data-aos-delay={100}
+      {/* Medium Screen */}
+      <motion.section
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.5,
+          type: "spring",
+          stiffness: 80,
+          damping: 15,
+          mass: 1.5,
+        }}
         className="flex md:hidden justify-between items-center h-16 w-full"
       >
         <SiteTitle />
@@ -88,16 +121,19 @@ export default function Navbar() {
           >
             <FaGithub size={25} />
           </a>
-          <MenuButton menuOpen={open} setMenuOpen={setOpen} className="size-6" />
+          <MenuButton
+            menuOpen={open}
+            setMenuOpen={setOpen}
+            className="size-6"
+          />
         </div>
 
         <div
           onClick={() => setOpen(!open)}
           className={`absolute top-16 right-0 w-full h-[calc(100vh-64px)] bg-transparent flex justify-end
           trasition duration-500 ease-in-out 
-          ${open ? "translate-x-0" : "translate-x-full"}`}
+          ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
         >
-          
           <div className="flex flex-col items-end py-5 gap-0 bg-accent shadow-lg rounded-bl-lg w-fit h-fit border-l border-b border-secondary/30">
             {navLinks.map((item) => (
               <Link
@@ -123,7 +159,7 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </nav>
   );
 }

@@ -1,4 +1,7 @@
+"use client";
+
 import React, { ReactNode } from "react";
+import { motion } from "motion/react"
 
 interface ButtonProps {
   onClick?: () => void;
@@ -22,7 +25,9 @@ export default function Button({
   isLarge,
 }: ButtonProps) {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.98 }}
       onClick={onClick}
       type={type}
       className="rounded-lg p-[1px] bg-transparent relative overflow-hidden group text-shadow-sm"
@@ -59,6 +64,6 @@ export default function Button({
           </span>
         )}
       </div>
-    </button>
+    </motion.button>
   );
 }

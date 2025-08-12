@@ -5,6 +5,7 @@ import { TbWorld } from "react-icons/tb";
 import { ReactNode } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
+import { motion } from "framer-motion";
 
 interface TechStack {
   name: string;
@@ -47,9 +48,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   return (
-    <div
-      data-aos="fade-in"
-      data-aos-delay="200"
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.6, ease: "easeIn", delay: 0.2 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="flex justify-center items-center p-[1px] bg-accent border border-primary/30 rounded-2xl shadow-md group"
@@ -106,6 +108,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
