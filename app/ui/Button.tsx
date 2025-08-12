@@ -28,6 +28,7 @@ export default function Button({
     <motion.button
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.98 }}
+      viewport={{ once: true, amount: 0.2 }}
       onClick={onClick}
       type={type}
       className="rounded-lg p-[1px] bg-transparent relative overflow-hidden group text-shadow-sm"

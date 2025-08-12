@@ -31,6 +31,7 @@ export default function SkillSections({
               damping: 15,
               mass: 1.5,
             }}
+            viewport={{ once: true, amount: 0.2 }}
             key={i}
             className="p-[1px] relative rounded-xl overflow-hidden"
           >

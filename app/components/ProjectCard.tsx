@@ -52,6 +52,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeIn", delay: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="flex justify-center items-center p-[1px] bg-accent border border-primary/30 rounded-2xl shadow-md group"

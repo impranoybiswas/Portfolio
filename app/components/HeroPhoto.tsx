@@ -15,6 +15,7 @@ export default function HeroPhoto() {
         damping: 15,
         mass: 2,
       }}
+      viewport={{ once: true, amount: 0.2 }}
       className="relative"
     >
       <motion.div

@@ -49,6 +49,7 @@ export default function Navbar() {
                 damping: 15,
                 mass: 1.5,
               }}
+              viewport={{ once: true, amount: 0.2 }}
               key={i}
             >
               <Link

@@ -38,6 +38,7 @@ export default function Contact() {
           initial={{ opacity: 0, x: -120, scale: 0.9 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="bg-accent shadow shadow-primary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center w-full"
         >
           <h2 className="text-3xl font-bold mb-4">Let&apos;s Connect</h2>

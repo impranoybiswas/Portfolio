@@ -20,6 +20,7 @@ export default function HeroText() {
         damping: 15,
         mass: 2,
       }}
+      viewport={{ once: true, amount: 0.2 }}
       className="w-full flex flex-col justify-center items-center md:items-start flex-1"
     >
       <h1 className="text-white text-2xl md:text-3xl font-semibold">

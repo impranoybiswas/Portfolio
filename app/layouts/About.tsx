@@ -48,6 +48,7 @@ export default function About() {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="md:border-l md:border-white pl-5 lg:pl-8 lg:flex-1"
         >
           <h1 className="pb-6 text-2xl md:text-3xl font-semibold text-shadow-xs">
