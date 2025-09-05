@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiReaddotcv } from "react-icons/si";
 import { Link as ScrollLink } from "react-scroll";
-import  Link from "next/link";
+import Link from "next/link";
 import { ScrollContext } from "../providers/ScrollProvider";
 import Button from "../ui/Button";
 import SiteTitle from "../ui/SiteTitle";
@@ -136,7 +136,7 @@ export default function Navbar() {
           trasition duration-500 ease-in-out 
           ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
         >
-          <div className="flex flex-col items-end py-5 gap-0 bg-accent shadow-lg rounded-bl-lg h-fit border-l border-b border-secondary/30">
+          <div className="flex flex-col items-end py-5 gap-0 bg-accent shadow-lg rounded-bl-lg w-fit h-fit border-l border-b border-secondary/30">
             {navLinks.map((item) => (
               <ScrollLink
                 key={item.name}
@@ -145,13 +145,13 @@ export default function Navbar() {
                 duration={300}
                 spy={true}
                 offset={-80}
-                className="relative font-semibold cursor-pointer pr-5 pl-10 py-2 text-2xl uppercase tracking-widest border-r-7 border-r-accent trasition duration-300 ease-in-out"
-                activeClass=" border-r-pink-600"
+                className="relative font-semibold cursor-pointer pr-5 py-3 text-xl uppercase tracking-wider border-r-7 border-r-accent trasition duration-300 ease-in-out"
+                activeClass=" border-r-secondary"
               >
                 {item.name}
               </ScrollLink>
             ))}
-            <Link className="mt-5 mx-auto" href={resumeLink} target="_blank">
+            <Link className="mt-5 mx-5" href={resumeLink} target="_blank">
               <Button
                 label="Resume"
                 leftIcon={<SiReaddotcv />}

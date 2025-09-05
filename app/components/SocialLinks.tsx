@@ -110,7 +110,7 @@ const IconGrid = () => {
 
   return (
     // Use scale to make the entire component responsive
-    <div className="relative w-[400px] h-[500px] scale-60 md:scale-80 lg:scale-100">
+    <div className="relative w-[400px] h-[500px] scale-75 lg:scale-100">
       {/* SVG container for all connecting lines, drawn underneath the icons */}
       <svg width={svgSize} height={svgSize} className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
         <defs>
