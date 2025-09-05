@@ -2,7 +2,8 @@
 import React, { useContext, useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiReaddotcv } from "react-icons/si";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import  Link from "next/link";
 import { ScrollContext } from "../providers/ScrollProvider";
 import Button from "../ui/Button";
 import SiteTitle from "../ui/SiteTitle";
@@ -37,7 +38,7 @@ export default function Navbar() {
           <SiteTitle />
         </motion.div>
 
-        <div className="flex-3 flex justify-center items-center gap-5 z-50 text-white/70">
+        <div className="flex-3 flex justify-center items-center gap-5 z-50 text-white/80">
           {navLinks.map((item, i) => (
             <motion.div
               initial={{ opacity: 0, y: -30 }}
@@ -52,17 +53,17 @@ export default function Navbar() {
               viewport={{ once: true, amount: 0.2 }}
               key={i}
             >
-              <Link
+              <ScrollLink
                 to={item.path}
                 smooth={true}
                 duration={300}
                 spy={true}
                 offset={-80}
-                activeClass="text-secondary font-semibold"
+                activeClass="text-pink-600 font-semibold"
                 className="flex cursor-pointer hover:text-secondary transition text-lg"
               >
                 {item.name}
-              </Link>
+              </ScrollLink>
             </motion.div>
           ))}
         </div>
@@ -106,22 +107,22 @@ export default function Navbar() {
         <SiteTitle />
 
         <div className="flex justify-center items-center gap-4">
-          <a
+          <Link
             href="https://www.linkedin.com/in/impranoybiswas/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center text-white"
           >
             <FaLinkedin size={25} />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://www.github.com/impranoybiswas/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center text-white"
           >
             <FaGithub size={25} />
-          </a>
+          </Link>
           <MenuButton
             menuOpen={open}
             setMenuOpen={setOpen}
@@ -135,29 +136,29 @@ export default function Navbar() {
           trasition duration-500 ease-in-out 
           ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
         >
-          <div className="flex flex-col items-end py-5 gap-0 bg-accent shadow-lg rounded-bl-lg w-fit h-fit border-l border-b border-secondary/30">
+          <div className="flex flex-col items-end py-5 gap-0 bg-accent shadow-lg rounded-bl-lg h-fit border-l border-b border-secondary/30">
             {navLinks.map((item) => (
-              <Link
+              <ScrollLink
                 key={item.name}
                 to={item.path}
                 smooth={true}
                 duration={300}
                 spy={true}
                 offset={-80}
-                className="relative font-semibold cursor-pointer pr-4 py-2 text-xl border-r-5 border-r-accent trasition duration-300 ease-in-out mr-1"
-                activeClass=" border-r-primary"
+                className="relative font-semibold cursor-pointer pr-5 pl-10 py-2 text-2xl uppercase tracking-widest border-r-7 border-r-accent trasition duration-300 ease-in-out"
+                activeClass=" border-r-pink-600"
               >
                 {item.name}
-              </Link>
+              </ScrollLink>
             ))}
-            <a className="mx-6 mt-5" href={resumeLink} target="_blank">
+            <Link className="mt-5 mx-auto" href={resumeLink} target="_blank">
               <Button
                 label="Resume"
                 leftIcon={<SiReaddotcv />}
                 isOutline={false}
                 isLarge={false}
               />
-            </a>
+            </Link>
           </div>
         </div>
       </motion.section>

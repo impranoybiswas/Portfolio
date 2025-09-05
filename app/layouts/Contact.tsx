@@ -33,13 +33,13 @@ const messengers = [
 export default function Contact() {
   return (
     <Section name="contact" title="Get in Touch" subtitle="">
-      <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-10 relative">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 relative">
         <motion.div
           initial={{ opacity: 0, x: -120, scale: 0.9 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="bg-accent shadow shadow-primary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center w-full"
+          className="bg-accent shadow shadow-primary p-5 lg:p-8 rounded-xl flex flex-col items-center justify-center w-full lg:w-11/12"
         >
           <h2 className="text-3xl font-bold mb-4">Let&apos;s Connect</h2>
           <p className="text-gray-100 text-center text-sm md:text-base mb-6">
@@ -49,10 +49,8 @@ export default function Contact() {
           <ContactForm />
         </motion.div>
 
-        <div className="flex flex-col items-center justify-between">
-          <h2 className="text-2xl font-semibold mt-10">
-            Contact on Social Media
-          </h2>
+        <div className="w-full flex flex-col items-center justify-between">
+         
 
           <SocialLinks />
           <div className="flex justify-center items-center w-auto h-auto rounded-md p-[2px] relative overflow-hidden">

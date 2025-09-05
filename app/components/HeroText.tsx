@@ -2,11 +2,13 @@
 import React from "react";
 import { SiReaddotcv } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 import { resumeLink } from "../layouts/Navbar";
 import { IoIosCodeWorking } from "react-icons/io";
 import Button from "../ui/Button";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function HeroText() {
   return (
@@ -46,19 +48,41 @@ export default function HeroText() {
       </h1>
       <p className="text-base lg:text-xl text-white mt-4 text-center md:text-left">
         I specialize in creating performant, responsive, and maintainable web
-        applications using React, TailwindCSS, Express.js, MongoDB. Let&apos;s
-        discuss your next project.
+        applications using Next.Js React.Js, TailwindCSS, Express.js, MongoDB,
+        Firebase.
       </p>
+      <p className="flex-1 font-semibold text-base lg:text-xl text-white text-center md:text-left mt-4">
+        Let&apos;s discuss your next project.
+      </p>
+      <div className="hidden md:flex items-center gap-4 mt-5">
+        <Link
+          href="https://www.linkedin.com/in/impranoybiswas/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex justify-center items-center text-white hover:text-secondary transition-all duration-300 ease-in-out"
+        >
+          <FaLinkedin size={30} />
+        </Link>
+        <Link
+          href="https://www.github.com/impranoybiswas/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex justify-center items-center text-white hover:text-secondary transition-all duration-300 ease-in-out"
+        >
+          <FaGithub size={30} />
+        </Link>
+      </div>
+
       <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-4 mt-12">
-        <a href={resumeLink} target="_blank">
+        <Link href={resumeLink} target="_blank">
           <Button
             isOutline={false}
             label="Show Resume"
             leftIcon={<SiReaddotcv />}
             isLarge={true}
           />
-        </a>
-        <Link
+        </Link>
+        <ScrollLink
           to={"projects"}
           smooth={true}
           duration={300}
@@ -71,7 +95,7 @@ export default function HeroText() {
             leftIcon={<IoIosCodeWorking />}
             isLarge={true}
           />
-        </Link>
+        </ScrollLink>
       </div>
     </motion.div>
   );
