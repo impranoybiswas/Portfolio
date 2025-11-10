@@ -8,7 +8,7 @@ import { ScrollContext } from "../providers/ScrollProvider";
 import Button from "../ui/Button";
 import SiteTitle from "../ui/SiteTitle";
 import MenuButton from "../ui/MenuButton";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const navLinks = [
   { name: "About", path: "about" },
@@ -26,7 +26,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 bg-base-100 h-fit w-full px-5 md:px-12 lg:px-25 text-white
+      className={`fixed top-0 left-0 z-50 bg-base-100/60 h-fit w-full px-5 md:px-12 lg:px-25 text-white backdrop-blur-2xl
     ${isScrolled ? "shadow-sm shadow-secondary/30" : ""} `}
     >
       <section className="w-full hidden md:flex justify-between mx-auto h-16 items-center gap-2">

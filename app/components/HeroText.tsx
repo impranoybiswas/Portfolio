@@ -7,7 +7,7 @@ import Link from "next/link";
 import { resumeLink } from "../layouts/Navbar";
 import { IoIosCodeWorking } from "react-icons/io";
 import Button from "../ui/Button";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function HeroText() {

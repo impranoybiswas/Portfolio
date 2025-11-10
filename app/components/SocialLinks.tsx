@@ -64,7 +64,7 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
-const IconWrapper = ({
+export const IconWrapper = ({
   children,
   className = "",
   isHighlighted = false,
@@ -199,11 +199,12 @@ const IconGrid = () => {
         {/* Center Icon */}
         <div className="absolute -translate-x-1/2 -translate-y-1/2 z-10">
           <IconWrapper
-            className="w-25 h-25 text-5xl text-secondary text-shadow-sm"
+            className="w-25 h-25 text-5xl text-secondary text-shadow-sm relative group"
             isHighlighted={true}
             animationDelay={0}
           >
             <FaHashtag />
+            <span className="absolute top-0 left-0 text-sm scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs text-white">Social Media</span>
           </IconWrapper>
         </div>
 
@@ -238,11 +239,12 @@ const IconGrid = () => {
                 ></div>
 
                 <IconWrapper
-                  className="w-16 h-16 text-3xl"
+                  className="w-16 h-16 text-3xl relative text-shadow-sm group"
                   isHovered={isHovered}
                   animationDelay={i * 0.20}
                 >
                   {link.icon}
+                  <span className="absolute top-0 left-0 text-xs scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs">{link.name}</span>
                 </IconWrapper>
               </div>
             </Link>

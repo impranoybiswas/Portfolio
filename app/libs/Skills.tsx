@@ -1,5 +1,5 @@
 import { FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiFirebase } from "react-icons/si";
+import { SiMongodb, SiExpress, SiFirebase, SiTypescript } from "react-icons/si";
 import { FaReact, FaJs } from "react-icons/fa";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa6";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
@@ -28,6 +28,12 @@ export const frontendSkills = [
     icon: <FaJs />,
     bgColor: "bg-yellow-50",
     color: "text-yellow-500",
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript />,
+    bgColor: "bg-blue-50",
+    color: "text-blue-500",
   },
   {
     name: "React",

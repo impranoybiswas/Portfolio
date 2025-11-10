@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import "./custom.css";
-import ThemeProvider from "./providers/ThemeProvider";
 import ScrollProvider from "./providers/ScrollProvider";
-import AOSInit from "./components/AOSInit";
 import { Toaster } from "react-hot-toast";
+import Footer from "./layouts/Footer";
+import Navbar from "./layouts/Navbar";
+import ThemeProvider from "./providers/ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -35,9 +36,10 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           <ScrollProvider>
-            <AOSInit />
             <Toaster position="top-center" reverseOrder={false} />
+            <Navbar />
             {children}
+            <Footer />
           </ScrollProvider>
         </ThemeProvider>
       </body>

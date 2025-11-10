@@ -38,7 +38,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSendEmail} className="space-y-6 w-full">
+    <form
+      onSubmit={handleSendEmail}
+      className="w-full flex flex-col gap-5 md:gap-7"
+    >
       <div>
         <label htmlFor="name" className="block mb-1 font-medium text-white">
           Your Name
@@ -81,22 +84,21 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
-      <div className="w-full md:w-fit float-end">
-        <Button
-          isOutline={false}
-          isLarge={false}
-          type="submit"
-          label={isLoading ? "Sending..." : "Send Message"}
-          onClick={() => {}}
-          leftIcon={
-            isLoading ? (
-              <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white border-opacity-70" />
-            ) : (
-              <FaPaperPlane />
-            )
-          }
-        />
-      </div>
+      <Button
+        isOutline={false}
+        isLarge={false}
+        type="submit"
+        label={isLoading ? "Sending..." : "Send Message"}
+        className="w-full py-5"
+        onClick={() => {}}
+        leftIcon={
+          isLoading ? (
+            <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white border-opacity-70" />
+          ) : (
+            <FaPaperPlane />
+          )
+        }
+      />
     </form>
   );
 }

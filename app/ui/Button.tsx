@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   className?: string;
-  label: string;
+  label?: string;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   isOutline: boolean;
