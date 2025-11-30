@@ -49,7 +49,7 @@ export default function HeroText() {
       <p className="text-base lg:text-xl text-white mt-4 text-center md:text-left">
         I specialize in creating performant, responsive, and maintainable web
         applications using Next.Js React.Js, TailwindCSS, Express.js, MongoDB,
-        Firebase.
+        Firebase, Supabase and more.
       </p>
       <p className="flex-1 font-semibold text-base lg:text-xl text-white text-center md:text-left mt-4">
         Let&apos;s discuss your next project.

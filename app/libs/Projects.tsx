@@ -17,7 +17,7 @@ export const projects = [
     id: 1,
     title: "Gadget Hunter",
     image:
-      "https://res.cloudinary.com/dudvlnxio/image/upload/v1753454186/tower-edge_cynmxr.png",
+      "https://res.cloudinary.com/dudvlnxio/image/upload/v1764484475/gadget-hunter_j9kprs.png",
     short_desc:
       "An advanced e-commerce platform for gadgets built with Next.js and TypeScript, supporting secure payments and modern animations.",
     description:
@@ -72,9 +72,9 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Ticket Hub",
+    title: "Ticket Hub (Team Project)",
     image:
-      "https://res.cloudinary.com/dudvlnxio/image/upload/v1753454186/tower-edge_cynmxr.png",
+      "https://res.cloudinary.com/dudvlnxio/image/upload/v1764484707/ticket-hub_otqjnu.png",
     short_desc:
       "A role-based event ticket booking system built with Next.js and MongoDB, featuring real-time seat booking and secure payments.",
     description:

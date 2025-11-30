@@ -2,7 +2,7 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa6";
 import Section from "../ui/Section";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const educations = [
   {
@@ -31,24 +31,41 @@ export default function About() {
   return (
     <Section name="about" title="About Me" className="relative">
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 z-10">
-        <div className="text-white/70 text-center md:text-justify text-base md:text-lg lg:flex-2">
-          <p className="leading-6 md:leading-8">
-          I am Pranoy Biswas Bappa, a postgraduate in Mathematics with a strong passion for coding, design, and technology. My journey in web development began in 2025 with the Programming Hero team, where I built a solid foundation in modern tech stacks and best practices.
+        <div className="text-white/70 text-center md:text-justify text-base md:text-lg lg:flex-2 leading-6 md:leading-8 space-y-4">
+          <p>
+            I am <strong>Pranoy Biswas Bappa</strong>, a postgraduate in
+            <strong> Mathematics</strong> with a deep passion for coding, design,
+            and modern technology. My journey into web development began in 2025
+            through the <strong>Programming Hero</strong> program, where I built
+            a solid foundation in contemporary tech stacks, clean architecture,
+            and industry best practices.
           </p>
 
-          <p className="mt-6 leading-6 md:leading-8">
-          With expertise in both web development and graphic design, I specialize in creating responsive, user-friendly applications that blend functionality with visually appealing interfaces. My background in mathematics sharpens my problem-solving abilities, enabling me to develop efficient, logical, and well-structured solutions.
+          <p>
+            Combining expertise in both web development and graphic design, I
+            focus on crafting responsive user-centric applications that balance
+            functionality with refined visual design. My background in
+            mathematics strengthens my analytical thinking, enabling me to build
+            efficient, structured, and logic-driven solutions.
           </p>
 
-          <p className="mt-6 font-semibold">
-          Fueled by curiosity and a drive for innovation, I constantly explore new tools, frameworks, and emerging technologies. I am a dedicated developer, a keen listener, and a fast learner—qualities that help me understand client needs and deliver solutions that truly align with their goals. For me, technology is not just a profession but a lifelong journey of learning, creativity, and growth.
+          <p>
+            Curiosity drives my learning. I actively explore new frameworks,
+            tools, and emerging technologies to stay ahead in a rapidly evolving
+            field. As a developer, I am committed, adaptable, and
+            attentive—qualities that help me understand user needs clearly and
+            translate them into meaningful digital experiences.
+          </p>
+
+          <p>
+            For me, technology is more than a career. It is a continuous journey
+            of creativity, learning, and purposeful innovation.
           </p>
         </div>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true, amount: 0.2 }}
           className="md:border-l md:border-white pl-5 lg:pl-8 lg:flex-1"
         >
           <h1 className="pb-6 text-2xl md:text-3xl font-semibold text-shadow-xs">

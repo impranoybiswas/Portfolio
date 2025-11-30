@@ -112,7 +112,11 @@ const IconGrid = () => {
     // Use scale to make the entire component responsive
     <div className="relative w-[400px] h-[500px] scale-75 lg:scale-100">
       {/* SVG container for all connecting lines, drawn underneath the icons */}
-      <svg width={svgSize} height={svgSize} className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <svg
+        width={svgSize}
+        height={svgSize}
+        className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+      >
         <defs>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -204,7 +208,9 @@ const IconGrid = () => {
             animationDelay={0}
           >
             <FaHashtag />
-            <span className="absolute top-0 left-0 text-sm scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs text-white">Social Media</span>
+            <span className="absolute top-0 left-0 text-sm scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs text-white">
+              Social Media
+            </span>
           </IconWrapper>
         </div>
 
@@ -241,10 +247,12 @@ const IconGrid = () => {
                 <IconWrapper
                   className="w-16 h-16 text-3xl relative text-shadow-sm group"
                   isHovered={isHovered}
-                  animationDelay={i * 0.20}
+                  animationDelay={i * 0.2}
                 >
                   {link.icon}
-                  <span className="absolute top-0 left-0 text-xs scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs">{link.name}</span>
+                  <span className="absolute top-0 left-0 text-xs scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs">
+                    {link.name}
+                  </span>
                 </IconWrapper>
               </div>
             </Link>
