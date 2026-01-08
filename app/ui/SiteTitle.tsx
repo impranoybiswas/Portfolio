@@ -6,15 +6,18 @@ interface Props {
   className?: string;
 }
 
-export default function SiteTitle({className} : Props) {
+export default function SiteTitle({ className }: Props) {
   return (
     <Link
+      smooth={true}
+      duration={300}
+      spy={true}
+      offset={-80}
       to="home"
-      className={`flex justify-start items-center gap-0 text-xl md:text-2xl font-semibold cursor-pointer ${className}`}
+      className={`relative size-5 md:size-6 flex justify-center items-center cursor-pointer ${className}`}
     >
-      <span className="relative size-6 md:size-7">
-        <Image fill src="/assets/logo.svg" alt="logo" />
-      </span>
+      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-pink-500 size-12 rounded-full"></span>
+      <Image src="/logo.svg" width={60} height={60} alt="logo" />
     </Link>
   );
 }

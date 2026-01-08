@@ -39,10 +39,10 @@ export default function ProjectCard({ project }: { project: Project }) {
       className="flex justify-center items-center p-[1px] bg-accent border border-primary/30 rounded-2xl shadow-md group"
     >
       <div className="flex flex-col w-full h-full p-5 lg:p-8 bg-accent/85 rounded-2xl group-hover:border group-hover:border-transparent">
-        <h2 className="text-3xl font-bold mb-3 text-center">{title}</h2>
-        <p className="text-gray-100 text-center mb-5">{short_desc}</p>
+        <h2 className="text-3xl font-bold mb-5 text-center">{title}</h2>
+        <p className="text-gray-100 text-center mb-6">{short_desc}</p>
         {/* Tech Stack Badges */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8">
           {stack.map((tech, index) => (
             <span
               key={index}

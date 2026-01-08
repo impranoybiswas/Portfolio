@@ -50,7 +50,7 @@ export default function Button({
               ? "text-secondary bg-base-100 hover:bg-accent border-[1px] border-secondary/10 hover:border-secondary/30"
               : ""
           }
-          ${isLarge ? "text-2xl h-14 px-7" : "text-base h-9 px-5"}
+          ${isLarge ? "text-xl md:text-2xl h-14 px-6" : "text-base h-9 px-5"}
         `}
       >
         {leftIcon && (

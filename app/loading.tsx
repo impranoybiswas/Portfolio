@@ -6,7 +6,7 @@ export default function Loading() {
     <main className="flex justify-center items-center h-screen w-full">
       <Image
         className="animate-ping"
-        src="/assets/logo.svg"
+        src="/logo.svg"
         alt="loading"
         width={60}
         height={60}

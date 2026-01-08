@@ -31,7 +31,7 @@ export default function HeroPhoto() {
 
       <div className="bg-base-100 hover:bg-accent rounded-full overflow-hidden size-50 md:size-80 lg:size-100 relative transision-all duration-700 ease-in-out group">
         <Image
-          src="/assets/photo.png"
+          src="/images/photo.png"
           className="object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
           alt="photo"
           fill

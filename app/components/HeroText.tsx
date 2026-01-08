@@ -28,10 +28,10 @@ export default function HeroText() {
     >
   
       <TimeGreeting/>
-      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-xs">
+      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-xs mt-2">
         I&apos;m Pranoy Biswas Bappa
       </h1>
-      <h1 className="text-secondary text-xl md:text-2xl mt-4">
+      <h1 className="text-secondary text-xl md:text-2xl mt-5">
         <Typewriter
           words={[
             "Full Stack MERN Developer",
@@ -46,7 +46,7 @@ export default function HeroText() {
           delaySpeed={1500}
         />
       </h1>
-      <p className="text-base lg:text-xl text-white mt-4 text-center md:text-left">
+      <p className="text-base lg:text-xl text-white mt-5 text-center md:text-left">
         I specialize in creating performant, responsive, and maintainable web
         applications using Next.Js React.Js, TailwindCSS, Express.js, MongoDB,
         Firebase, Supabase and more.
@@ -54,7 +54,7 @@ export default function HeroText() {
       <p className="flex-1 font-semibold text-base lg:text-xl text-white text-center md:text-left mt-4">
         Let&apos;s discuss your next project.
       </p>
-      <div className="hidden md:flex items-center gap-4 mt-5">
+      <div className="flex items-center gap-4 mt-6">
         <Link
           href="https://www.linkedin.com/in/impranoybiswas/"
           target="_blank"

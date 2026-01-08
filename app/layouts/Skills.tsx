@@ -13,7 +13,7 @@ export default function Skills() {
       subtitle="Technologies I master to build exceptional digital experiences"
     >
       <div className="size-40 md:size-90 absolute right-0 -bottom-10 z-5 opacity-5">
-        <Image alt="circuit" src="/assets/circuit.png" fill />
+        <Image alt="circuit" src="/images/circuit.png" fill />
       </div>
 
       <SkillSections title="Frontend" skills={frontendSkills} />
