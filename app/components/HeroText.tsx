@@ -9,6 +9,7 @@ import { IoIosCodeWorking } from "react-icons/io";
 import Button from "../ui/Button";
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import TimeGreeting from "./TimeGreeting";
 
 export default function HeroText() {
   return (
@@ -25,9 +26,8 @@ export default function HeroText() {
       viewport={{ once: true, amount: 0.2 }}
       className="w-full flex flex-col justify-center items-center md:items-start flex-1"
     >
-      <h1 className="text-white text-2xl md:text-3xl font-semibold">
-        Hi There!
-      </h1>
+  
+      <TimeGreeting/>
       <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-xs">
         I&apos;m Pranoy Biswas Bappa
       </h1>

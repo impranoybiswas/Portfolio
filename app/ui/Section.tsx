@@ -14,7 +14,7 @@ export default function Section({ name, className, title, subtitle, children }: 
   return (
     <Element
       name={name}
-      className={`w-full flex flex-col justify-center items-center mb-15 md:mb-20 ${className}`}
+      className={`w-full flex flex-col justify-center items-center mb-15 md:mb-20 relative z-5 ${className}`}
     >
       <h1 className="text-2xl md:text-4xl font-bold mb-3">{title}</h1>
       <p className="text-base md:text-lg opacity-65 mb-6 md:mb-8">{subtitle}</p>

@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "Portfolio",
     "Next.js",
     "TypeScript",
+    "Frontend Developer",
+    "Full Stack Developer",
   ],
 };
 
@@ -32,7 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html
+      lang="en"
+      className="scroll-smooth overflow-x-hidden"
+      data-theme="light"
+    >
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           <ScrollProvider>

@@ -3,6 +3,7 @@ import { SiMongodb, SiExpress, SiFirebase, SiTypescript } from "react-icons/si";
 import { FaReact, FaJs } from "react-icons/fa";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa6";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { RiSupabaseFill } from "react-icons/ri";
 import {
   SiFigma,
   SiAdobephotoshop,
@@ -79,6 +80,12 @@ export const backendSkills = [
     icon: <SiFirebase />,
     bgColor: "bg-yellow-50",
     color: "text-yellow-500",
+  },
+  {
+    name: "Supabase",
+    icon: <RiSupabaseFill />,
+    bgColor: "bg-green-50",
+    color: "text-green-500",
   },
 ];
 

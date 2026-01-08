@@ -4,7 +4,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiFramer,
- SiNextra,
+  SiNextra,
   SiMongodb,
   SiFirebase,
   SiExpress,
@@ -76,7 +76,7 @@ export const projects = [
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1764484707/ticket-hub_otqjnu.png",
     short_desc:
-      "A role-based event ticket booking system built with Next.js and MongoDB, featuring real-time seat booking and secure payments.",
+      "A role-based event ticket booking system built with Next.js and MongoDB, featuring real-time seat booking and secure payments. Includes PDF ticket generation and Framer Motion animations.",
     description:
       "Ticket Hub is a full-stack event ticket booking platform built using Next.js, TypeScript, and MongoDB. It offers role-based dashboards for Admins, Organizers, and Users to manage events, bookings, and transactions efficiently. Framer Motion enhances UI transitions, while SSLCommerz ensures secure payment processing. Users can generate digital tickets in PDF format and authenticate via Next Auth. The system provides real-time seat management and event analytics for organizers.",
     features: [
@@ -178,7 +178,7 @@ export const projects = [
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1753454185/share-bite_xx2bdd.png",
     short_desc:
-      "A community-based food sharing app that connects donors and receivers to reduce food waste sustainably.",
+      "A community-based food sharing app that connects donors and receivers to reduce food waste sustainably. Users can share surplus food, browse available listings, and communicate securely.",
     description:
       "Share Bite is a community-driven platform that connects food donors and receivers to minimize food waste. Users can share surplus food, browse available listings nearby, and communicate securely. The platform promotes sustainability and social responsibility through real-time updates and a location-based sharing system. Built with React, Tailwind CSS, and Firebase for secure user authentication and data storage.",
     features: [

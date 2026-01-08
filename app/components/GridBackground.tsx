@@ -18,7 +18,7 @@ export const GridBackground = () => {
 
   return (
     <div
-      className="fixed inset-0 w-full h-screen opacity-60 -z-10 overflow-hidden transition-transform duration-300 ease-out"
+      className="fixed inset-0 w-full h-screen opacity-60 z-1 overflow-hidden transition-transform duration-300 ease-out scale-120"
       style={{
         backgroundImage: `
           linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
@@ -26,13 +26,9 @@ export const GridBackground = () => {
         `,
         backgroundSize: "50px 50px",
         animation: "moveGrid 20s linear infinite",
-        transform: `translate(${mousePosition.x / 30}px, ${
-          mousePosition.y / 30
-        }px)`,
+        transform: `translate(${mousePosition.x / 30}px, ${mousePosition.y / 30}px)`
       }}
     >
-      {/* Glow in the center */}
-      <div className="absolute top-1/2 left-1/2 w-[60vmin] h-full bg-transparent rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" />
 
       {/* Keyframes */}
       <style>
