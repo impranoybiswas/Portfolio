@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import { FaEnvelope, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import { IconWrapper } from "./SocialLinks";
 import Link from "next/link";
@@ -67,7 +67,7 @@ export default function ContactLinks() {
       <div className="w-full h-10 bg-base-100/60 backdrop-blur-xl absolute top-0 left-0 z-5" />
 
       <div className="w-full md:w-3/5 mx-auto mb-3 h-[2px] bg-gradient-to-r via-primary/60 via-50% from-transparent to-transparent relative z-10" />
-      <span className="text-primary text-xl font-semibold relative z-10">
+      <span className="text-white text-xl lg:text-2xl font-semibold relative z-10">
         Contact Me
       </span>
     </div>

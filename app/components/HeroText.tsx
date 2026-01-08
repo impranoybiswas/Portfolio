@@ -4,12 +4,14 @@ import { SiReaddotcv } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
-import { resumeLink } from "../layouts/Navbar";
 import { IoIosCodeWorking } from "react-icons/io";
 import Button from "../ui/Button";
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TimeGreeting from "./TimeGreeting";
+
+export const resumeLink =
+  "https://drive.google.com/file/d/1q1GvCYP-pihc6pnOu5fgY5zN-USw33Sk/view";
 
 export default function HeroText() {
   return (

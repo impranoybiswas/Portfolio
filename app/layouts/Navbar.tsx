@@ -14,13 +14,10 @@ const navLinks = [
   { name: "Contact", path: "contact", icon: <LuContact /> },
 ];
 
-export const resumeLink =
-  "https://drive.google.com/file/d/1q1GvCYP-pihc6pnOu5fgY5zN-USw33Sk/view";
-
 export default function Navbar() {
 
   return (
-    <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 scale-99 hover:scale-100 transition-all duration-300 ease-in-out">
+    <nav className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 scale-99 hover:scale-100 transition-all duration-500 ease-in-out">
       <div className="flex items-center gap-2 rounded-full border border-secondary/40 bg-primary/20 backdrop-blur-md p-2 shadow-2xl text-white">
         {navLinks.map((link) => {
           return (
@@ -31,8 +28,8 @@ export default function Navbar() {
               duration={300}
               spy={true}
               offset={-80}
-              className="group h-10 w-10 md:w-auto flex items-center justify-center gap-2 rounded-full transition-all duration-300 text-white hover:bg-primary/20 cursor-pointer md:px-4 text-shadow-2xs text-lg"
-              activeClass="bg-primary/60 text-secondary ring-2 ring-secondary/30 "
+              className="group h-10 w-10 md:w-auto flex items-center justify-center gap-2 rounded-full transition-all duration-300 ease-in-out text-white hover:bg-primary/20 cursor-pointer md:px-4 text-shadow-xs text-lg md:text-base"
+              activeClass="bg-primary/60 text-secondary ring-2 ring-secondary/30"
             >
               {link.icon}
               {
