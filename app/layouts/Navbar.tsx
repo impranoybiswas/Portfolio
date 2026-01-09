@@ -27,9 +27,9 @@ export default function Navbar() {
               smooth={true}
               duration={300}
               spy={true}
-              offset={-80}
+              offset={-30}
               className="group h-10 w-10 md:w-auto flex items-center justify-center gap-2 rounded-full transition-all duration-300 ease-in-out text-white hover:bg-primary/20 cursor-pointer md:px-4 text-shadow-xs text-lg md:text-base"
-              activeClass="bg-primary/60 text-secondary ring-2 ring-secondary/30"
+              activeClass="bg-pink-600 text-secondary ring-2 ring-secondary/30"
             >
               {link.icon}
               {
