@@ -8,9 +8,10 @@ import {
   SiMongodb,
   SiFirebase,
   SiExpress,
+  SiJavascript,
 } from "react-icons/si";
 
-import { BsFiletypePdf } from "react-icons/bs";
+import { BsFiletypePdf, BsStripe } from "react-icons/bs";
 
 export const projects = [
   {
@@ -68,6 +69,12 @@ export const projects = [
         color: "text-red-600",
         bg: "bg-red-50",
       },
+      {
+        name: "SSL Commerz",
+        icon: <BsStripe />,
+        color: "text-blue-600",
+        bg: "bg-blue-50",
+      },
     ],
   },
   {
@@ -96,10 +103,10 @@ export const projects = [
         bg: "bg-gray-100",
       },
       {
-        name: "TypeScript",
-        icon: <SiTypescript />,
-        color: "text-blue-600",
-        bg: "bg-blue-50",
+        name: "JavaScript",
+        icon: <SiJavascript />,
+        color: "text-yellow-600",
+        bg: "bg-yellow-50",
       },
       {
         name: "Framer Motion",
@@ -124,6 +131,12 @@ export const projects = [
         icon: <BsFiletypePdf />,
         color: "text-red-600",
         bg: "bg-red-50",
+      },
+      {
+        name: "SSL Commerz",
+        icon: <BsStripe />,
+        color: "text-blue-600",
+        bg: "bg-blue-50",
       },
     ],
   },

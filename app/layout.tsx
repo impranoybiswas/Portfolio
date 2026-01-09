@@ -42,7 +42,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           <ScrollProvider>
-            <Toaster position="top-center" reverseOrder={false} />
+            <Toaster toastOptions={{ duration: 3000 }} gutter={10} position="top-center" reverseOrder={false} />
             <Navbar />
             {children}
             <Footer />
