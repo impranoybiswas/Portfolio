@@ -21,3 +21,74 @@
   --color-accent: #260a2e;
   --color-base-100: #1d0326;
 }
+
+/* CUSTOME CSS */
+@theme inline {
+  --animate-slowSpin: slowSpin 8s ease-in-out infinite;
+  @keyframes slowSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  --animate-socialSpin: socialSpin 35s ease-in-out infinite;
+  @keyframes socialSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  --animate-socialSpinR: socialSpinR 35s ease-in-out infinite;
+  @keyframes socialSpinR {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  --animate-sillyZoom: sillyZoom 10s ease-in-out infinite;
+  @keyframes sillyZoom {
+    0%,
+    100% {
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  --animate-moveGrid: moveGrid 20s linear infinite;
+  @keyframes moveGrid {
+    0% { background-position: 0 0; }
+    100% { background-position: 80px 80px; }
+  }
+}
+
+/* LENIS SMOOTH SCROLLING */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

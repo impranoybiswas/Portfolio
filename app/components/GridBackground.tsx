@@ -1,7 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export const GridBackground = () => {
+/**
+ * GridBackground Component
+ * 
+ * Renders a fixed background with a grid pattern that moves slightly based on mouse position
+ * to create a parallax effect. Also features a continuous scrolling animation.
+ * 
+ * @returns {JSX.Element} The animated grid background
+ */
+export default function GridBackground() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -18,27 +26,16 @@ export const GridBackground = () => {
 
   return (
     <div
-      className="fixed inset-0 w-full h-screen opacity-60 z-1 overflow-hidden transition-transform duration-300 ease-out scale-120"
+      className="fixed inset-0 w-full h-screen opacity-60 z-1 overflow-hidden transition-transform duration-300 ease-out scale-120 animate-moveGrid"
       style={{
         backgroundImage: `
           linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
         `,
         backgroundSize: "50px 50px",
-        animation: "moveGrid 20s linear infinite",
         transform: `translate(${mousePosition.x / 30}px, ${mousePosition.y / 30}px)`
       }}
     >
-
-      {/* Keyframes */}
-      <style>
-        {`
-          @keyframes moveGrid {
-            0% { background-position: 0 0; }
-            100% { background-position: 80px 80px; }
-          }
-        `}
-      </style>
     </div>
   );
-};
+}

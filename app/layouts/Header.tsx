@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import HeroText from "../components/HeroText";
 import HeroPhoto from "../components/HeroPhoto";
 import { Element } from "react-scroll";

@@ -4,9 +4,24 @@ import { FaPaperPlane } from "react-icons/fa6";
 import Button from "../ui/Button";
 import toast from "react-hot-toast";
 
+/**
+ * ContactForm Component
+ * 
+ * Displays a contact form with fields for Name, Email, and Message.
+ * Handles form submission via API route `/api/send-email`.
+ * Uses `react-hot-toast` for user feedback.
+ * 
+ * @returns {JSX.Element} The contact form component
+ */
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
 
+  /**
+   * Handles the form submission event.
+   * Sends data to the backend API and handles success/error states.
+   * 
+   * @param {FormEvent<HTMLFormElement>} e - The form submission event
+   */
   const handleSendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);

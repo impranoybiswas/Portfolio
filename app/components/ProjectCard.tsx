@@ -11,6 +11,12 @@ import ProjectDetails from "./ProjectDetails";
 export default function ProjectCard({ project }: { project: Project }) {
   const { id, title, image, short_desc, stack, live, github } = project;
 
+  /**
+   * Handles mouse movement over the card to create a dynamic radial gradient glow effect.
+   * Updates the background style directly for performance.
+   * 
+   * @param {React.MouseEvent<HTMLDivElement, MouseEvent>} e - Mouse event
+   */
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -21,6 +27,11 @@ export default function ProjectCard({ project }: { project: Project }) {
     e.currentTarget.style.border = "none";
   };
 
+  /**
+   * Resets the card style when mouse leaves.
+   * 
+   * @param {React.MouseEvent<HTMLDivElement, MouseEvent>} e - Mouse event
+   */
   const handleMouseLeave = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
