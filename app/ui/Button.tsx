@@ -34,7 +34,7 @@ export default function Button({
       onClick={onClick}
       type={type}
       disabled={disabled}
-      className="rounded-lg p-1 bg-transparent relative overflow-hidden group text-shadow-sm"
+      className="rounded-lg p-[1px] bg-transparent relative overflow-hidden group text-shadow-sm"
     >
       <div
         className={`absolute top-0 left-0 w-full h-full z-5 scale-150
@@ -50,7 +50,7 @@ export default function Button({
         className={`${className} relative flex justify-center items-center gap-2 rounded-lg font-semibold cursor-pointer transition-all duration-500 ease-in-out group z-10
           ${
             isOutline
-              ? "text-secondary bg-base-100 hover:bg-accent border-2 border-secondary/10 hover:border-secondary/30"
+              ? "text-secondary bg-base-100 hover:bg-accent border border-secondary/30 hover:border-secondary/30"
               : ""
           }
           ${isLarge ? "text-xl md:text-2xl h-14 px-6" : "text-base h-9 px-5"}
