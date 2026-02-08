@@ -1,52 +1,41 @@
 "use client";
-import React, { FormEvent, useState } from "react";
+
+import { FormEvent, useState } from "react";
+import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 import { FaPaperPlane } from "react-icons/fa6";
 import Button from "../ui/Button";
-import toast from "react-hot-toast";
 
-/**
- * ContactForm Component
- * 
- * Displays a contact form with fields for Name, Email, and Message.
- * Handles form submission via API route `/api/send-email`.
- * Uses `react-hot-toast` for user feedback.
- * 
- * @returns {JSX.Element} The contact form component
- */
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
 
-  /**
-   * Handles the form submission event.
-   * Sends data to the backend API and handles success/error states.
-   * 
-   * @param {FormEvent<HTMLFormElement>} e - The form submission event
-   */
   const handleSendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    const form = new FormData(e.currentTarget).entries();
-    const formData = Object.fromEntries(form);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    if (!name || !message) {
+      toast.error("Please fill out all fields");
+      return;
+    }
 
     try {
-      const res = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        toast.success("Email sent successfully!");
-        (e.target as HTMLFormElement).reset();
-      } else {
-        toast.error("Failed to send email.");
-      }
+      await emailjs.send(
+        "service_n9o5j6r", // replace with your EmailJS service ID
+        "template_zecffvo", // replace with your EmailJS template ID
+        { name, email, message },
+        "Ol57Hy414peihTahw" // replace with your EmailJS public key
+      );
+      toast.success("Message sent successfully!");
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong.");
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -66,7 +55,7 @@ export default function ContactForm() {
           name="name"
           id="name"
           required
-          className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent transition"
+          className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-2 focus:ring-secondary/70 transition"
           placeholder="Enter your full name"
         />
       </div>
@@ -80,7 +69,7 @@ export default function ContactForm() {
           name="email"
           id="email"
           required
-          className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent transition"
+          className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-2 focus:ring-secondary/70 transition"
           placeholder="example@mail.com"
         />
       </div>
@@ -92,27 +81,27 @@ export default function ContactForm() {
         <textarea
           name="message"
           id="message"
-          required
           rows={6}
-          className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent resize-none transition"
+          required
+          className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-2 focus:ring-secondary/70 resize-none transition"
           placeholder="Write your message here..."
-        ></textarea>
+        />
       </div>
 
       <Button
-        isOutline={false}
-        isLarge={false}
         type="submit"
         label={isLoading ? "Sending..." : "Send Message"}
         className="w-full py-5"
-        onClick={() => {}}
+        isOutline={false}
+        isLarge={false}
         leftIcon={
           isLoading ? (
-            <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white border-opacity-70" />
+            <span className="animate-spin h-5 w-5 rounded-full border-t-2 border-white" />
           ) : (
             <FaPaperPlane />
           )
         }
+        disabled={isLoading}
       />
     </form>
   );

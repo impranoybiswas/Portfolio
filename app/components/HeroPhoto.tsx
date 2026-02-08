@@ -26,10 +26,10 @@ export default function HeroPhoto() {
           repeat: Infinity, // loop forever
           ease: "linear", // keep speed constant
         }}
-        className="bg-gradient-to-r from-indigo-500/0 via-purple-500/10 to-purple-400 rounded-full size-51 md:size-81 lg:size-101 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="bg-linear-to-r from-indigo-500/0 via-purple-500/10 to-purple-400 rounded-full size-52 md:size-82 lg:size-102 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
 
-      <div className="bg-base-100 hover:bg-accent rounded-full overflow-hidden size-51 md:size-80 lg:size-100 relative transision-all duration-700 ease-in-out group">
+      <div className="bg-base-100 hover:bg-accent rounded-full overflow-hidden size-50 md:size-80 lg:size-100 relative transision-all duration-700 ease-in-out group">
         <Image
           src="/images/photo.png"
           className="object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
