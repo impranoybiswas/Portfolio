@@ -18,3 +18,5 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MY_PORTOFULIO }}
           channelId: live
           projectId: my-portofulio
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
