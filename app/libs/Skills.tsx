@@ -1,9 +1,10 @@
 import { FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiFirebase, SiTypescript } from "react-icons/si";
+import { SiMongodb, SiExpress, SiFirebase, SiTypescript, SiNestjs } from "react-icons/si";
 import { FaReact, FaJs } from "react-icons/fa";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa6";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import { RiSupabaseFill } from "react-icons/ri";
+import { BiLogoPostgresql } from "react-icons/bi";
 import {
   SiFigma,
   SiAdobephotoshop,
@@ -70,6 +71,12 @@ export const backendSkills = [
     color: "text-gray-700",
   },
   {
+    name: "Nest.js",
+    icon: <SiNestjs />,
+    bgColor: "bg-red-100",
+    color: "text-pink-700",
+  },
+  {
     name: "MongoDB",
     icon: <SiMongodb />,
     bgColor: "bg-emerald-50",
@@ -85,7 +92,13 @@ export const backendSkills = [
     name: "Supabase",
     icon: <RiSupabaseFill />,
     bgColor: "bg-green-50",
-    color: "text-green-500",
+    color: "text-green-800",
+  },
+  {
+    name: "PostgreSQL",
+    icon: <BiLogoPostgresql />,
+    bgColor: "bg-teal-50",
+    color: "text-teal-700",
   },
 ];
 

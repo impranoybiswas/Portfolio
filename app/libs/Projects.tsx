@@ -7,8 +7,14 @@ import {
   SiNextra,
   SiMongodb,
   SiFirebase,
-  SiExpress,
   SiJavascript,
+  SiReactquery,
+  SiAntdesign,
+  SiSocketdotio,
+  SiJsonwebtokens,
+  SiPrisma,
+  SiPostgresql,
+  SiNestjs,
 } from "react-icons/si";
 
 import { BsFiletypePdf, BsStripe } from "react-icons/bs";
@@ -31,7 +37,7 @@ export const projects = [
       "Framer Motion animations for better UX",
     ],
     live: "https://gadget-hunter-pranoy.vercel.app/",
-    github: "https://github.com/impranoybiswas/Gadget_Hunter",
+    github: "https://github.com/impranoybiswas/gadget-hunter",
     stack: [
       {
         name: "Next.js",
@@ -79,6 +85,96 @@ export const projects = [
   },
   {
     id: 2,
+    title: "Dev Logs",
+    image:
+      "https://res.cloudinary.com/dudvlnxio/image/upload/v1771231492/dev-blogs_knmtcl.png",
+
+    short_desc:
+      "A premium developer workspace to track job applications, build resumes, and connect with other developers in real-time.",
+
+    description:
+      "Dev Logs is a full-stack developer productivity and networking platform designed to help developers manage job applications, build professional resumes, and connect with other developers worldwide. Built with Next.js 15 (App Router) and NestJS, the system uses PostgreSQL with Prisma ORM for scalable database management. It includes JWT-based authentication with Passport, real-time chat using Socket.io, AI-powered resume builder with instant PDF export, analytics visualization with Recharts, and secure image handling via ImageKit.io. The UI is modern, responsive, and premium, powered by Ant Design, Tailwind CSS, and Framer Motion.",
+
+    features: [
+      "Developer dashboard with real-time job application tracking (Pending, Interviewing, Accepted, Rejected)",
+      "AI-powered resume builder with modern templates and instant PDF export",
+      "Real-time messaging system powered by Socket.io",
+      "Friend request system with notifications and global developer search",
+      "Career analytics and progress visualization using Recharts",
+      "Secure JWT authentication with Passport integration",
+      "Image upload handling via ImageKit.io",
+      "Premium responsive UI with Light/Dark theme support"
+    ],
+
+    live: "https://dev-logs-pranoy.vercel.app/",
+    github: "https://github.com/impranoybiswas/dev-logs",
+
+    stack: [
+      {
+        name: "Next.js 15",
+        icon: <SiNextdotjs />,
+        color: "text-black",
+        bg: "bg-gray-100",
+      },
+      {
+        name: "NestJS",
+        icon: <SiNestjs />,
+        color: "text-red-600",
+        bg: "bg-red-50",
+      },
+      {
+        name: "PostgreSQL",
+        icon: <SiPostgresql />,
+        color: "text-blue-700",
+        bg: "bg-blue-50",
+      },
+      {
+        name: "Prisma",
+        icon: <SiPrisma />,
+        color: "text-indigo-600",
+        bg: "bg-indigo-50",
+      },
+      {
+        name: "JWT",
+        icon: <SiJsonwebtokens />,
+        color: "text-yellow-600",
+        bg: "bg-yellow-50",
+      },
+      {
+        name: "Socket.io",
+        icon: <SiSocketdotio />,
+        color: "text-black",
+        bg: "bg-gray-200",
+      },
+      {
+        name: "Ant Design",
+        icon: <SiAntdesign />,
+        color: "text-blue-600",
+        bg: "bg-blue-50",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss />,
+        color: "text-sky-500",
+        bg: "bg-sky-50",
+      },
+      {
+        name: "Framer Motion",
+        icon: <SiFramer />,
+        color: "text-pink-600",
+        bg: "bg-pink-50",
+      },
+      {
+        name: "React Query",
+        icon: <SiReactquery />,
+        color: "text-red-500",
+        bg: "bg-red-50",
+      }
+    ],
+  }
+  ,
+  {
+    id: 3,
     title: "Ticket Hub (Team Project)",
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1764484707/ticket-hub_otqjnu.png",
@@ -141,7 +237,7 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Tower Edge",
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1753454186/tower-edge_cynmxr.png",
@@ -185,55 +281,5 @@ export const projects = [
       },
     ],
   },
-  {
-    id: 4,
-    title: "Share Bite",
-    image:
-      "https://res.cloudinary.com/dudvlnxio/image/upload/v1753454185/share-bite_xx2bdd.png",
-    short_desc:
-      "A community-based food sharing app that connects donors and receivers to reduce food waste sustainably and communicate securely.",
-    description:
-      "Share Bite is a community-driven platform that connects food donors and receivers to minimize food waste. Users can share surplus food, browse available listings nearby, and communicate securely. The platform promotes sustainability and social responsibility through real-time updates and a location-based sharing system. Built with React, Tailwind CSS, and Firebase for secure user authentication and data storage.",
-    features: [
-      "Real-time food listing and updates",
-      "Location-based food sharing",
-      "User authentication with Firebase",
-      "Responsive design for all devices",
-      "Secure donor-receiver communication",
-    ],
-    live: "https://share-bite-pranoy.netlify.app/",
-    github: "https://github.com/impranoybiswas/PH_A11_Share_Bite",
-    stack: [
-      {
-        name: "React",
-        icon: <SiReact />,
-        color: "text-sky-500",
-        bg: "bg-sky-50",
-      },
-      {
-        name: "TailwindCSS",
-        icon: <SiTailwindcss />,
-        color: "text-sky-600",
-        bg: "bg-sky-100",
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        color: "text-green-600",
-        bg: "bg-green-50",
-      },
-      {
-        name: "Express.js",
-        icon: <SiExpress />,
-        color: "text-gray-700",
-        bg: "bg-gray-100",
-      },
-      {
-        name: "Firebase",
-        icon: <SiFirebase />,
-        color: "text-yellow-600",
-        bg: "bg-yellow-50",
-      },
-    ],
-  },
+
 ];
