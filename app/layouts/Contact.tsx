@@ -5,12 +5,16 @@ import { motion } from "motion/react";
 import SocialLinks from "../components/SocialLinks";
 import ContactForm from "../components/ContactForm";
 import ContactLinks from "../components/ContactLinks";
+import QRModal from "../components/QRModal";
 
 
 export default function Contact() {
   return (
     <Section name="contact" title="" subtitle="">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 relative">
+        <div className="absolute top-2 right-0">
+          <QRModal/>
+        </div>
         <motion.div
           initial={{ opacity: 0, x: -120, scale: 0.9 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}

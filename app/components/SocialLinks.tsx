@@ -82,13 +82,13 @@ export const IconWrapper = ({
         backdrop-blur-xl rounded-full flex items-center justify-center transition-all duration-300 border
         ${
           isHighlighted
-            ? " bg-gradient-to-r from-primary/50 to-black/60 border-secondary/50 dark:shadow-blue-500/20 shadow-secondary/40 shadow-2xl animate-breathing-glow"
-            : `bg-secondery ${!isHovered && "animate-float"}`
+            ? " bg-linear-to-r from-primary/50 to-black/60 border-secondary/50 dark:shadow-blue-500/20 shadow-secondary/40 shadow-2xl animate-breathing-glow"
+            : `bg-secondary ${!isHovered && "animate-float"}`
         }
         ${
           isHovered
-            ? " bg-gradient-to-r from-secondary/50 to-black/60 border-secondary/60 scale-110  shadow-blue-400/40 shadow-2xl"
-            : "bg-gradient-to-r from-primary/50 to-black/60 border-secondary/50"
+            ? " bg-linear-to-r from-secondary/50 to-black/60 border-secondary/60 scale-110  shadow-blue-400/40 shadow-2xl"
+            : "bg-linear-to-r from-primary/50 to-black/60 border-secondary/50"
         }
         ${className}
     `}

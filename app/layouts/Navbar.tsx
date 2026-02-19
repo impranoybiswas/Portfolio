@@ -1,18 +1,16 @@
 "use client";
 
-import { FaHome, FaUserAlt } from "react-icons/fa";
+import { FaAt, FaCode, FaHome, FaUserAlt } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import { IoMdSettings } from "react-icons/io";
 import { MdDisplaySettings } from "react-icons/md";
-import { LuContact } from "react-icons/lu";
 import { motion } from "motion/react";
 
 const navLinks = [
-  { name: "About", path: "about", icon: <FaUserAlt size={18} /> },
-  { name: "Skills", path: "skills", icon: <IoMdSettings size={23} /> },
-  { name: "", path: "home", icon: <FaHome size={23} /> },
-  { name: "Projects", path: "projects", icon: <MdDisplaySettings size={23} /> },
-  { name: "Contact", path: "contact", icon: <LuContact size={22} /> },
+  { name: "About", path: "about", icon: <FaUserAlt size={17} /> },
+  { name: "Skills", path: "skills", icon: <FaCode size={22} /> },
+  { name: "", path: "home", icon: <FaHome size={22} /> },
+  { name: "Projects", path: "projects", icon: <MdDisplaySettings size={22} /> },
+  { name: "Contact", path: "contact", icon: <FaAt size={21} /> },
 ];
 
 export default function Navbar() {
@@ -23,7 +21,7 @@ export default function Navbar() {
     transition={{ duration: 0.3, ease: "easeInOut", delay: 0.3 }}
     viewport={{ once: true, amount: 0.2 }}
     className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 scale-99 hover:scale-100 transition-all duration-500 ease-in-out">
-      <div className="flex items-center gap-3 rounded-full border border-secondary/40 bg-primary/20 backdrop-blur-md p-2 shadow-2xl text-white">
+      <div className="flex items-center gap-4 rounded-full border border-secondary/40 bg-primary/20 backdrop-blur-md p-2 shadow-2xl text-white">
         {navLinks.map((link) => {
           return (
             <ScrollLink

@@ -37,7 +37,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
             transition={{ duration: 0.25 }}
             onClick={() => setShowModal(false)}
             className="
-              fixed inset-0 z-[9999]
+              fixed inset-0 z-9999
               flex items-center justify-center
               bg-black/60 backdrop-blur-xl
               px-4 min-h-dvh
