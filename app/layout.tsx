@@ -30,12 +30,12 @@ export const metadata: Metadata = {
 
 /**
  * Root Layout
- * 
+ *
  * The top-level layout wrapper for the application.
  * - Sets up global fonts (Poppins).
  * - Provides global contexts: ThemeProvider, LenisProvider, ScrollProvider.
  * - Includes Navbar, Footer, and Toast notifications.
- * 
+ *
  * @param {Readonly<{ children: React.ReactNode }>} props - The component props
  * @returns {JSX.Element} The root html structure
  */

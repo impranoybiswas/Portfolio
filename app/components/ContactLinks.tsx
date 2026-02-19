@@ -26,7 +26,7 @@ const messengers = [
     ariaLabel: "Chat on Telegram",
     icon: <FaTelegramPlane />,
     hoverColor: "hover:text-orange-400",
-  },
+  }
 ];
 
 export default function ContactLinks() {
@@ -66,7 +66,7 @@ export default function ContactLinks() {
 
       <div className="w-full h-10 bg-base-100/60 backdrop-blur-xl absolute top-0 left-0 z-5" />
 
-      <div className="w-full md:w-3/5 mx-auto mb-3 h-[2px] bg-linear-to-r via-primary/60 via-50% from-transparent to-transparent relative z-10" />
+      <div className="w-full md:w-3/5 mx-auto mb-3 h-0.5 bg-linear-to-r via-primary/60 via-50% from-transparent to-transparent relative z-10" />
       <span className="text-white text-xl lg:text-2xl font-semibold relative z-10">
         Contact Me
       </span>

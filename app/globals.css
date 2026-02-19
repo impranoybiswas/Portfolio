@@ -1,12 +1,26 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
 
-@plugin "daisyui" {
-  themes: all;
+  /* Custom */
+  --primary: #7522c2;
+  --secondary: #852ef4;
+  --accent: #260a2e;
+  --base-100: #1d0326;
+  --base-200: #0c020f;
 }
 
-@plugin "daisyui/theme" {
+/* @theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-base-100: var(--base-100);
+  --color-base-200: var(--base-200);
+} */
+
+/* @plugin "daisyui/theme" {
   name: "light";
   --color-primary: #7522c2;
   --color-secondary: #852ef4;
@@ -20,10 +34,18 @@
   --color-secondary: #852ef4;
   --color-accent: #260a2e;
   --color-base-100: #1d0326;
-}
+} */
 
 /* CUSTOME CSS */
 @theme inline {
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-base-100: var(--base-100);
+  --color-base-200: var(--base-200);
+  --color-bappa: var(--bappa);
+
   --animate-slowSpin: slowSpin 8s ease-in-out infinite;
   @keyframes slowSpin {
     0% {
@@ -66,8 +88,12 @@
 
   --animate-moveGrid: moveGrid 20s linear infinite;
   @keyframes moveGrid {
-    0% { background-position: 0 0; }
-    100% { background-position: 80px 80px; }
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 80px 80px;
+    }
   }
 }
 
