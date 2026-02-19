@@ -17,6 +17,7 @@ declare global {
     color: string;
     bg: string;
   }
+
 }
 
 export {};

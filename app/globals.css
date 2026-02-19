@@ -9,32 +9,8 @@
   --secondary: #852ef4;
   --accent: #260a2e;
   --base-100: #1d0326;
-  --base-200: #0c020f;
+  --base-200: #17061b;
 }
-
-/* @theme inline {
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-base-100: var(--base-100);
-  --color-base-200: var(--base-200);
-} */
-
-/* @plugin "daisyui/theme" {
-  name: "light";
-  --color-primary: #7522c2;
-  --color-secondary: #852ef4;
-  --color-accent: #260a2e;
-  --color-base-100: #1d0326;
-}
-
-@plugin "daisyui/theme" {
-  name: "dark";
-  --color-primary: #7522c2;
-  --color-secondary: #852ef4;
-  --color-accent: #260a2e;
-  --color-base-100: #1d0326;
-} */
 
 /* CUSTOME CSS */
 @theme inline {

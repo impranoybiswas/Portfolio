@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       viewport={{ once: true, amount: 0.2 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="flex justify-center items-center p-[1px] bg-accent border border-primary/30 rounded-2xl shadow-md group"
+      className="flex justify-center items-center p-px bg-accent border border-primary/30 rounded-2xl shadow-md group"
     >
       <div className="flex flex-col w-full h-full p-5 lg:p-8 bg-accent/85 rounded-2xl group-hover:border group-hover:border-transparent">
         <h2 className="text-3xl font-bold mb-5 text-center">{title}</h2>

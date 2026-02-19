@@ -30,7 +30,7 @@ export default function HeroText() {
     >
       <TimeGreeting />
 
-      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-secondary via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-xs mt-2">
+      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-linear-to-r from-secondary via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-xs mt-2">
         I&apos;m Pranoy Biswas Bappa
       </h1>
       <h1 className="text-pink-500 text-xl md:text-2xl mt-5">

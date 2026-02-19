@@ -43,12 +43,8 @@ export default function QRModal() {
               transition={{ duration: 0.35, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
               className="
-                relative w-200
-                rounded-2xl
-                border border-indigo-500/20
-                bg-[#260a2e]
-                shadow-2xl shadow-indigo-500/30
-                max-h-[90vh] overflow-y-scroll
+                relative w-200 rounded-2xl border border-indigo-500/20
+                bg-[#260a2e] shadow-2xl shadow-indigo-500/30 max-h-[90vh]
                 grid grid-cols-3 p-10 gap-10
               "
             >

@@ -34,7 +34,7 @@ export default function Button({
       onClick={onClick}
       type={type}
       disabled={disabled}
-      className="rounded-lg p-[1px] bg-transparent relative overflow-hidden group text-shadow-sm"
+      className="rounded-lg p-px bg-transparent relative overflow-hidden group text-shadow-sm"
     >
       <div
         className={`absolute top-0 left-0 w-full h-full z-5 scale-150
