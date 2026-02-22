@@ -37,15 +37,23 @@ export default function ContactForm() {
       name,
       email,
       subject: `New Message from ${name}`,
-      text: `PORTFOLIO MESSAGE\nName: ${name}\nEmail: ${email}\n\n${message}`,
+      html: `<div>
+        <p style="font-size: 16px; font-weight: bold; color: blue;">New Message from ${name}</p>
+        <p>Name: ${name}</p>
+        <i style="color: gray; font-size: 8px;">Email: ${email}</i>
+        <p>Message: ${message}</p>
+        </div>`,
     };
 
     try {
-      const res = await fetch("https://nextjs-test-pranoy.vercel.app/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(emailData),
-      });
+      const res = await fetch(
+        "https://nextjs-test-pranoy.vercel.app/api/send-email",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(emailData),
+        },
+      );
 
       const data = await res.json();
 
