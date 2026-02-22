@@ -14,13 +14,12 @@
 
 /* CUSTOME CSS */
 @theme inline {
-
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
   --color-base-100: var(--base-100);
   --color-base-200: var(--base-200);
-  --color-bappa: var(--bappa);
+  --color-bappa: var(--primary);
 
   --animate-slowSpin: slowSpin 8s ease-in-out infinite;
   @keyframes slowSpin {
