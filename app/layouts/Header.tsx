@@ -1,8 +1,7 @@
 "use client";
-
-import HeroText from "../components/HeroText";
-import HeroPhoto from "../components/HeroPhoto";
 import { Element } from "react-scroll";
+import HeroPhoto from "../components/HeroPhoto";
+import HeroText from "../components/HeroText";
 
 export default function Header() {
   return (

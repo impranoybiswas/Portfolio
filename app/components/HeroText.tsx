@@ -36,7 +36,7 @@ export default function HeroText() {
       <h1 className="text-pink-500 text-xl md:text-2xl mt-5">
         <Typewriter
           words={[
-            "Full Stack MERN Developer",
+            "Full Stack MERN-Developer",
             "Code Lover & Creative Thinker",
             "Lifelong Learner",
           ]}
@@ -56,6 +56,9 @@ export default function HeroText() {
       <p className="flex-1 font-semibold text-base lg:text-xl text-white text-center md:text-left mt-4">
         Let&apos;s discuss your next project.
       </p>
+      <span className="text-red-500 dark:text-green-400">
+        Hello Ami Checker
+      </span>
       <div className="flex items-center gap-4 mt-6">
         <Link
           href="https://www.linkedin.com/in/impranoybiswas/"

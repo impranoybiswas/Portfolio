@@ -6,6 +6,7 @@ import Skills from "./layouts/Skills";
 import GridBackground from "./components/GridBackground";
 import GoToTop from "./components/GoToTop";
 import SpecialDayPopup from "./components/SpecialDayPopup";
+import SettingButton from "./components/SettingButton";
 
 /**
  * Home Page
@@ -27,6 +28,9 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <span className="fixed bottom-5 right-5 z-100">
+        <SettingButton />
+      </span>
     </main>
   );
 }

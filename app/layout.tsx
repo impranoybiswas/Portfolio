@@ -6,7 +6,8 @@ import LenisProvider from "./providers/LenisProvider";
 import { Toaster } from "react-hot-toast";
 import Footer from "./layouts/Footer";
 import Navbar from "./layouts/Navbar";
-import ThemeProvider from "./providers/ThemeProvider";
+import { ColorProvider } from "./providers/ColorProvider";
+import { ThemeProvider } from "next-themes";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -47,20 +48,27 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body className={`${poppins.variable} antialiased`}>
-        <ThemeProvider>
-          <LenisProvider>
-            <ScrollProvider>
-              <Toaster
-                toastOptions={{ duration: 3000 }}
-                gutter={10}
-                position="top-center"
-                reverseOrder={false}
-              />
-              <Navbar />
-              {children}
-              <Footer />
-            </ScrollProvider>
-          </LenisProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          storageKey="app-theme"
+        >
+          <ColorProvider>
+            <LenisProvider>
+              <ScrollProvider>
+                <Toaster
+                  toastOptions={{ duration: 3000 }}
+                  gutter={10}
+                  position="top-center"
+                  reverseOrder={false}
+                />
+                <Navbar />
+                {children}
+                <Footer />
+              </ScrollProvider>
+            </LenisProvider>
+          </ColorProvider>
         </ThemeProvider>
       </body>
     </html>

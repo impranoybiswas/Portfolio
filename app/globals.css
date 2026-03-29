@@ -1,75 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #09090b;
+/* ===============================
+   Animations
+================================= */
 
-  /* Custom */
-  --primary: #7522c2;
-  --secondary: #852ef4;
-  --accent: #260a2e;
-  --base-100: #1d0326;
-  --base-200: #17061b;
+@theme inline {
+  --animate-slowSpin: slowSpin 8s ease-in-out infinite;
+  --animate-socialSpin: socialSpin 35s ease-in-out infinite;
+  --animate-socialSpinR: socialSpinR 35s ease-in-out infinite;
+  --animate-sillyZoom: sillyZoom 10s ease-in-out infinite;
+  --animate-moveGrid: moveGrid 20s linear infinite;
 }
 
-/* CUSTOME CSS */
-@theme inline {
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-base-100: var(--base-100);
-  --color-base-200: var(--base-200);
-  --color-bappa: var(--primary);
+/* Keyframes */
 
-  --animate-slowSpin: slowSpin 8s ease-in-out infinite;
-  @keyframes slowSpin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  --animate-socialSpin: socialSpin 35s ease-in-out infinite;
-  @keyframes socialSpin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-  --animate-socialSpinR: socialSpinR 35s ease-in-out infinite;
-  @keyframes socialSpinR {
-    0% {
-      transform: rotate(360deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
+@keyframes socialSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-  --animate-sillyZoom: sillyZoom 10s ease-in-out infinite;
-  @keyframes sillyZoom {
-    0%,
-    100% {
-      transform: scale(0.9);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-  }
+@keyframes socialSpinR {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
 
-  --animate-moveGrid: moveGrid 20s linear infinite;
-  @keyframes moveGrid {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 80px 80px;
-    }
-  }
+@keyframes sillyZoom {
+  0%, 100% { transform: scale(0.9); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 80px 80px; }
 }
 
 /* LENIS SMOOTH SCROLLING */
