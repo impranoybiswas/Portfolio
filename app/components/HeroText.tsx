@@ -30,10 +30,10 @@ export default function HeroText() {
     >
       <TimeGreeting />
 
-      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-linear-to-r from-secondary via-purple-500 to-pink-500 bg-clip-text text-transparent py-3 text-shadow-xs mt-2">
+      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-linear-to-r from-primary via-primary to-secondary bg-clip-text text-transparent py-3 text-shadow-xs mt-2">
         I&apos;m Pranoy Biswas Bappa
       </h1>
-      <h1 className="text-pink-500 text-xl md:text-2xl mt-5">
+      <h1 className="text-secondary text-xl md:text-2xl mt-5">
         <Typewriter
           words={[
             "Full Stack MERN-Developer",
@@ -48,23 +48,20 @@ export default function HeroText() {
           delaySpeed={1500}
         />
       </h1>
-      <p className="text-base lg:text-xl text-white mt-5 text-center md:text-left">
+      <p className="text-base lg:text-xl mt-5 text-center md:text-left">
         I specialize in creating performant, responsive, and maintainable web
         applications using Next.Js React.Js, TailwindCSS, Express.js, MongoDB,
         Firebase, Supabase and more.
       </p>
-      <p className="flex-1 font-semibold text-base lg:text-xl text-white text-center md:text-left mt-4">
+      <p className="flex-1 font-semibold text-base lg:text-xl text-center md:text-left mt-4">
         Let&apos;s discuss your next project.
       </p>
-      <span className="text-red-500 dark:text-green-400">
-        Hello Ami Checker
-      </span>
       <div className="flex items-center gap-4 mt-6">
         <Link
           href="https://www.linkedin.com/in/impranoybiswas/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex justify-center items-center text-white hover:text-secondary transition-all duration-300 ease-in-out"
+          className="flex justify-center items-center hover:text-secondary transition-all duration-300 ease-in-out"
         >
           <FaLinkedin size={30} />
         </Link>
@@ -72,7 +69,7 @@ export default function HeroText() {
           href="https://www.github.com/impranoybiswas/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex justify-center items-center text-white hover:text-secondary transition-all duration-300 ease-in-out"
+          className="flex justify-center items-center hover:text-secondary transition-all duration-300 ease-in-out"
         >
           <FaGithub size={30} />
         </Link>

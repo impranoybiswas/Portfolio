@@ -1,7 +1,26 @@
 "use client";
 import { motion } from "motion/react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function HeroVideo() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="size-50 md:size-80 lg:size-100 rounded-full bg-background/20 animate-pulse relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full size-51 md:size-81 lg:size-101 border border-primary/20" />
+      </div>
+    );
+  }
+
+  const isDark = resolvedTheme === "dark";
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -16,24 +35,30 @@ export default function HeroVideo() {
       viewport={{ once: true, amount: 0.2 }}
       className="relative"
     >
-      {/* <motion.div
+      <motion.div
         initial={{ rotate: 0 }}
         animate={{ rotate: 360 }}
         transition={{
-          duration: 10, // slow rotation (seconds)
-          repeat: Infinity, // loop forever
-          ease: "linear", // keep speed constant
+          duration: 10,
+          repeat: Infinity,
+          ease: "linear",
         }}
-        className="bg-linear-to-r from-indigo-500/0 via-purple-500/10 to-purple-400 rounded-full size-52 md:size-82 lg:size-102 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      /> */}
+        className="bg-linear-to-r from-indigo-500/0 via-primary/50 to-primary rounded-full size-51 md:size-81 lg:size-101 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      />
 
-      <div className="bg-white hover:bg-accent rounded-full overflow-hidden size-50 md:size-80 lg:size-100 relative transition-all duration-700 ease-in-out group shadow-inner shadow-accent">
+      <div className="bg-background rounded-full overflow-hidden size-50 md:size-80 lg:size-100 relative transition-all duration-700 ease-in-out group shadow-inner shadow-black/10">
         <video
-          src="/videos/me-dark.mp4"
+          key={isDark ? "dark" : "light"}
+          src={
+            isDark
+              ? "https://res.cloudinary.com/dudvlnxio/video/upload/v1774808863/me-dark_cvgh9j.mp4"
+              : "https://res.cloudinary.com/dudvlnxio/video/upload/v1774808852/me-light_cwfkrc.mp4"
+          }
           autoPlay
           loop
           muted
-          className="w-full h-full object-cover mix-blend-screen"
+          playsInline
+          className={`w-full h-full object-cover ${isDark ? "mix-blend-screen" : "mix-blend-multiply"}`}
         />
       </div>
     </motion.div>

@@ -65,25 +65,25 @@ export default function Modal({
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
               className={`
-                relative bg-base-100 rounded-3xl shadow-2xl 
+                relative bg-background rounded-3xl shadow-2xl 
                 w-full ${containerSizes[size]} overflow-hidden flex flex-col
               `}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-base-content/5">
-                <h3 className="text-xl font-bold text-base-content">
+              <div className="flex items-center justify-between p-6 border-b border-foreground/5">
+                <h3 className="text-xl font-bold text-foreground">
                   {title || "Modal Details"}
                 </h3>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="size-10 rounded-full flex items-center justify-center text-base-content/40 hover:text-base-content hover:bg-base-200 transition-colors cursor-pointer"
+                  className="size-10 rounded-full flex items-center justify-center text-foreground/40 hover:text-red-500/50 hover:bg-base-200/50 transition-colors cursor-pointer"
                 >
                   <CgClose size={22} />
                 </button>
               </div>
 
               {/* Body */}
-              <div className="p-8 overflow-y-auto max-h-[80vh]">{children}</div>
+              <div className="p-4 overflow-y-auto max-h-[80vh]">{children}</div>
             </motion.div>
           </div>
         )}

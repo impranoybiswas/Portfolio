@@ -19,18 +19,18 @@ import SettingButton from "./components/SettingButton";
  */
 export default function Home() {
   return (
-    <main className="bg-base-100 w-full px-5 md:px-12 lg:px-20 mx-auto flex flex-col items-center text-white overflow-hidden font-poppins">
-      <GridBackground />
-      <GoToTop />
-      <SpecialDayPopup />
+    <main className="w-full px-5 md:px-12 lg:px-20 mx-auto flex flex-col items-center overflow-hidden font-poppins">
       <Header />
       <About />
       <Skills />
       <Projects />
       <Contact />
-      <span className="fixed bottom-5 right-5 z-100">
+      <span className="fixed bottom-12 right-20 z-150 size-10 bg-secondary flex justify-center items-center rounded-full border border-primary text-white text-2xl">
         <SettingButton />
       </span>
+      <GridBackground />
+      <GoToTop />
+      <SpecialDayPopup />
     </main>
   );
 }

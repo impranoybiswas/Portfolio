@@ -1,6 +1,23 @@
 @import "tailwindcss";
 
 /* ===============================
+   Tailwind Theme Mapping
+================================= */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-base-100: var(--base-100);
+  --color-base-200: var(--base-200);
+}
+
+/* ===============================
    Animations
 ================================= */
 
@@ -15,28 +32,49 @@
 /* Keyframes */
 
 @keyframes slowSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes socialSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes socialSpinR {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes sillyZoom {
-  0%, 100% { transform: scale(0.9); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 @keyframes moveGrid {
-  from { background-position: 0 0; }
-  to { background-position: 80px 80px; }
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 80px;
+  }
 }
 
 /* LENIS SMOOTH SCROLLING */

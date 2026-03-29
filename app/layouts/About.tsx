@@ -18,7 +18,7 @@ const educations = [
   {
     degree: "HSC in Science",
     institution: "Cox's Bazar Govt. College",
-    session: "2014 - 2015",
+    session: "2013 - 2014",
   },
   {
     degree: "SSC in Science",
@@ -31,14 +31,14 @@ export default function About() {
   return (
     <Section name="about" title="About Me" className="relative">
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 z-10">
-        <div className="text-white/70 text-center md:text-justify text-base md:text-lg lg:flex-2 leading-6 md:leading-8 space-y-4">
+        <div className="text-foreground/80 text-center md:text-justify text-base md:text-lg lg:flex-2 leading-6 md:leading-8 space-y-4">
           <p>
             I am <strong>Pranoy Biswas Bappa</strong>, a postgraduate in
-            <strong> Mathematics</strong> with a deep passion for coding, design,
-            and modern technology. My journey into web development began in 2025
-            through the <strong>Programming Hero</strong> program, where I built
-            a solid foundation in contemporary tech stacks, clean architecture,
-            and industry best practices.
+            <strong> Mathematics</strong> with a deep passion for coding,
+            design, and modern technology. My journey into web development began
+            in 2025 through the <strong>Programming Hero</strong> program, where
+            I built a solid foundation in contemporary tech stacks, clean
+            architecture, and industry best practices.
           </p>
 
           <p>
@@ -66,9 +66,9 @@ export default function About() {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="md:border-l md:border-white pl-5 lg:pl-8 lg:flex-1"
+          className="md:border-l md:border-secondary/40 pl-5 lg:pl-8 lg:flex-1"
         >
-          <h1 className="pb-6 text-2xl md:text-3xl font-semibold text-shadow-xs">
+          <h1 className="pb-8 text-2xl md:text-3xl font-semibold text-shadow-xs">
             Education
           </h1>
           <div className="flex flex-col gap-5 ">

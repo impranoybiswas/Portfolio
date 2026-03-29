@@ -51,10 +51,8 @@ export default function ProjectDetails({ project }: { project: Project }) {
               onClick={(e) => e.stopPropagation()}
               className="
                 relative w-full max-w-5xl
-                rounded-2xl
-                border border-indigo-500/20
-                bg-[#260a2e]
-                shadow-2xl shadow-indigo-500/30
+                rounded-2xl border border-secondary/50
+                bg-base-100 shadow-2xl shadow-secondary/30
                 max-h-[90vh] overflow-y-scroll
               "
             >
@@ -64,29 +62,29 @@ export default function ProjectDetails({ project }: { project: Project }) {
                 className="
                   absolute right-2 top-4 z-20
                   flex h-9 w-9 items-center justify-center
-                  rounded-full bg-white/10
+                  rounded-full bg-foreground/50
                   hover:bg-red-500/70 transition cursor-pointer
                 "
               >
-                <TfiClose className="text-white text-sm" />
+                <TfiClose className="text-background text-sm" />
               </button>
 
               {/* Content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-5 md:p-8 overflow-y-scroll h-auto md:h-[90vh]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-5 md:p-8 h-auto md:h-[88vh]">
                 {/* Details */}
-                <div className="flex flex-col gap-4 text-white">
-                  <h2 className="text-2xl font-bold text-indigo-400">
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-2xl font-bold text-primary">
                     {title}
                   </h2>
 
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
                     {description}
                   </p>
 
                   {/* Features */}
                   <div>
                     <h3 className="font-semibold mb-1">Features</h3>
-                    <ul className="list-disc list-inside text-sm text-slate-300 space-y-1">
+                    <ul className="list-disc list-inside text-sm text-foreground space-y-1">
                       {features.map((f, i) => (
                         <li key={i}>{f}</li>
                       ))}
@@ -103,7 +101,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
                           className="
                             flex items-center gap-1
                             rounded-full px-3 py-1
-                            text-xs bg-white/10
+                            text-xs bg-foreground/10
                           "
                         >
                           {tech.icon}

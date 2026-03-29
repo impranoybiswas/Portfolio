@@ -79,10 +79,10 @@ export const IconWrapper = ({
 }) => (
   <div
     className={`
-        backdrop-blur-xl rounded-full flex items-center justify-center transition-all duration-300 border
+        backdrop-blur-xl rounded-full flex items-center justify-center transition-all duration-300 border text-white
         ${
           isHighlighted
-            ? " bg-linear-to-r from-primary/50 to-black/60 border-secondary/50 dark:shadow-blue-500/20 shadow-secondary/40 shadow-2xl animate-breathing-glow"
+            ? " bg-linear-to-r from-secondary/50 to-black/60 border-secondary/50 dark:shadow-blue-500/20 shadow-secondary/40 shadow-2xl animate-breathing-glow"
             : `bg-secondary ${!isHovered && "animate-float"}`
         }
         ${
@@ -156,7 +156,7 @@ const IconGrid = () => {
                 y1={y1}
                 x2={x2}
                 y2={y2}
-                stroke={isLineActive ? "#852ef4" : "#6B7280"}
+                stroke={isLineActive ? "var(--primary)" : "var(--secondary)"}
                 strokeWidth="1.5"
                 className="transition-all duration-300 ease-in-out"
                 style={{ opacity: isLineActive ? 0.8 : 0.25 }}
@@ -187,7 +187,7 @@ const IconGrid = () => {
                 y1={startY}
                 x2={endX}
                 y2={endY}
-                stroke={isSpokeActive ? "#852ef4" : "#6B7280"}
+                stroke={isSpokeActive ? "var(--primary)" : "var(--secondary)"}
                 strokeWidth="1.5"
                 className="transition-all duration-300 ease-in-out"
                 style={{ opacity: isSpokeActive ? 1 : 0.25 }}
@@ -203,7 +203,7 @@ const IconGrid = () => {
         {/* Center Icon */}
         <div className="absolute -translate-x-1/2 -translate-y-1/2 z-10">
           <IconWrapper
-            className="w-25 h-25 text-5xl text-secondary text-shadow-sm relative group"
+            className="w-25 h-25 text-5xl bg-primary text-shadow-sm relative group"
             isHighlighted={true}
             animationDelay={0}
           >
@@ -239,7 +239,7 @@ const IconGrid = () => {
               <div className="-translate-x-1/2 -translate-y-1/2 relative">
                 {/* Spotlight effect */}
                 <div
-                  className={`absolute inset-[-20px] bg-blue-500/20 dark:bg-blue-500/30 rounded-full blur-2xl transition-opacity duration-300 ${
+                  className={`absolute inset-[-20px] bg-primary/30 rounded-full blur-2xl transition-opacity duration-300 ${
                     isHovered ? "opacity-100" : "opacity-0"
                   }`}
                 ></div>

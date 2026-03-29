@@ -21,7 +21,7 @@ export default function Navbar() {
     transition={{ duration: 0.3, ease: "easeInOut", delay: 0.3 }}
     viewport={{ once: true, amount: 0.2 }}
     className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 scale-99 hover:scale-100 transition-all duration-500 ease-in-out">
-      <div className="flex items-center gap-4 rounded-full border border-secondary/40 bg-primary/20 backdrop-blur-md p-2 shadow-2xl text-white">
+      <div className="flex items-center gap-4 rounded-full border border-secondary/40 bg-background/50 backdrop-blur-md p-2 shadow-2xl text-foreground">
         {navLinks.map((link) => {
           return (
             <ScrollLink
@@ -31,8 +31,8 @@ export default function Navbar() {
               duration={1000}
               spy={true}
               offset={-30}
-              className="group h-10 w-10 md:w-auto flex items-center justify-center rounded-full transition-all duration-300 ease-in-out text-white hover:bg-primary/20 cursor-pointer md:px-4 text-shadow-xs text-lg md:text-base"
-              activeClass="bg-pink-600 text-secondary ring-1 ring-secondary/30 whitespace-nowrap"
+              className="group h-10 w-10 md:w-auto flex items-center justify-center rounded-full transition-all duration-300 ease-in-out hover:bg-secondary cursor-pointer md:px-4 text-shadow-xs text-lg md:text-base"
+              activeClass="bg-secondary text-white ring-1 ring-secondary/30 whitespace-nowrap"
             >
               <motion.div className="flex items-center gap-2" whileTap={{ scale: 0.9 }}>{link.icon}
               {link.name !== "" && (

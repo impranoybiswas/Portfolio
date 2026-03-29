@@ -40,8 +40,8 @@ export default function Button({
         className={`absolute top-0 left-0 w-full h-full z-5 scale-150
           ${
             isOutline
-              ? "bg-linear-to-b from-transparent via-secondary to-transparent animate-slowSpin"
-              : "bg-linear-to-r from-primary to-secondary group-hover:bg-linear-to-l group-hover:via-purple-700 group-hover:to-pink-600 text-white"
+              ? "bg-linear-to-b from-transparent via-primary to-transparent animate-slowSpin"
+              : "bg-linear-to-br from-primary via-primary to-secondary group-hover:bg-linear-to-br group-hover:from-secondary group-hover:via-primary group-hover:to-primary transition-all duration-500 ease-in-out"
           }
         `}
       />
@@ -50,8 +50,8 @@ export default function Button({
         className={`${className} relative flex justify-center items-center gap-2 rounded-lg font-semibold cursor-pointer transition-all duration-500 ease-in-out group z-10
           ${
             isOutline
-              ? "text-secondary bg-base-100 hover:bg-accent border border-secondary/30 hover:border-secondary/30"
-              : ""
+              ? "text-primary bg-background border border-primary/10 hover:border-primary/30"
+              : "text-primary-foreground"
           }
           ${isLarge ? "text-xl md:text-2xl h-14 px-6" : "text-base h-9 px-5"}
         `}

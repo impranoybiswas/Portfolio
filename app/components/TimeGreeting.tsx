@@ -28,7 +28,7 @@ export default function TimeGreeting() {
   }, []);
 
   return (
-    <h1 className="tracking-wide text-white text-2xl md:text-3xl font-semibold text-center md:text-left">
+    <h1 className="tracking-wide text-foreground text-2xl md:text-3xl font-semibold text-center md:text-left">
       Hi There! <br className="block md:hidden"/> {greeting}
     </h1>
   );

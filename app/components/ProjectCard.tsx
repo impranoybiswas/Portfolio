@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    e.currentTarget.style.background = `radial-gradient(circle at ${x}px ${y}px,  #7522c2, #260a2e, #260a2e)`;
+    e.currentTarget.style.background = `radial-gradient(circle at ${x}px ${y}px,  var(--primary), var(--background), var(--background))`;
 
     e.currentTarget.style.border = "none";
   };
@@ -35,8 +35,8 @@ export default function ProjectCard({ project }: { project: Project }) {
   const handleMouseLeave = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-    e.currentTarget.style.background = "#260a2e";
-    e.currentTarget.style.border = "1px solid #852ef430";
+    e.currentTarget.style.background = "var(--background)";
+    e.currentTarget.style.border = "2px solid var(--base-200)";
   };
 
   return (
@@ -47,11 +47,11 @@ export default function ProjectCard({ project }: { project: Project }) {
       viewport={{ once: true, amount: 0.2 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="flex justify-center items-center p-px bg-accent border border-primary/30 rounded-2xl shadow-md group"
+      className="flex justify-center items-center p-px bg-base-200 border border-primary/30 rounded-2xl shadow-md group text-foreground"
     >
-      <div className="flex flex-col w-full h-full p-5 lg:p-8 bg-accent/85 rounded-2xl group-hover:border group-hover:border-transparent">
+      <div className="flex flex-col w-full h-full p-5 lg:p-8 bg-base-200/90 rounded-2xl group-hover:border group-hover:border-transparent">
         <h2 className="text-3xl font-bold mb-5 text-center">{title}</h2>
-        <p className="text-gray-100 text-center mb-6">{short_desc}</p>
+        <p className="text-foreground/80 text-center mb-6">{short_desc}</p>
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8">
           {stack.map((tech, index) => (

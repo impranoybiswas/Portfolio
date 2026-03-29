@@ -78,7 +78,7 @@ export default function ContactForm() {
       className="w-full flex flex-col gap-5 md:gap-7"
     >
       <div>
-        <label htmlFor="name" className="block mb-1 font-medium text-white">
+        <label htmlFor="name" className="block mb-1 font-medium text-foreground/80">
           Your Name
         </label>
         <input
@@ -92,7 +92,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block mb-1 font-medium text-white">
+        <label htmlFor="email" className="block mb-1 font-medium text-foreground/80">
           Your Email
         </label>
         <input
@@ -106,7 +106,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block mb-1 font-medium text-white">
+        <label htmlFor="message" className="block mb-1 font-medium text-foreground/80">
           Your Message
         </label>
         <textarea
