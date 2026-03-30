@@ -1,12 +1,12 @@
-import About from "./layouts/About";
-import Contact from "./layouts/Contact";
-import Header from "./layouts/Header";
-import Projects from "./layouts/Projects";
-import Skills from "./layouts/Skills";
-import GridBackground from "./components/GridBackground";
-import GoToTop from "./components/GoToTop";
-import SpecialDayPopup from "./components/SpecialDayPopup";
-import SettingButton from "./components/SettingButton";
+import About from "../layouts/About";
+import Contact from "../layouts/Contact";
+import Header from "../layouts/Header";
+import Projects from "../layouts/Projects";
+import Skills from "../layouts/Skills";
+import GridBackground from "../components/GridBackground";
+import GoToTop from "../components/GoToTop";
+import SpecialDayPopup from "../components/SpecialDayPopup";
+import SettingButton from "../components/SettingButton";
 
 /**
  * Home Page

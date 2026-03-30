@@ -12,14 +12,16 @@ export default function FontController() {
           onClick={() => {
             setFont(f.value);
           }}
-          className={`flex items-center justify-between px-4 py-2 rounded-lg border border-secondary/30 transition text-sm cursor-pointer ${
+          className={`flex items-center justify-between px-4 py-2 rounded-lg border transition text-sm cursor-pointer ${
             font === f.value
-              ? "border-primary bg-primary/10 text-primary"
-              : "border-border hover:bg-muted"
+              ? "border-primary/50 bg-primary/10 shadow shadow-primary/10"
+              : "border-primary/20 hover:bg-base-100/60 text-foreground/30"
           }`}
         >
           <span style={{ fontFamily: f.value }}>{f.name}</span>
-          {font === f.value && <span className="text-xs text-primary pl-1">✓</span>}
+          {font === f.value && (
+            <span className="text-xs text-primary pl-1">✓</span>
+          )}
         </button>
       ))}
     </div>

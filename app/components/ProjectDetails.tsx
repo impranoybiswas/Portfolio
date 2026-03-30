@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "motion/react";
+import { ReactNode, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { TbListDetails, TbWorld } from "react-icons/tb";
@@ -10,11 +10,21 @@ import { FaGithub } from "react-icons/fa";
 
 import Button from "../ui/Button";
 import Portal from "../ui/Portal";
+import { useTranslations } from "next-intl";
+
+interface Project {
+  key: string;
+  image: string;
+  stack: { name: string; icon: ReactNode }[];
+  live: string;
+  github: string;
+}
 
 export default function ProjectDetails({ project }: { project: Project }) {
   const [showModal, setShowModal] = useState(false);
+  const t = useTranslations("projects");
 
-  const { title, image, description, features, stack, live, github } = project;
+  const { key, image, stack, live, github } = project;
 
   return (
     <>
@@ -23,7 +33,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
         isLarge={false}
         isOutline={false}
         onClick={() => setShowModal(true)}
-        label="View Details"
+        label={t("buttons.viewDetails")}
         leftIcon={<TbListDetails />}
       />
 
@@ -74,26 +84,32 @@ export default function ProjectDetails({ project }: { project: Project }) {
                 {/* Details */}
                 <div className="flex flex-col gap-4">
                   <h2 className="text-2xl font-bold text-primary">
-                    {title}
+                    {t(`list.${key}.title`)}
                   </h2>
 
                   <p className="text-sm text-foreground/80 leading-relaxed">
-                    {description}
+                    {t(`list.${key}.description`)}
                   </p>
 
                   {/* Features */}
                   <div>
-                    <h3 className="font-semibold mb-1">Features</h3>
+                    <h3 className="font-semibold mb-1">
+                      {t("labels.features")}
+                    </h3>
                     <ul className="list-disc list-inside text-sm text-foreground space-y-1">
-                      {features.map((f, i) => (
-                        <li key={i}>{f}</li>
-                      ))}
+                      {(t.raw(`list.${key}.features`) as string[]).map(
+                        (f, i) => (
+                          <li key={i}>{f}</li>
+                        ),
+                      )}
                     </ul>
                   </div>
 
                   {/* Stack */}
                   <div>
-                    <h3 className="font-semibold mb-1">Tech Stack</h3>
+                    <h3 className="font-semibold mb-1">
+                      {t("labels.techStack")}
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {stack.map((tech, i) => (
                         <span
@@ -117,14 +133,14 @@ export default function ProjectDetails({ project }: { project: Project }) {
                       <Button
                         isLarge={false}
                         isOutline={false}
-                        label="GitHub"
+                        label={t("buttons.github")}
                         leftIcon={<FaGithub />}
                       />
                     </Link>
                     <Link href={live} target="_blank">
                       <Button
                         isLarge={false}
-                        label="Live"
+                        label={t("buttons.live")}
                         isOutline
                         leftIcon={<TbWorld />}
                       />
@@ -136,7 +152,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
                   <div className="relative z-10">
                     <Image
                       src={image}
-                      alt={title}
+                      alt={key}
                       width={500}
                       height={500}
                       className="w-full h-full object-cover"

@@ -4,9 +4,11 @@ import { FaEnvelope, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import { IconWrapper } from "./SocialLinks";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const messengers = [
   {
+    key: "email",
     name: "Email",
     url: "mailto:impranoybiswas@gmail.com",
     ariaLabel: "Send email",
@@ -14,6 +16,7 @@ const messengers = [
     hoverColor: "hover:text-blue-800",
   },
   {
+    key: "whatsapp",
     name: "WhatsApp",
     url: "https://wa.me/8801521305572",
     ariaLabel: "Chat on WhatsApp",
@@ -21,6 +24,7 @@ const messengers = [
     hoverColor: "hover:text-green-600",
   },
   {
+    key: "telegram",
     name: "Telegram",
     url: "https://t.me/impranoybiswas",
     ariaLabel: "Chat on Telegram",
@@ -30,6 +34,8 @@ const messengers = [
 ];
 
 export default function ContactLinks() {
+  const t = useTranslations("contact");
+
   return (
     <div className="w-full text-center relative">
       <div className="flex items-center justify-center gap-4 absolute -top-15 left-1/2 -translate-x-1/2 z-5">
@@ -56,7 +62,7 @@ export default function ContactLinks() {
               >
                 {messenger.icon}
                 <span className="absolute top-0 left-0 text-xs scale-0 group-hover:scale-100 group-hover:-top-6 group-hover:-left-9 transition-all duration-500 ease-in-out bg-primary px-2 py-1 rounded-full border-secondary border shadow-xs whitespace-nowrap">
-                  {messenger.name}
+                  {t(`links.${messenger.key}`)}
                 </span>
               </IconWrapper>
             </Link>
@@ -68,7 +74,7 @@ export default function ContactLinks() {
 
       <div className="w-full h-12 bg-linear-to-b from-background via-background/50 to-transparent backdrop-blur absolute top-0 left-0 z-5" />
       <span className="text-foreground text-xl lg:text-2xl font-semibold relative z-10">
-        Contact Me
+        {t("contactMe")}
       </span>
     </div>
   );

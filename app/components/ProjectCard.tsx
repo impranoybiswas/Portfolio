@@ -7,14 +7,16 @@ import Button from "../ui/Button";
 import { motion } from "motion/react";
 import Link from "next/link";
 import ProjectDetails from "./ProjectDetails";
+import { useTranslations } from "next-intl";
 
-export default function ProjectCard({ project }: { project: Project }) {
-  const { id, title, image, short_desc, stack, live, github } = project;
+export default function ProjectCard({ project }: { project: any }) {
+  const { id, key, title, image, stack, live, github } = project;
+  const t = useTranslations("projects");
 
   /**
    * Handles mouse movement over the card to create a dynamic radial gradient glow effect.
    * Updates the background style directly for performance.
-   * 
+   *
    * @param {React.MouseEvent<HTMLDivElement, MouseEvent>} e - Mouse event
    */
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -29,11 +31,11 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   /**
    * Resets the card style when mouse leaves.
-   * 
+   *
    * @param {React.MouseEvent<HTMLDivElement, MouseEvent>} e - Mouse event
    */
   const handleMouseLeave = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
     e.currentTarget.style.background = "var(--background)";
     e.currentTarget.style.border = "2px solid var(--base-200)";
@@ -50,11 +52,15 @@ export default function ProjectCard({ project }: { project: Project }) {
       className="flex justify-center items-center p-px bg-base-200 border border-primary/30 rounded-2xl shadow-md group text-foreground"
     >
       <div className="flex flex-col w-full h-full p-5 lg:p-8 bg-base-200/90 rounded-2xl group-hover:border group-hover:border-transparent">
-        <h2 className="text-3xl font-bold mb-5 text-center">{title}</h2>
-        <p className="text-foreground/80 text-center mb-6">{short_desc}</p>
+        <h2 className="text-3xl font-bold mb-5 text-center">
+          {t(`list.${key}.title`)}
+        </h2>
+        <p className="text-foreground/80 text-center mb-6">
+          {t(`list.${key}.shortDesc`)}
+        </p>
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8">
-          {stack.map((tech, index) => (
+          {stack.map((tech: any, index: number) => (
             <span
               key={index}
               className={`flex items-center gap-1 px-3 py-1 rounded-md shadow text-xs ${tech.bg} ${tech.color}`}
@@ -84,7 +90,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             <Button
               isLarge={false}
               isOutline={false}
-              label="GitHub"
+              label={t("buttons.github")}
               leftIcon={<FaGithub />}
             />
           </Link>
@@ -92,7 +98,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             <Button
               isLarge={false}
               isOutline={true}
-              label="Live"
+              label={t("buttons.live")}
               leftIcon={<TbWorld />}
             />
           </a>

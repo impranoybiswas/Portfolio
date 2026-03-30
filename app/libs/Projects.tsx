@@ -22,6 +22,7 @@ import { BsFiletypePdf, BsStripe } from "react-icons/bs";
 export const projects = [
   {
     id: 1,
+    key: "gadgetHunter",
     title: "Gadget Hunter",
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1764484475/gadget-hunter_j9kprs.png",
@@ -85,6 +86,7 @@ export const projects = [
   },
   {
     id: 2,
+    key: "devLogs",
     title: "Dev Logs",
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1771231492/dev-blogs_knmtcl.png",
@@ -103,7 +105,7 @@ export const projects = [
       "Career analytics and progress visualization using Recharts",
       "Secure JWT authentication with Passport integration",
       "Image upload handling via ImageKit.io",
-      "Premium responsive UI with Light/Dark theme support"
+      "Premium responsive UI with Light/Dark theme support",
     ],
 
     live: "https://dev-logs-pranoy.vercel.app/",
@@ -169,12 +171,12 @@ export const projects = [
         icon: <SiReactquery />,
         color: "text-red-500",
         bg: "bg-red-50",
-      }
+      },
     ],
-  }
-  ,
+  },
   {
     id: 3,
+    key: "ticketHub",
     title: "Ticket Hub (Team Project)",
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1764484707/ticket-hub_otqjnu.png",
@@ -238,6 +240,7 @@ export const projects = [
   },
   {
     id: 4,
+    key: "towerEdge",
     title: "Tower Edge",
     image:
       "https://res.cloudinary.com/dudvlnxio/image/upload/v1753454186/tower-edge_cynmxr.png",
@@ -281,5 +284,4 @@ export const projects = [
       },
     ],
   },
-
 ];

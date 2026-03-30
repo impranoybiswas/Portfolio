@@ -70,7 +70,7 @@ export default function Modal({
               `}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-secondary/20">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-secondary/20 bg-base-200/50">
                 <h3 className="text-xl font-bold text-foreground">
                   {title || "Modal Details"}
                 </h3>
@@ -83,7 +83,7 @@ export default function Modal({
               </div>
 
               {/* Body */}
-              <div className="p-4 overflow-y-auto max-h-[80vh]">{children}</div>
+              <div className="px-5 pt-8 pb-5 overflow-y-auto max-h-[80vh]">{children}</div>
             </motion.div>
           </div>
         )}

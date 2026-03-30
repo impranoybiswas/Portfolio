@@ -12,8 +12,11 @@ import {
 } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 
+import { useTranslations } from "next-intl";
+
 interface SocialLink {
   id: number;
+  key: string;
   name: string;
   icon: React.ReactNode;
   link: string;
@@ -22,42 +25,49 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     id: 1,
+    key: "linkedin",
     name: "Linkedin",
     icon: <FaLinkedin />,
     link: "https://www.linkedin.com/in/impranoybiswas/",
   },
   {
     id: 2,
+    key: "github",
     name: "Github",
     icon: <FaGithub />,
     link: "https://github.com/impranoybiswas",
   },
   {
     id: 3,
+    key: "facebook",
     name: "Facebook",
     icon: <FaFacebook />,
     link: "https://www.facebook.com/impranoybiswas",
   },
   {
     id: 4,
+    key: "instagram",
     name: "Instagram",
     icon: <FaInstagram />,
     link: "https://www.instagram.com/impranoybiswas",
   },
   {
     id: 5,
+    key: "behance",
     name: "Behance",
     icon: <FaBehance />,
     link: "https://www.behance.com/impranoybiswas",
   },
   {
     id: 6,
+    key: "twitter",
     name: "Twitter",
     icon: <FaTwitter />,
     link: "https://twitter.com/impranoybiswas",
   },
   {
     id: 7,
+    key: "threads",
     name: "Threads",
     icon: <FaThreads />,
     link: "https://www.threads.net/@impranoybiswas",
@@ -100,6 +110,7 @@ export const IconWrapper = ({
 
 const IconGrid = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const t = useTranslations("contact");
 
   // Constants for layout calculation
   const radius = 160;
@@ -208,8 +219,8 @@ const IconGrid = () => {
             animationDelay={0}
           >
             <FaHashtag />
-            <span className="absolute top-0 left-0 text-sm scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs text-white">
-              Social Media
+            <span className="absolute top-0 left-0 text-sm scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-12 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs text-white whitespace-nowrap">
+              {t("socialMedia")}
             </span>
           </IconWrapper>
         </div>
@@ -251,7 +262,7 @@ const IconGrid = () => {
                 >
                   {link.icon}
                   <span className="absolute top-0 left-0 text-xs scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-7 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs">
-                    {link.name}
+                    {t(`links.${link.key}`)}
                   </span>
                 </IconWrapper>
               </div>

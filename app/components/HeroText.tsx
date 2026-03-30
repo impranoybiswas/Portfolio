@@ -9,11 +9,13 @@ import Button from "../ui/Button";
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TimeGreeting from "./TimeGreeting";
+import { useTranslations } from "next-intl";
 
 export const resumeLink =
   "https://drive.google.com/file/d/1q1GvCYP-pihc6pnOu5fgY5zN-USw33Sk/view";
 
 export default function HeroText() {
+  const t = useTranslations("header");
   return (
     <motion.div
       initial={{ opacity: 0, x: 100 }}
@@ -31,15 +33,11 @@ export default function HeroText() {
       <TimeGreeting />
 
       <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-linear-to-r from-primary via-primary to-secondary bg-clip-text text-transparent py-3 text-shadow-xs mt-2">
-        I&apos;m Pranoy Biswas Bappa
+        {t("name")}
       </h1>
       <h1 className="text-secondary text-xl md:text-2xl mt-5">
         <Typewriter
-          words={[
-            "Full Stack MERN-Developer",
-            "Code Lover & Creative Thinker",
-            "Lifelong Learner",
-          ]}
+          words={t.raw("tagline") as string[]}
           loop={0}
           cursor
           cursorStyle="|"
@@ -49,12 +47,10 @@ export default function HeroText() {
         />
       </h1>
       <p className="text-base lg:text-xl mt-5 text-center md:text-left">
-        I specialize in creating performant, responsive, and maintainable web
-        applications using Next.Js React.Js, TailwindCSS, Express.js, MongoDB,
-        Firebase, Supabase and more.
+        {t("description")}
       </p>
       <p className="flex-1 font-semibold text-base lg:text-xl text-center md:text-left mt-4">
-        Let&apos;s discuss your next project.
+        {t("callToAction")}
       </p>
       <div className="flex items-center gap-4 mt-6">
         <Link
@@ -79,7 +75,7 @@ export default function HeroText() {
         <Link href={resumeLink} target="_blank">
           <Button
             isOutline={false}
-            label="Show Resume"
+            label={t("buttons.downloadCV")}
             leftIcon={<SiReaddotcv />}
             isLarge={true}
           />
@@ -93,7 +89,7 @@ export default function HeroText() {
         >
           <Button
             isOutline={true}
-            label="Check My Work"
+            label={t("buttons.viewProjects")}
             leftIcon={<IoIosCodeWorking />}
             isLarge={true}
           />

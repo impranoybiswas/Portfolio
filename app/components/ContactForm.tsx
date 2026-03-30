@@ -3,6 +3,7 @@ import React, { FormEvent, useState } from "react";
 import { FaPaperPlane } from "react-icons/fa6";
 import Button from "../ui/Button";
 import toast from "react-hot-toast";
+import { useTranslations } from "next-intl";
 
 /**
  * ContactForm Component
@@ -15,6 +16,7 @@ import toast from "react-hot-toast";
  */
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations("contact.form");
 
   /**
    * Handles the form submission event.
@@ -58,14 +60,14 @@ export default function ContactForm() {
       const data = await res.json();
 
       if (data.success) {
-        toast.success("Email sent successfully!");
+        toast.success(t("messages.success"));
         (e.target as HTMLFormElement).reset();
       } else {
-        toast.error("Failed to send email.");
+        toast.error(t("messages.error"));
       }
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong.");
+      toast.error(t("messages.error"));
       console.log("error", error);
     } finally {
       setIsLoading(false);
@@ -78,8 +80,11 @@ export default function ContactForm() {
       className="w-full flex flex-col gap-5 md:gap-7"
     >
       <div>
-        <label htmlFor="name" className="block mb-1 font-medium text-foreground/80">
-          Your Name
+        <label
+          htmlFor="name"
+          className="block mb-1 font-medium text-foreground/80"
+        >
+          {t("nameLabel")}
         </label>
         <input
           type="text"
@@ -87,13 +92,16 @@ export default function ContactForm() {
           id="name"
           required
           className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent transition"
-          placeholder="Enter your full name"
+          placeholder={t("namePlaceholder")}
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block mb-1 font-medium text-foreground/80">
-          Your Email
+        <label
+          htmlFor="email"
+          className="block mb-1 font-medium text-foreground/80"
+        >
+          {t("emailLabel")}
         </label>
         <input
           type="email"
@@ -101,13 +109,16 @@ export default function ContactForm() {
           id="email"
           required
           className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent transition"
-          placeholder="example@mail.com"
+          placeholder={t("emailPlaceholder")}
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block mb-1 font-medium text-foreground/80">
-          Your Message
+        <label
+          htmlFor="message"
+          className="block mb-1 font-medium text-foreground/80"
+        >
+          {t("messageLabel")}
         </label>
         <textarea
           name="message"
@@ -115,7 +126,7 @@ export default function ContactForm() {
           required
           rows={6}
           className="w-full px-5 py-3 rounded-lg border border-secondary/50 focus:ring-secondary/70 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent resize-none transition"
-          placeholder="Write your message here..."
+          placeholder={t("messagePlaceholder")}
         ></textarea>
       </div>
 
@@ -123,7 +134,7 @@ export default function ContactForm() {
         isOutline={false}
         isLarge={true}
         type="submit"
-        label={isLoading ? "Sending..." : "Send Message"}
+        label={isLoading ? t("sending") : t("sendButton")}
         className="w-full py-5"
         onClick={() => {}}
         leftIcon={

@@ -12,10 +12,10 @@ export function ColorPalette() {
           <button
             key={c.key}
             onClick={() => setColorTheme(c.key)}
-            className={`flex flex-1 flex-col gap-2 p-2 rounded-lg border border-secondary/30 transition text-left cursor-pointer ${
+            className={`flex flex-1 flex-col gap-2 p-2 rounded-lg border transition text-left cursor-pointer ${
               isActive
-                ? "border-primary bg-primary/10"
-                : "border-border hover:bg-muted"
+                ? "border-primary/50 bg-primary/10 shadow shadow-primary/10"
+                : "border-primary/20 hover:bg-base-100 text-foreground/30"
             }`}
           >
             <div className="flex items-center justify-center gap-1">

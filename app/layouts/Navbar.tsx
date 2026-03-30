@@ -4,16 +4,20 @@ import { FaAt, FaCode, FaHome, FaUserAlt } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 import { MdDisplaySettings } from "react-icons/md";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
-const navLinks = [
-  { name: "About", path: "about", icon: <FaUserAlt size={17} /> },
-  { name: "Skills", path: "skills", icon: <FaCode size={22} /> },
-  { name: "", path: "home", icon: <FaHome size={22} /> },
-  { name: "Projects", path: "projects", icon: <MdDisplaySettings size={22} /> },
-  { name: "Contact", path: "contact", icon: <FaAt size={21} /> },
-];
+
 
 export default function Navbar() {
+  const t = useTranslations("navbar");
+
+  const navLinks = [
+  { name: t("about"), path: "about", icon: <FaUserAlt size={17} /> },
+  { name: t("skills"), path: "skills", icon: <FaCode size={22} /> },
+  { name: "", path: "home", icon: <FaHome size={22} /> },
+  { name: t("projects"), path: "projects", icon: <MdDisplaySettings size={22} /> },
+  { name: t("contact"), path: "contact", icon: <FaAt size={21} /> },
+];
   return (
     <motion.nav 
     initial={{ opacity: 0, scaleX: 0.7 }}
