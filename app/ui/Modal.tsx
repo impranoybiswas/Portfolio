@@ -76,7 +76,7 @@ export default function Modal({
                 </h3>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="size-10 rounded-full flex items-center justify-center text-foreground/40 hover:text-red-500/50 hover:bg-base-200/50 transition-colors cursor-pointer"
+                  className="size-10 rounded-full flex items-center justify-center text-foreground/40 hover:text-red-300 hover:bg-red-100 transition-colors cursor-pointer"
                 >
                   <CgClose size={22} />
                 </button>
