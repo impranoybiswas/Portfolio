@@ -121,7 +121,7 @@ export default function ContactForm() {
 
       <Button
         isOutline={false}
-        isLarge={false}
+        isLarge={true}
         type="submit"
         label={isLoading ? "Sending..." : "Send Message"}
         className="w-full py-5"

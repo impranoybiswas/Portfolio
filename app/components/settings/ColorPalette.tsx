@@ -5,30 +5,30 @@ export function ColorPalette() {
   const { colorTheme, setColorTheme } = useColorTheme();
 
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="flex flex-wrap gap-2 w-full">
       {colors.map((c) => {
         const isActive = colorTheme === c.key;
         return (
           <button
             key={c.key}
             onClick={() => setColorTheme(c.key)}
-            className={`flex flex-col gap-2 p-3 rounded-lg border transition text-left ${
+            className={`flex flex-1 flex-col gap-2 p-2 rounded-lg border border-secondary/30 transition text-left cursor-pointer ${
               isActive
                 ? "border-primary bg-primary/10"
                 : "border-border hover:bg-muted"
             }`}
           >
-            <div className="flex gap-1">
+            <div className="flex items-center justify-center gap-1">
               {c.colors.map((color: string) => (
                 <span
                   key={color}
-                  className="w-5 h-5 rounded-full border border-black/10"
+                  className="w-5 h-5 rounded-full border border-foreground/20"
                   style={{ background: color }}
                 />
               ))}
             </div>
 
-            <div className="flex items-center justify-between text-sm font-medium">
+            <div className="flex items-center justify-center text-xs font-medium">
               {c.name}
             </div>
           </button>

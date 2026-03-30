@@ -8,6 +8,7 @@ import Footer from "./layouts/Footer";
 import Navbar from "./layouts/Navbar";
 import { ColorProvider } from "./providers/ColorProvider";
 import { ThemeProvider } from "next-themes";
+import { FontProvider } from "./providers/FontProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -47,7 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <body className={`${poppins.variable} antialiased bg-background text-foreground`}>
+      <body
+        className={`${poppins.variable} antialiased bg-background text-foreground`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -56,17 +59,19 @@ export default function RootLayout({
         >
           <ColorProvider>
             <LenisProvider>
-              <ScrollProvider>
-                <Toaster
-                  toastOptions={{ duration: 3000 }}
-                  gutter={10}
-                  position="top-center"
-                  reverseOrder={false}
-                />
-                <Navbar />
-                {children}
-                <Footer />
-              </ScrollProvider>
+              <FontProvider>
+                <ScrollProvider>
+                  <Toaster
+                    toastOptions={{ duration: 3000 }}
+                    gutter={10}
+                    position="top-center"
+                    reverseOrder={false}
+                  />
+                  <Navbar />
+                  {children}
+                  <Footer />
+                </ScrollProvider>
+              </FontProvider>
             </LenisProvider>
           </ColorProvider>
         </ThemeProvider>

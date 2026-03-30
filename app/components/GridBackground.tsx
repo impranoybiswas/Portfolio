@@ -29,8 +29,8 @@ export default function GridBackground() {
       className="fixed inset-0 w-full h-screen opacity-60 z-1 overflow-hidden transition-transform duration-300 ease-out scale-120 animate-moveGrid"
       style={{
         backgroundImage: `
-          linear-gradient(to right, var(--base-200) 1px, transparent 1px),
-          linear-gradient(to bottom, var(--base-200) 1px, transparent 1px)
+          linear-gradient(to right, var(--grid-pattern) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--grid-pattern) 1px, transparent 1px)
         `,
         backgroundSize: "50px 50px",
         transform: `translate(${mousePosition.x / 30}px, ${mousePosition.y / 30}px)`

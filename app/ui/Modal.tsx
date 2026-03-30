@@ -65,12 +65,12 @@ export default function Modal({
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
               className={`
-                relative bg-background rounded-3xl shadow-2xl 
+                relative bg-background rounded-3xl shadow-2xl shadow-secondary/20 border border-secondary/20 
                 w-full ${containerSizes[size]} overflow-hidden flex flex-col
               `}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-foreground/5">
+              <div className="flex items-center justify-between p-6 border-b border-secondary/20">
                 <h3 className="text-xl font-bold text-foreground">
                   {title || "Modal Details"}
                 </h3>
