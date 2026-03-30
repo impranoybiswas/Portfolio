@@ -5,10 +5,30 @@
 ================================= */
 
 :root {
+  --background: oklch(0.97 0.02 162);
+  --foreground: oklch(0.15 0.03 162);
+  --primary: oklch(0.58 0.16 162);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.68 0.12 162);
+  --secondary-foreground: oklch(0.98 0 0);
+  --accent: oklch(0.8 0.14 85);
+  --accent-foreground: oklch(0.15 0.03 162);
+  --base-100: oklch(1 0 0);
+  --base-200: oklch(0.94 0.02 162);
   --grid-pattern: #00000011;
 }
 
 .dark {
+  --background: oklch(0.14 0.02 162);
+  --foreground: oklch(0.94 0.02 162);
+  --primary: oklch(0.75 0.16 162);
+  --primary-foreground: oklch(0.14 0.02 162);
+  --secondary: oklch(0.58 0.16 162);
+  --secondary-foreground: oklch(0.98 0 0);
+  --accent: oklch(0.85 0.15 85);
+  --accent-foreground: oklch(0.14 0.02 162);
+  --base-100: oklch(0.16 0.02 162);
+  --base-200: oklch(0.2 0.03 162);
   --grid-pattern: #ffffff0e;
 }
 

@@ -25,7 +25,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
-      <span className="fixed bottom-12 right-20 z-150 size-10 bg-secondary flex justify-center items-center rounded-full border border-primary text-white text-2xl">
+      <span className="fixed bottom-22 md:bottom-12 right-5 md:right-20 z-150 size-8 md:size-10 bg-secondary flex justify-center items-center rounded-full border border-primary text-white text-xl md:text-2xl">
         <SettingButton />
       </span>
       <GridBackground />
