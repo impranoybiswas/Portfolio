@@ -5,17 +5,19 @@ import FontController from "./settings/FontController";
 import LanguageToggle from "./settings/LanguageToggle";
 
 import { Settings } from "lucide-react";
-import FixedButton from "../ui/FixedButton";
 
 export default function SettingButton() {
   return (
     <Modal
       label={
-        <FixedButton className="bottom-32 md:bottom-12 -right-px md:right-6">
-          <Settings />
-        </FixedButton>
+        <Settings className="group-hover:rotate-12 transition-transform duration-300" />
       }
-      title="Customization"
+      title={
+        <div className="flex items-center gap-2">
+          <Settings className="size-5 text-primary animate-pulse" />
+          <span>Customization</span>
+        </div>
+      }
     >
       <div className="flex flex-col gap-5 bg-background text-foreground text-base md:text-lg">
         <div className="flex items-center justify-between bg-base-200/50 border border-foreground/5 rounded-xl p-4">

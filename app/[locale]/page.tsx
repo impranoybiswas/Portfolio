@@ -7,6 +7,7 @@ import GridBackground from "../components/GridBackground";
 import GoToTop from "../components/GoToTop";
 import SpecialDayPopup from "../components/SpecialDayPopup";
 import SettingButton from "../components/SettingButton";
+import AiChatBot from "../components/AiChatBot";
 
 /**
  * Home Page
@@ -25,10 +26,19 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <span className="fixed-button bottom-25 group">
+        <SettingButton />
+        <span className="fixed-button-tag">Customization</span>
+      </span>
+
+      <span className="fixed-button bottom-12 group">
+        <AiChatBot />
+        <span className="fixed-button-tag">AI Assistant</span>
+      </span>
+
       <GridBackground />
       <GoToTop />
       <SpecialDayPopup />
-      <SettingButton />
     </main>
   );
 }

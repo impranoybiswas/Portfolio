@@ -7,7 +7,7 @@ import { CgClose } from "react-icons/cg";
 interface ModalProps {
   label: ReactNode; // Trigger content
   children: ReactNode; // Modal content
-  title?: string;
+  title?: ReactNode;
   size?: "sm" | "md" | "lg" | "xl";
 }
 
@@ -39,7 +39,7 @@ export default function Modal({
     <>
       {/* Trigger */}
       <div
-        className="cursor-pointer active:scale-95 transition-transform"
+        className="cursor-pointer active:scale-95 transition-transform h-full w-full flex items-center justify-center"
         onClick={() => setShowModal(true)}
       >
         {label}
