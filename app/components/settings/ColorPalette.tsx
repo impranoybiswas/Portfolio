@@ -5,7 +5,7 @@ export function ColorPalette() {
   const { colorTheme, setColorTheme } = useColorTheme();
 
   return (
-    <div className="flex flex-wrap gap-2 w-full">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
       {colors.map((c) => {
         const isActive = colorTheme === c.key;
         return (
