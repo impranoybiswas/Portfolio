@@ -1,10 +1,9 @@
 "use client";
 
-import { FaAt, FaCode, FaHome, FaUserAlt } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import { MdDisplaySettings } from "react-icons/md";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
+import { House , User, CodeXml, FolderGit, AtSign  } from "lucide-react";
 
 
 
@@ -12,11 +11,11 @@ export default function Navbar() {
   const t = useTranslations("navbar");
 
   const navLinks = [
-  { name: t("about"), path: "about", icon: <FaUserAlt size={17} /> },
-  { name: t("skills"), path: "skills", icon: <FaCode size={22} /> },
-  { name: "", path: "home", icon: <FaHome size={22} /> },
-  { name: t("projects"), path: "projects", icon: <MdDisplaySettings size={22} /> },
-  { name: t("contact"), path: "contact", icon: <FaAt size={21} /> },
+  { name: t("about"), path: "about", icon: <User /> },
+  { name: t("skills"), path: "skills", icon: <CodeXml /> },
+  { name: "", path: "home", icon: <House /> },
+  { name: t("projects"), path: "projects", icon: <FolderGit /> },
+  { name: t("contact"), path: "contact", icon: <AtSign /> },
 ];
   return (
     <motion.nav 
@@ -25,7 +24,7 @@ export default function Navbar() {
     transition={{ duration: 0.3, ease: "easeInOut", delay: 0.3 }}
     viewport={{ once: true, amount: 0.2 }}
     className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 scale-99 hover:scale-100 transition-all duration-500 ease-in-out">
-      <div className="flex items-center gap-4 rounded-full border border-secondary/40 bg-background/50 backdrop-blur-md p-2 shadow-2xl text-foreground">
+      <div className="flex items-center gap-2 rounded-full border border-secondary/40 bg-background/50 backdrop-blur-md p-2 shadow-2xl text-foreground">
         {navLinks.map((link) => {
           return (
             <ScrollLink

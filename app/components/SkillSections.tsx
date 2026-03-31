@@ -29,14 +29,14 @@ export default function SkillSections({
             className="p-px relative rounded-xl overflow-hidden"
           >
             <div className="w-full h-full absolute top-0 left-0 bg-linear-to-b from-transparent via-secondary/50 to-transparent scale-130 z-5 animate-slowSpin" />
-            <div className="flex flex-col md:flex-row items-center justify-center gap-3 lg:gap-4 bg-base-200 backdrop-blur-xl hover:bg-base-100/90 p-3 rounded-xl group relative z-10">
+            <div className="flex flex-row items-center justify-center gap-3 lg:gap-4 bg-base-200 backdrop-blur-xl hover:bg-base-100/90 p-3 rounded-xl group relative z-10">
               <div
-                className={`size-12 flex justify-center items-center rounded-lg 
-                ${item.color} ${item.bg} text-3xl group-hover:scale-110 duration-500 ease-in-out transition`}
+                className={`size-8 md:size-12 flex justify-center items-center rounded-lg 
+                ${item.color} ${item.bg} text-xl md:text-3xl group-hover:scale-110 duration-500 ease-in-out transition`}
               >
                 {item.icon}
               </div>
-              <p className="text-base lg:text-xl font-semibold flex-1">
+              <p className="text-sm md:text-lg lg:text-xl font-semibold flex-1">
                 {item.name}
               </p>
             </div>

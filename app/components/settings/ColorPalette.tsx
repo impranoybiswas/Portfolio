@@ -22,13 +22,13 @@ export function ColorPalette() {
               {c.colors.map((color: string) => (
                 <span
                   key={color}
-                  className="w-5 h-5 rounded-full border border-foreground/20"
+                  className="size-4 md:size-5 rounded-full border border-foreground/20"
                   style={{ background: color }}
                 />
               ))}
             </div>
 
-            <div className="flex items-center justify-center text-xs font-medium">
+            <div className="flex items-center justify-center text-[10px] md:text-sm font-medium">
               {c.name}
             </div>
           </button>

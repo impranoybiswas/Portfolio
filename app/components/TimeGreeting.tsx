@@ -30,8 +30,8 @@ export default function TimeGreeting() {
   }, [t]);
 
   return (
-    <h1 className="tracking-wide text-foreground text-2xl md:text-3xl font-semibold text-center md:text-left">
-      {t("hi")} <br className="block md:hidden"/> {greeting}
+    <h1 className="tracking-wide text-foreground text-lg md:text-2xl lg:text-3xl font-semibold text-center md:text-left">
+      {t("hi")} {greeting}
     </h1>
   );
 }

@@ -35,7 +35,7 @@ export default function HeroText() {
       <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-linear-to-r from-primary via-primary to-secondary bg-clip-text text-transparent py-3 text-shadow-xs mt-2">
         {t("name")}
       </h1>
-      <h1 className="text-secondary text-xl md:text-2xl mt-5">
+      <h1 className="text-secondary text-xl md:text-2xl mt-1 md:mt-5">
         <Typewriter
           words={t.raw("tagline") as string[]}
           loop={0}

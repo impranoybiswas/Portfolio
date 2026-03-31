@@ -56,7 +56,7 @@ export default function About() {
         </motion.div>
       </div>
 
-      <FaGraduationCap className="size-40 md:size-64 absolute right-0 -bottom-20 z-5 opacity-5" />
+      <FaGraduationCap className="size-40 md:size-64 absolute right-0 bottom-20 z-5 opacity-5" />
     </Section>
   );
 }
