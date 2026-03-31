@@ -108,11 +108,11 @@
 
 /* Custom Style */
 .fixed-button {
-  @apply fixed right-6 z-150 size-8 md:size-10 bg-secondary flex justify-center items-center rounded-full border border-primary text-white text-xl md:text-2xl cursor-pointer;
+  @apply fixed -right-px md:right-6 z-150 size-10 bg-primary/60 md:bg-primary flex justify-center items-center rounded-l-xl md:rounded-full border border-secondary text-white text-xl md:text-2xl cursor-pointer text-shadow-2xs;
 }
 
 .fixed-button-tag {
-  @apply absolute top-0 left-0 text-[10px] opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 group-hover:-top-5 group-hover:-left-20 transition-all duration-500 ease-in-out bg-background/70 px-3 py-1 rounded-full border-primary/80 border shadow-xs whitespace-nowrap;
+  @apply absolute top-0 left-0 text-[10px] opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 group-hover:-top-5 group-hover:-left-20 transition-all duration-500 ease-in-out bg-background/70 px-3 py-1 rounded-full border-primary/80 border shadow-xs whitespace-nowrap text-shadow-2xs text-white;
 }
 
 /* LENIS SMOOTH SCROLLING */

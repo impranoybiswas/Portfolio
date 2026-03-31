@@ -26,12 +26,12 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
-      <span className="fixed-button bottom-25 group">
+      <span className="fixed-button bottom-45 md:bottom-25 group">
         <SettingButton />
         <span className="fixed-button-tag">Customization</span>
       </span>
 
-      <span className="fixed-button bottom-12 group">
+      <span className="fixed-button bottom-32 md:bottom-12 group">
         <AiChatBot />
         <span className="fixed-button-tag">AI Assistant</span>
       </span>

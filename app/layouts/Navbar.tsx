@@ -24,7 +24,7 @@ export default function Navbar() {
     transition={{ duration: 0.3, ease: "easeInOut", delay: 0.3 }}
     viewport={{ once: true, amount: 0.2 }}
     className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 scale-99 hover:scale-100 transition-all duration-500 ease-in-out">
-      <div className="flex items-center gap-2 rounded-full border border-secondary/40 bg-background/50 backdrop-blur-md p-2 shadow-2xl text-foreground">
+      <div className="flex items-center gap-3 rounded-full border border-secondary/40 bg-background/50 backdrop-blur-md p-2 shadow-2xl text-foreground">
         {navLinks.map((link) => {
           return (
             <ScrollLink
