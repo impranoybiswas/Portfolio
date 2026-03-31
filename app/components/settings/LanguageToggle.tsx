@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "../../i18n/routing";
 import { useTransition } from "react";
 
 export default function LanguageToggle() {
@@ -13,10 +13,8 @@ export default function LanguageToggle() {
   const changeLanguage = (nextLocale: string) => {
     if (nextLocale === locale) return;
 
-    const newPath = pathname.replace(`/${locale}`, `/${nextLocale}`);
-
     startTransition(() => {
-      router.replace(newPath);
+      router.replace(pathname, { locale: nextLocale });
     });
   };
 
@@ -30,7 +28,7 @@ export default function LanguageToggle() {
             ? "border-primary/50 bg-primary/10 shadow shadow-primary/10"
             : "border-primary/20 hover:bg-base-100/60 text-foreground/30"
         }`}
-      > 
+      >
         বাংলা
       </button>
 
