@@ -219,7 +219,7 @@ const IconGrid = () => {
             animationDelay={0}
           >
             <FaHashtag />
-            <span className="absolute top-0 left-0 text-sm scale-0 group-hover:scale-100 group-hover:-top-4 group-hover:-left-12 transition-all duration-500 ease-in-out bg-primary px-3 py-1 rounded-full border-secondary border shadow-xs text-white whitespace-nowrap">
+            <span className="fixed-button-tag">
               {t("socialMedia")}
             </span>
           </IconWrapper>
