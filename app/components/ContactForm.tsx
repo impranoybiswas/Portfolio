@@ -1,5 +1,5 @@
 "use client";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { FaPaperPlane } from "react-icons/fa6";
 import Button from "../ui/Button";
 import { useTranslations } from "next-intl";
@@ -19,8 +19,18 @@ export default function ContactForm() {
     initialState,
   );
 
+  useEffect(() => {
+  if (!state.message) return;
+
+  if (state.success) {
+    toast.success(state.message);
+  } else {
+    toast.error(state.message);
+  }
+}, [state]);
+
   return (
-    <form action={formAction} className="w-full flex flex-col gap-5 md:gap-7">
+    <form action={formAction} autoComplete="off" className="w-full flex flex-col gap-5 md:gap-7">
       <div>
         <label
           htmlFor="name"
@@ -71,8 +81,6 @@ export default function ContactForm() {
           placeholder={t("messagePlaceholder")}
         ></textarea>
       </div>
-
-      {state.message && toast(state.message)}
 
       <Button
         isOutline={false}

@@ -41,10 +41,9 @@ export async function sendContactEmail(
       subject: `New message from ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px;">
-          <h2>Portfolio Message</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Message:</strong></p>
+          <h3>Portfolio Message</h3>
+          <p><strong>From :</strong> ${name}</p>
+          <p><strong>Email :</strong> ${email}</p>
           <p style="background:#f4f4f4; padding:12px; border-radius:6px;">${message}</p>
         </div>
       `,
