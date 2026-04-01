@@ -1,84 +1,26 @@
 "use client";
-import React, { FormEvent, useState } from "react";
+import { useActionState } from "react";
 import { FaPaperPlane } from "react-icons/fa6";
 import Button from "../ui/Button";
-import toast from "react-hot-toast";
 import { useTranslations } from "next-intl";
+import { ContactFormState, sendContactEmail } from "../libs/sendContactMail";
+import toast from "react-hot-toast";
 
-/**
- * ContactForm Component
- *
- * Displays a contact form with fields for Name, Email, and Message.
- * Handles form submission via API route `/api/send-email`.
- * Uses `react-hot-toast` for user feedback.
- *
- * @returns {JSX.Element} The contact form component
- */
+const initialState: ContactFormState = {
+  success: false,
+  message: "",
+};
+
 export default function ContactForm() {
-  const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("contact.form");
 
-  /**
-   * Handles the form submission event.
-   * Sends data to the backend API and handles success/error states.
-   *
-   * @param {FormEvent<HTMLFormElement>} e - The form submission event
-   */
-  const handleSendEmail = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    const form = new FormData(e.currentTarget).entries();
-    const formData = Object.fromEntries(form);
-
-    const name = formData.name as string;
-    const email = formData.email as string;
-    const message = formData.message as string;
-
-    const emailData = {
-      name,
-      email,
-      subject: `New Message from ${name}`,
-      html: `<div>
-        <p style="font-size: 16px; font-weight: bold; color: blue;">New Message from ${name}</p>
-        <p>Name: ${name}</p>
-        <i style="color: gray; font-size: 8px;">Email: ${email}</i>
-        <p>Message: ${message}</p>
-        </div>`,
-    };
-
-    try {
-      const res = await fetch(
-        "https://nextjs-test-pranoy.vercel.app/api/send-email",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(emailData),
-        },
-      );
-
-      const data = await res.json();
-
-      if (data.success) {
-        toast.success(t("messages.success"));
-        (e.target as HTMLFormElement).reset();
-      } else {
-        toast.error(t("messages.error"));
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error(t("messages.error"));
-      console.log("error", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const [state, formAction, isPending] = useActionState(
+    sendContactEmail,
+    initialState,
+  );
 
   return (
-    <form
-      onSubmit={handleSendEmail}
-      className="w-full flex flex-col gap-5 md:gap-7"
-    >
+    <form action={formAction} className="w-full flex flex-col gap-5 md:gap-7">
       <div>
         <label
           htmlFor="name"
@@ -130,15 +72,17 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
+      {state.message && toast(state.message)}
+
       <Button
         isOutline={false}
         isLarge={true}
         type="submit"
-        label={isLoading ? t("sending") : t("sendButton")}
+        label={isPending ? t("sending") : t("sendButton")}
         className="w-full py-5"
         onClick={() => {}}
         leftIcon={
-          isLoading ? (
+          isPending ? (
             <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white border-opacity-70" />
           ) : (
             <FaPaperPlane />
