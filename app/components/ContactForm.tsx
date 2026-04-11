@@ -3,7 +3,7 @@ import { useActionState, useEffect } from "react";
 import { FaPaperPlane } from "react-icons/fa6";
 import Button from "../ui/Button";
 import { useTranslations } from "next-intl";
-import { ContactFormState, sendContactEmail } from "../libs/sendContactMail";
+import { ContactFormState, sendContactEmail } from "../lib/sendContactMail";
 import toast from "react-hot-toast";
 
 const initialState: ContactFormState = {
@@ -20,17 +20,21 @@ export default function ContactForm() {
   );
 
   useEffect(() => {
-  if (!state.message) return;
+    if (!state.message) return;
 
-  if (state.success) {
-    toast.success(state.message);
-  } else {
-    toast.error(state.message);
-  }
-}, [state]);
+    if (state.success) {
+      toast.success(state.message);
+    } else {
+      toast.error(state.message);
+    }
+  }, [state]);
 
   return (
-    <form action={formAction} autoComplete="off" className="w-full flex flex-col gap-5 md:gap-7">
+    <form
+      action={formAction}
+      autoComplete="off"
+      className="w-full flex flex-col gap-5 md:gap-7"
+    >
       <div>
         <label
           htmlFor="name"

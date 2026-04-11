@@ -3,7 +3,7 @@ import React from "react";
 import SkillSections from "../components/SkillSections";
 import Section from "../ui/Section";
 import Image from "next/image";
-import { backendSkills, frontendSkills, graphicsSkills } from "../libs/Skills";
+import { backendSkills, frontendSkills, graphicsSkills } from "../lib/Skills";
 import { useTranslations } from "next-intl";
 
 export default function Skills() {

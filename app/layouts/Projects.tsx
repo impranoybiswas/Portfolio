@@ -3,7 +3,7 @@ import React from "react";
 
 import ProjectCard from "../components/ProjectCard";
 import Section from "../ui/Section";
-import { projects } from "../libs/Projects";
+import { projects } from "../lib/Projects";
 import { useTranslations } from "next-intl";
 
 export default function Projects() {
