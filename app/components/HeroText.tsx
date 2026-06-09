@@ -12,7 +12,7 @@ import TimeGreeting from "./TimeGreeting";
 import { useTranslations } from "next-intl";
 
 export const resumeLink =
-  "https://drive.google.com/file/d/1q1GvCYP-pihc6pnOu5fgY5zN-USw33Sk/view";
+  "https://drive.google.com/file/d/1jO0FwCPfI5X4LeCGCvOLBZVarejDlbDN/view?usp=sharing";
 
 export default function HeroText() {
   const t = useTranslations("header");
